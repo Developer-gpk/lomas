@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.outer-wrapper{
+    contain: paint;
+}
+@font-face{
+    font-family: "Silka-bold";
+    src: url("../fonts/Silka\ Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Silka-regular";
+    src: url("../fonts/Silka\ Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}

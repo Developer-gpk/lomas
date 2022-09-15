@@ -1,0 +1,129 @@
+.navigation{
+    left: 0;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    -webkit-transition: all 550ms ease-in-out;
+    transition: all 550ms ease-in-out;
+    width: 100%;
+    z-index: 999;
+    background: rgba(24,29,36, 0.2);
+    height: 110px;
+}
+.navigation.isActive{
+    background: #181D24;
+    -webkit-transition: all 550ms ease-in-out;
+    transition: all 550ms ease-in-out;
+    padding: 0px 0px;
+    height: 90px;
+}
+.navigation.isPropiedad{
+    background: #181D24;
+}
+.navigation .isClick{
+    background: #181D24;
+}
+.navigation .holder{
+    margin: 0 auto;
+    max-width: 1330px;
+    width: 100%;
+}
+.navigation .navbar-brand{
+    margin-left: 110px;
+}
+.navigation .bi.bi-list{
+    color: #CC9964;
+    font-size: 35px;
+}
+.navigation .navbar-toggler{
+    border: none;
+}
+.navigation .navbar-toggler:focus{
+    box-shadow: none;
+}
+.navigation .navbar-nav .nav-link{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+.navigation .navbar-nav .nav-link::after{
+    display:block;
+    content: '';
+    border-bottom: solid 3px #CC9964;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+.navigation .navbar-nav .nav-link.dropdown-toggle::after{
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+}
+.navigation .navbar-nav .nav-link.dropdown-toggle span{
+    margin-left: 5px !important;
+}
+.navigation .navbar-nav .nav-link:hover:after{
+    transform: scaleX(1);
+}
+#footer{
+    background: #181D24;
+}
+#footer .holder{
+    margin: 0 auto;
+    max-width: 1330px;
+    width: 100%;
+    padding-top: 100px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 35px;
+}
+#footer .fcc-text{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+#footer .fcc-text span{
+    font-family: 'Silka-bold';
+    color: #CC9964;
+}
+#footer .fcc-link ul a{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 10px;
+    padding: 8px;
+    color: #EEEEEE;
+}
+#footer .fcc-aviso{
+    border-top: 1px solid #CC9964;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+#footer .fcc-aviso .derechos{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 10px;
+    color: #EEEEEE;
+}
+@media (max-width: 767px){
+    .navigation{
+        padding: 0px 0px;
+    }
+    .navigation .navbar-brand{
+        margin-left: 130px;
+    }
+    .navigation .navbar-nav .nav-link{
+        margin: 10px;
+        font-family: 'Silka-regular', sans-serif;
+        font-size: 20px;
+        color: #FFFFFF;
+    }
+    #footer .holder{
+        padding-top: 60px;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 100px;
+    }
+    #footer .fcc-text{
+        font-size: 14px;
+    }
+    #footer .fcc-link ul a{
+        font-size: 10px;
+    }
+}

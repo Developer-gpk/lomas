@@ -1,0 +1,97 @@
+#category-banner{
+
+}
+#category-banner .holder{
+    margin: 0 auto;
+    max-width: 1330px;
+    width: 100%;
+    padding: 0px 70px;
+}
+#category-banner .holder{
+    margin: 0 auto;
+    max-width: 1330px;
+    width: 100%;
+    padding: 0px 70px;
+}
+#category-banner .parallax-category-desk div:first-child{
+    filter: brightness(40%);
+}
+#category-banner .parallax-category-desk .carousel-caption.content-category{
+    bottom: 35%;
+}
+#category-banner .parallax-category-desk .carousel-caption.content-category h1{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 34px;
+    color: #FFFFFF;
+}
+#category-banner .parallax-category-desk .carousel-caption.content-category span{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+#category-propiedades .holder{
+    margin: 0 auto;
+    max-width: 1330px;
+    width: 100%;
+    padding: 50px 70px;
+}
+#empieza{
+
+}
+#empieza .holder{
+    margin: 0 auto;
+    max-width: 1330px;
+    width: 100%;
+    padding: 50px 70px;
+}
+#empieza .parallax-category-banner-desk{
+    border-radius: 15px;
+}
+#empieza .parallax-category-banner-desk div:first-child{
+    filter: brightness(40%);
+}
+#empieza .parallax-category-banner-desk .carousel-caption.content-category{
+    bottom: 40%;
+}
+#empieza .parallax-category-banner-desk .carousel-caption.content-category h1{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 28px;
+    color: #FFFFFF;
+}
+#empieza .parallax-category-banner-desk .carousel-caption.content-category span{
+    font-family: 'Silka-bold';
+    font-size: 28px;
+    color: #CC9964;
+}
+@media (max-width: 767px){
+    #category-banner .parallax-category-desk{
+        height: 380px !important;
+    }
+    #category-banner .parallax-category-desk .carousel-caption.content-category{
+        bottom: 10%;
+    }
+    #category-banner .parallax-category-desk .carousel-caption.content-category h1{
+        font-size: 26px;
+    }
+    #category-banner .parallax-category-desk .carousel-caption.content-category span{
+        font-size: 14px;
+    }
+    #category-propiedades .holder{
+        padding: 50px 0px;
+    }
+    #empieza .holder{
+        padding: 110px 0px;
+    }
+    #empieza .parallax-category-banner-desk{
+        border-radius: 0px;
+    }
+    #empieza .parallax-category-banner-desk .carousel-caption.content-category{
+        bottom: 30%;
+    }
+    #empieza .parallax-category-banner-desk .carousel-caption.content-category h1{
+        font-size: 22px;
+    }
+    #empieza .parallax-category-banner-desk .carousel-caption.content-category span{
+        font-size: 22px;
+    }
+}

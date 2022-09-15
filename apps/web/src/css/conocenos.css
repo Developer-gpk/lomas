@@ -1,0 +1,211 @@
+#conocenos-banner{
+
+}
+#conocenos-banner .parallax-conocenos-desk div:first-child{
+    filter: brightness(40%);
+}
+#conocenos-banner .parallax-conocenos-desk .carousel-caption.content-creditos{
+    bottom: 219px;
+}
+#conocenos-banner .parallax-conocenos-desk .carousel-caption.content-creditos h1{
+    font-family: 'Silka-bold';
+    font-size: 34px;
+    color: #FFFFFF;
+}
+#fundad{
+
+}
+#fundad .holder{
+    margin: 163px auto;
+    max-width: 1330px;
+    width: 100%;
+    padding: 0px 70px;
+}
+#fundad p{
+    font-family: 'Silka-bold';
+    font-size: 24px;
+    color: #181D24;
+}
+#fundad span{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 20px;
+    color: #515761;
+}
+#conocenos-title{
+
+}
+#conocenos-title .holder{
+    margin: 152px auto;
+    max-width: 1330px;
+    width: 100%;
+    padding: 0px 300px;
+}
+#conocenos-title h3{
+    text-align: center;
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 34px;
+    color: #181D24;
+}
+#conocenos-title span{
+    font-family: 'Silka-bold';
+    color: #CC9964;
+}
+#inmobiliarias{
+
+}
+#inmobiliarias .holder{
+    margin: 152px auto;
+    max-width: 1330px;
+    width: 100%;
+    padding: 0px 70px;
+}
+#inmobiliarias .parallax-inmobiliarias-desk div:first-child{
+    filter: brightness(40%);
+}
+#inmobiliarias .parallax-inmobiliarias-desk .carousel-caption.content-creditos{
+    bottom: 30%;
+}
+#inmobiliarias .parallax-inmobiliarias-desk .carousel-caption.content-creditos h1{
+    font-family: 'Silka-bold';
+    font-size: 28px;
+    color: #CC9964;
+}
+#inmobiliarias .list-group .list-group-item::before{
+    content: none;
+}
+#inmobiliarias .list-group .list-group-item{
+    border: none;
+}
+#inmobiliarias .list-group .list-group-item .fw-bold{
+    font-family: 'Silka-bold';
+    font-size: 20px;
+    color: #181D24;
+    margin-bottom: 20px;
+}
+#inmobiliarias .list-group .list-group-item{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 14px;
+    color: #515761;
+}
+#inmobiliarias .links{
+    font-family: 'Silka-regular', sans-serif;
+    text-align: center;
+    padding: 10px 15px;
+    background: #CC9964;
+    border-radius: 40px;
+    width: 257px;
+    height: 48px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#credito{
+    background: #EEEEEE;
+}
+#credito .holder{
+    margin: 0 auto;
+    max-width: 1330px;
+    width: 100%;
+    padding: 0px 70px;
+}
+#credito .content-text{
+    padding-top: 160px;
+    padding-left: 110px;
+    padding-right: 70px;
+}
+#credito .content-text h3{
+    font-family: 'Silka-bold';
+    font-size: 28px;
+    color: #CC9964;
+}
+#credito .content-text p{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 20px;
+    color: #515761;
+}
+#credito .content-text span{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 16px;
+    color: #515761;
+}
+@media (max-width: 767px){
+    #conocenos-banner .parallax-conocenos-desk{
+        height: 480px;
+    }
+    #conocenos-banner .parallax-conocenos-desk .carousel-caption.content-creditos{
+        bottom: 30%;
+        right: 0;
+        left: 0;
+    }
+    #conocenos-banner .parallax-conocenos-desk .carousel-caption.content-creditos h1{
+        font-size: 26px;
+    }
+    #fundad .holder{
+        padding: 0px 17px;
+    }
+    #fundad .image span{
+        width: 380px !important;
+        height: 321px !important;
+    }
+    #fundad p{
+        font-family: 'Silka-bold';
+        font-size: 22px;
+        color: #181D24;
+    }
+    #fundad span{
+        font-family: 'Silka-regular', sans-serif;
+        font-size: 18px;
+        color: #515761;
+    }
+    #conocenos-title .holder{
+        margin: 40px auto;
+        padding: 0px 17px;
+    }
+    #conocenos-title h3{
+        font-size: 28px;
+    }
+    #inmobiliarias .holder{
+        margin: 152px auto;
+        padding: 0px 0px;
+    }
+    #inmobiliarias .container-fluid{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #inmobiliarias .parallax-inmobiliarias-desk .carousel-caption.content-creditos h1{
+        font-size: 26px;
+    }
+    #inmobiliarias .list-group .list-group-item.d-flex{
+        display: block !important;
+    }
+    #inmobiliarias .list-group .list-group-item span{
+        margin: 0 150px !important;
+    }
+    #credito .holder{
+        margin: 0 0;
+        padding: 0px 0px;
+    }
+    #credito .content-text{
+        padding-top: 107px;
+        padding-left: 17px;
+        padding-right: 17px;
+        padding-bottom: 117px;
+        text-align: center;
+    }
+    #credito .image{
+        padding-right: 0;
+        padding-left: 0;
+    }
+    #credito .image span{
+        width: 414px !important;
+        height: 311px !important;
+    }
+    #credito .content-text h3{
+        font-size: 26px;
+    }
+    #credito .content-text p{
+        font-size: 18px;
+    }
+    #credito .content-text span{
+        font-size: 14px;
+    }
+}

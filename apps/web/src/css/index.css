@@ -1,0 +1,389 @@
+#portada{
+
+}
+#portada .holder{
+    margin: 0 auto;
+    max-width: 1330px;
+    width: 100%;
+}
+#portada .portada-carousel .portada-parallax-desk{
+    filter: brightness(40%);
+}
+#portada .portada-carousel .portada-parallax-desk div{
+    transform: translateY(100px) !important;
+}
+#portada .portada-carousel .portada-parallax-mobile{
+    filter: brightness(40%);
+    height: 550px;
+}
+#portada .portada-carousel .portada-parallax-mobile div{
+    transform: translateY(100px) !important;
+}
+#portada .portada-carousel .carousel-caption{
+    z-index: 2;
+}
+#portada .portada-carousel .carousel-caption h3{
+    font-family: 'Silka-bold';
+    font-size: 34px;
+    color: #EEEEEE;
+}
+#portada .portada-carousel .carousel-caption .menu{
+    width: 100%;
+    background: #FFFFFF;
+    padding: 15px;
+    border-radius: 5px;
+}
+#portada .portada-carousel .carousel-caption .menu select{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 16px;
+    background: #EEEEEE;
+    color: #646464;
+    background-image: url('../icons/dropdown.svg');
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    -webkit-appearance: none;
+    border: black;
+}
+#portada .portada-carousel .carousel-caption .menu select:focus{
+    border: black;
+    box-shadow: none;
+}
+#portada .portada-carousel .carousel-caption .menu .inputs-range {
+    background: #EEEEEE;
+    border-radius: 5px;
+    height: 100%;
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#portada .portada-carousel .carousel-caption .menu .inputs-range .row {
+    margin-top: 20px;
+    padding: 0 10px;
+}
+#portada .portada-carousel .carousel-caption .menu .inputs-range span {
+    color: #646464;
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 9px;
+}
+#portada .portada-carousel .carousel-caption .menu .inputs-range .range{
+    position: relative;
+    margin: 8px;
+}
+#portada .portada-carousel .carousel-caption .menu .inputs-range .range input[type=range] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+#portada .portada-carousel .carousel-caption .menu .inputs-range .range input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+}
+#portada .portada-carousel .carousel-caption .menu .inputs-range .range input[type=range]:focus {
+    outline: none;
+} 
+#portada .portada-carousel .carousel-caption .menu .inputs-range .range input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #CC9964;
+}
+#portada .portada-carousel .carousel-caption .menu .inputs-range .range input[type=range]:focus::-ms-fill-lower {
+    background: #CC9964;
+} 
+#portada .portada-carousel .carousel-caption .menu .inputs-range .range input[type=range]:focus::-ms-fill-upper {
+    background: #CC9964;
+} 
+#portada .portada-carousel .carousel-caption .menu .inputs-range .range input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #CC9964;
+    border-radius: 1px;
+    box-shadow: none;
+    border: 0;
+}
+#portada .portada-carousel .carousel-caption .menu .inputs-range .range input[type=range]::-webkit-slider-thumb {
+    z-index: 2;
+    position: relative;
+    box-shadow: 0px 0px 0px #000;
+    border: 1px solid #CC9964;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #CC9964;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+}
+#portada .portada-carousel .carousel-caption .menu button{
+    background: #CC9964;
+    color: #FFFFFF;
+}
+#propiedades{
+
+}
+#propiedades .holder{
+    margin: 0 auto;
+    max-width: 1330px;
+    width: 100%;
+    padding: 0px 70px;
+}
+#propiedades h2{
+    font-family: 'Silka-regular', sans-serif;
+    font-weight: bold;
+    font-size: 34px;
+    color: #181D24;
+}
+#propiedades .categorias .nav-tabs{
+    --bs-nav-tabs-border-width: 0px;
+}
+#propiedades .categorias .nav-item{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#propiedades .categorias .nav-item span{
+    width: 30px !important;
+    height: 30px !important;
+}
+#propiedades .categorias .nav-item img{
+    padding: 3px !important;
+    margin-top: 4px !important;
+}
+#propiedades .categorias .nav-link{
+    border-bottom: 4px solid #EEEEEE;
+    font-family: 'Silka-regular', sans-serif;
+    color: #181D24;
+}
+#propiedades .categorias .active{
+    border-bottom: 4px solid #CC9964;
+}
+#conocenos{
+
+}
+#conocenos .holder{
+    margin: 0 auto;
+    max-width: 1330px;
+    width: 100%;
+    padding: 0px 70px;
+}
+#conocenos .conocenos-parallax-desk div:first-child{
+    filter: brightness(40%);
+}
+#conocenos .conocenos-parallax-desk .content p{
+    position: absolute;
+    top: 118px;
+    width: 50%;
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 24px;
+    color: #EEEEEE;
+    left: 110px;
+    line-height: 29px;
+}
+#conocenos .conocenos-parallax-desk .content p span{
+    font-family: 'Silka-bold';
+    font-size: 28px;
+    color: #CC9964;
+}
+#conocenos .conocenos-parallax-desk .content p a{
+    font-size: 16px;
+}
+#logo{
+
+}
+#logo .holder{
+    margin: -8% auto;
+    max-width: 1330px;
+    width: 100%;
+    padding: 0px 70px;
+}
+#logo img{
+    width: 196px !important;
+    height: 186px !important;
+}
+#contacto{
+
+}
+#contacto .parallax-contacto-desk{
+    width: 1440px;
+    height: 1116px;
+}
+#contacto .holder{
+    margin: 30% auto;
+    max-width: 1330px;
+    width: 100%;
+    padding: 0px 180px;
+}
+#contacto form .row{
+    margin-left: 0;
+    margin-right: 0;
+}
+#contacto form h3{
+    font-family: 'Silka-bold';
+    font-size: 34px;
+    color: #181D24;
+    margin: 30px auto;
+}
+#contacto form p{
+    font-family: 'Silka-bold';
+    font-size: 24px;
+    color: #181D24;
+    margin: 0px 0px 40px 0px;
+}
+#contacto form p span{
+    font-family: 'Silka-regular', sans-serif;
+    color: #CC9964;
+}
+#contacto form .input-contact input{
+    background: #EEEEEE;
+    color: #515761;
+    font-size: 12px;
+    font-family: 'Silka-regular', sans-serif;
+    height: 50px;
+}
+#contacto form h6{
+    font-family: 'Silka-bold';
+    font-size: 16px;
+    color: #181D24;
+}
+#contacto form .options-contact input{
+    background: #D1CFC9;
+}
+#contacto form .options-contact label{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 14px;
+    color: #515761;
+    margin-left: 10px;
+}
+#contacto form textarea{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 12px;
+    color: #515761;
+    height: 210px;
+}
+#contacto form .submit-contact{
+    text-align: end;
+}
+#contacto form .submit-contact button{
+    background: #CC9964;
+    font-size: 18px;
+    color: #EEEEEE;
+    width: 30%;
+}
+#lugares{
+    background: #EEEEEE;
+}
+#lugares .holder{
+    margin: 0px auto;
+    max-width: 1330px;
+    width: 100%;
+    padding: 50px 70px;
+}
+#lugares .row div{
+    width: 20%;
+}
+#lugares .row h4{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 9px;
+    color: #515761;
+}
+#lugares .row ul{
+    list-style: none;
+    padding: 0;
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 9px;
+    color: #515761;
+}
+@media (max-width: 2400px){
+    #contacto .parallax-contacto-desk{
+        height: 1300px !important;
+    }
+    #contacto .holder{
+        margin: 20% auto;
+    }
+}
+@media (max-width: 1330px){
+    #contacto .parallax-contacto-desk{
+        height: 1116px !important;
+    }
+    #contacto .holder{
+        margin: 20% auto;
+    }
+}
+@media (max-width: 767px){
+    #portada .portada-carousel .carousel-caption{
+        right: 0;
+        left: 0;
+        width: 100%;
+    }
+    #portada .portada-carousel .carousel-caption .menu{
+        margin-left: 10px;
+        margin-right: 10px;
+        width: auto;
+    }
+    #portada .portada-carousel .carousel-caption h3{
+        font-size: 26px;
+    }
+    #portada .portada-carousel .carousel-caption .menu .inputs-range {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    #portada .portada-carousel .carousel-caption .menu select{
+        font-size: 12px;
+    }
+    #portada .portada-carousel .carousel-caption .menu button{
+        border-radius: 20px;
+    }
+    #portada .portada-carousel .carousel-caption .menu button i{
+        margin-left: -2px;
+    }
+    #propiedades h2{
+        font-size: 26px;
+    }
+    #propiedades .holder{
+        padding: 0px 0px;
+    }
+    #logo .holder{
+        margin: -8% auto;
+        max-width: 1330px;
+        width: 100%;
+        padding: 0px 36px;
+    }
+    #logo span{
+        width: 63px !important;
+        height: 60px !important;
+    }
+    #conocenos .holder{
+        padding: 0px 0px;
+    }
+    #conocenos .conocenos-parallax-desk{
+        height: 460px;
+    }
+    #conocenos .conocenos-parallax-desk .content p{
+        top: 0px;
+        left: 0px;
+        font-size: 20px;
+        width: 100%;
+        padding: 70px 17px 0px 17px;
+        line-height: 24px;
+    }
+    #conocenos .conocenos-parallax-desk .content p span{
+        font-size: 22px;
+    }
+    #contacto .holder{
+        padding: 0px 17px;
+        margin: 50% auto;
+    }
+    #contacto .parallax-contacto-desk {
+        height: 1345px !important;
+    }
+    #lugares .holder{
+        padding: 30px 17px;
+    }
+    #lugares .row div {
+        width: 50%;
+        margin-top: 10px;
+    }
+    #lugares .row h4 {
+        margin-bottom: 10px;
+    }
+}
