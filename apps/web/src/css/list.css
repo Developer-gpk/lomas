@@ -64,3 +64,9 @@
 .propiedad .card-body .btn-propi:hover a{
     transform: translateX(70%);
 }
+
+@media (max-width: 767px){
+    .propiedad .card-body .btn-propi:hover a{
+        transform: translateX(0%);
+    }
+}

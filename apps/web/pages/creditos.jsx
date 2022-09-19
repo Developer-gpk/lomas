@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import Layout from '../src/Layout/Layout'
 import Image from 'next/image'
 import { ParallaxBanner } from 'react-scroll-parallax'
-import { CoverCreditos1, ArrowSend, Img1, Img2, Img3, BannerBanks, Banorte, BBVA, Calednar, HSBC, Santander, Scotiabank } from 'ui/constants'
+import { CoverCreditos1, ArrowSend, Img1, Img2, Img3, BannerBanks, Banorte, Bbva, HSBC, Santander, Scotiabank, Agente } from 'ui/constants'
+import Forms from '../src/Components/Forms/Form'
 
 export default function Creditos(){
     const [element1, setElement1] = useState(false)
@@ -159,7 +160,7 @@ export default function Creditos(){
                                             <h1>Trabajamos con los bancos más reconocidos</h1>
                                             <div className='row'>
                                                 <span className="col">
-                                                    <Image src={BBVA} alt="pin" width="160" height="33" layout={"fixed"} />
+                                                    <Image src={Bbva} alt="pin" width="160" height="33" layout={"fixed"} />
                                                 </span>
                                                 <span className="col">
                                                     <Image src={Banorte} alt="pin" width="160" height="33" layout={"fixed"} />
@@ -200,7 +201,7 @@ export default function Creditos(){
                                             <h1>Trabajamos con los bancos más reconocidos</h1>
                                             <div className='row'>
                                                 <span className="col">
-                                                    <Image src={BBVA} alt="pin" width="160" height="33" layout={"fixed"} />
+                                                    <Image src={Bbva} alt="pin" width="160" height="33" layout={"fixed"} />
                                                 </span>
                                                 <span className="col">
                                                     <Image src={Banorte} alt="pin" width="160" height="33" layout={"fixed"} />
@@ -223,7 +224,25 @@ export default function Creditos(){
                     />
                 </div>
             </section>
-
+            <section className='block' id='form-multistep'>
+                <div className='holder'>
+                    <div className='container-fluid'>
+                        <div className='row'>
+                            <div className='col-12 col-md-6'>
+                                <div className='row'>
+                                    <h3><span>¡Terminó la espera!,</span> consigue tu financiamiento ahora.</h3>
+                                </div>
+                                <div className='row'>
+                                    <Forms />
+                                </div>
+                            </div>
+                            <div className='col-12 col-md-6 image'>
+                                <Image src={Agente} alt="pin" width="527" height="568" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section className='block' id="lugares">
                 <div className='holder'>
                     <div className='row mx-auto'>

@@ -1,6 +1,6 @@
 .navigation{
     left: 0;
-    padding: 10px 20px;
+    padding: 0px 0px;
     position: fixed;
     top: 0;
     -webkit-transition: all 550ms ease-in-out;
@@ -15,7 +15,6 @@
     -webkit-transition: all 550ms ease-in-out;
     transition: all 550ms ease-in-out;
     padding: 0px 0px;
-    height: 90px;
 }
 .navigation.isPropiedad{
     background: #181D24;
@@ -28,8 +27,26 @@
     max-width: 1330px;
     width: 100%;
 }
+.navigation .navbar{
+    padding: 0;
+}
+.navigation .container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+.navigation .navbar-collapse{
+    margin-top: 71px;
+    margin-right: 78px;
+}
+.navigation .navbar-collapse .dropdown-menu{
+    background: rgba(238, 238, 238, 0.7);
+    left: -35px;
+}
 .navigation .navbar-brand{
-    margin-left: 110px;
+    margin: 20px 0px 20px 70px;
+    padding-bottom: 0;
+    padding-top: 0;
+    font-size: 0;
 }
 .navigation .bi.bi-list{
     color: #CC9964;
@@ -37,6 +54,7 @@
 }
 .navigation .navbar-toggler{
     border: none;
+    padding-right: 17px;
 }
 .navigation .navbar-toggler:focus{
     box-shadow: none;
@@ -101,17 +119,79 @@
     font-size: 10px;
     color: #EEEEEE;
 }
+.whats {
+    position: fixed; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+    right: 0; /* Establecemos la barra en la izquierda */
+    top: 200px; /* Bajamos la barra 200px de arriba a abajo */
+    z-index: 2000; /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+}
+.whats ul {
+    list-style: none;
+}
+.whats ul .whatsapp{
+    background: #25D366;
+}
+.whats ul .phone{
+    background: #CC9964;
+}
+.whats ul li{
+    margin-bottom: 20px;
+    padding: 0px 14px;
+    border-radius: 30px 0px 0px 30px;
+}
+.whats ul li a{
+    display: inline-block;
+    color:#fff;
+    background: #000;
+    padding: 15px 15px;
+    text-decoration: none;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease;
+    margin-top: 13px;
+}
+.whats ul li.whatsapp:hover{
+    background: #075E54;
+}
+.whats ul li.phone:hover{
+    background: #8E6439;
+}
+.whats ul li .icon-whatsapp {
+    background: url("../icons/wa-cta.svg") no-repeat;
+}
+.whats ul li .icon-number {
+    background: url("../icons/phone-cta.svg") no-repeat;
+}
+    
 @media (max-width: 767px){
     .navigation{
         padding: 0px 0px;
     }
     .navigation .navbar-brand{
-        margin-left: 130px;
+        margin-left: 150px;
+    }
+    .navigation .navbar-collapse{
+        margin-top: 0px;
     }
     .navigation .navbar-nav .nav-link{
         margin: 10px;
         font-family: 'Silka-regular', sans-serif;
         font-size: 20px;
+        color: #FFFFFF;
+    }
+    .navigation .navbar-collapse{
+        margin-top: 0px;
+        margin-right: 0px;
+    }
+    .navigation .navbar-collapse .dropdown-menu{
+        background: transparent;
+        color: #FFFFFF;
+    }
+    .dropdown-menu.show {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .navigation .navbar-collapse .dropdown-menu li a{
         color: #FFFFFF;
     }
     #footer .holder{

@@ -1,0 +1,159 @@
+.navi{
+    left: 0;
+    padding: 0px 0px;
+    position: fixed;
+    top: 0;
+    -webkit-transition: all 550ms ease-in-out;
+    transition: all 550ms ease-in-out;
+    width: 100%;
+    z-index: 999;
+    background: rgba(24,29,36, 0.2);
+    height: 110px;
+}
+.navi .holder{
+    margin: 0 auto;
+    max-width: 1330px;
+    width: 100%;
+}
+.navi .navbar{
+    padding: 0;
+}
+.navi .container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+.navi .navbar-brand{
+    margin: 20px 0px 20px 70px;
+    padding-bottom: 0;
+    padding-top: 0;
+    font-size: 0;
+}
+#landing{
+    background-image: url('../../../../packages/ui/constants/landing/cover-background.webp');
+    height: 680px;
+}
+#landing .holder{
+    margin: 0 auto;
+    max-width: 1330px;
+    width: 100%;
+    display: flex;
+}
+#landing .holder .title{
+    margin-top: 240px;
+    padding-left: 70px;
+    padding-right: 25px;
+}
+#landing .holder .image{
+    margin-top: 140px;
+}
+#landing .holder .title .container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+#landing .holder .title .container-fluid h1{
+    font-family: 'Silka-bold';
+    font-size: 54px;
+    color: #EEEEEE;
+    margin-bottom: 20px;
+}
+#landing .holder .title .container-fluid span{
+    font-family: 'Silka-regular';
+    font-size: 22px;
+    color: #CC9964;
+}
+#landing .holder .title .container-fluid a{
+    width: 303px;
+    height: 48px;
+    padding: 15px 30px 15px 30px;
+    background: #CC9964;
+    position: absolute;
+    margin-top: 50px;
+    border-radius: 24px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: 'Silka-regular';
+}
+#title-statick{
+
+}
+#title-statick .holder{
+    margin: 0 auto;
+    max-width: 1330px;
+    width: 100%;
+    margin-top: 190px;
+}
+#title-statick .holder h2{
+    text-align: center;
+    font-family: 'Silka-regular';
+    font-size: 34px;
+    color: #181D24;
+    padding-left: 402px;
+    padding-right: 401px;
+    margin-bottom: 0;
+}
+#title-statick .holder h2 span{
+    font-family: 'Silka-bold';
+    color: #CC9964;
+}
+#static{
+
+}
+#static .holder{
+    margin: 0 auto;
+    max-width: 1330px;
+    width: 100%;
+    margin-top: 37px;
+}
+#container{
+    display: flex !important;
+    width:500% !important;
+  }
+#component{
+    width: 100% !important;
+    height: 100vh !important;
+  }
+@media (max-width: 767px){
+    .navi .navbar-brand{
+        margin: 20px 0px 20px 150px;
+    }
+    #landing .holder{
+        display: block;
+    }
+    #landing .holder .title{
+        margin-top: 163px;
+        padding-left: 17px;
+        padding-right: 17px;
+        text-align: center;
+    }
+    #landing .holder .title .container-fluid h1{
+        font-size: 40px;
+        margin-bottom: 23px;
+    }
+    #landing .holder .title .container-fluid span{
+        font-size: 18px;
+    }
+    #landing .holder .title .container-fluid a{
+        width: 248px;
+        height: 38px;
+        padding: 10px 15px 10px 15px;
+        background: #CC9964;
+        position: absolute;
+        margin-top: 62px;
+        border-radius: 24px;
+        color: #FFFFFF;
+        font-size: 14px;
+        font-family: 'Silka-regular';
+        left: 83px;
+    }
+    #landing .holder .image {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 225px;
+    }
+    #landing .holder .image div{
+        height: 270px !important;
+    }
+    #landing .holder .image div div{
+        inset: 0px 0px !important;
+    }
+}

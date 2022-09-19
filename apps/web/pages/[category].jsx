@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -6,16 +6,58 @@ import imageUrlBuilder from '@sanity/image-url'
 import Layout from '../src/Layout/Layout'
 import BannerCategory from '../src/Components/BannerCategory/BannerCategory'
 import BannerCategoryFooter from '../src/Components/BannerCategoryFooter/BannerCategoryFooter'
+import SearchCategoryDesk from '../src/Components/SearchCategory/SearchCategoryDesk'
 import sanityClient from '../libs/Client'
 import { M2_Const, Rec, Banios_comp, Arrow1 } from 'ui/constants'
 const builder = imageUrlBuilder(sanityClient)
 
-function Category({ propiedades }){
+function Category(){
+    const [search, setSearch] = useState(null)
+    const [update, setUpdate] = useState(null);
     const route = useRouter()
+    const ubi = String(route.query.ubicacion)
+    const tipo = String(route.query.tipo)
+    const habi = route.query.habitaciones
+    const min = Math.floor(route.query.min)
+    const max = Math.floor(route.query.max)
+    const category = route.query.category
     function urlForce(soruce){
         const img = builder.image(soruce)
         return img
     }
+    useEffect(() => {
+        if(ubi == null || tipo == null || habi == null || min == null || max == null){
+            if(update == search){
+                sanityClient.fetch(
+                    `*[_type == "propiedades" && categoria->.slug.current == $category]{
+                        ...,
+                        categoria->
+                    }`, {category}
+                )
+                .then((data) =>{
+                    setSearch(data)
+                    setUpdate(data)
+                })
+                .catch(console.error);
+            }
+        } else {
+            if(update == search){
+                sanityClient.fetch(
+                    `*[_type == "propiedades" && categoria->.slug.current == $category && ubicacion->.slug.current == $ubi && availability == $tipo && bathroom == $habi && sale > $min && sale < $max]{
+                        ...,
+                        categoria->,
+                        ubicacion->
+                    }[0..11]`, {category, ubi, tipo, habi, min, max}
+                )
+                .then((data) =>{
+                    setSearch(data)
+                    setUpdate(data)
+                })
+                .catch(console.error);
+            }
+        }
+	}, [update, search, category, ubi, tipo, habi, min, max]);
+
     return(
         <Layout>
             <section className='block' id='category-banner'>
@@ -26,11 +68,18 @@ function Category({ propiedades }){
                     </div>
                 </div>
             </section>
+            <section className='block' id='form'>
+                <div className='holder'>
+                    <div className='container-fluid'>
+                        <SearchCategoryDesk />
+                    </div>
+                </div>
+            </section>
             <section className='block' id='category-propiedades'>
                 <div className='holder'>
                     <div className='container-fluid'>
                         <ul className='propiedades'>
-                            {propiedades?.map((propiedad, index) =>(
+                            {search?.map((propiedad, index) =>(
                                 <li className='propiedad card' key={index}>
                                     {propiedad.imagesGallery?.map((img, index) => (
                                         index <= 0 ?
@@ -118,33 +167,6 @@ function Category({ propiedades }){
             </section>
         </Layout>
     )
-}
-
-export async function getStaticPaths() {
-    const paths = await sanityClient.fetch(
-      `*[_type == "category" && defined(slug.current)][].slug.current`
-    )
-  
-    return {
-      paths: paths.map(( category ) => ({params: { category }})),
-      fallback: true,
-    }
-}
-
-export async function getStaticProps(context) {
-    // It's important to default the slug so that it doesn't return "undefined"
-    const { category = "" } = context.params
-    const propiedades = await sanityClient.fetch(`
-    *[_type == "propiedades" && categoria->.slug.current == $category]{
-        ...,
-        categoria->
-      }
-    `, { category })
-    return {
-      props: {
-        propiedades
-      }
-    }
 }
 
 export default Category

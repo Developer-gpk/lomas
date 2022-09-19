@@ -26,7 +26,7 @@ export default function Navbar(){
                     <div className="container-fluid">
                         <Link href="/">
                             <a className="navbar-brand" href="#">
-                                <Image src={Logo} alt="Logo Lomas Home" width="97" height="60" />
+                                <Image src={Logo} alt="Logo Lomas Home" width="114" height="70" />
                             </a>
                         </Link>
                         <button onClick={() => setIsClick(!isClick)} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

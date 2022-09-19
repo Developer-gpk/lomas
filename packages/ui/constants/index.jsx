@@ -31,9 +31,10 @@ import CoverCreditos1 from './creditos/cover.webp'
 import Img1 from './creditos/img01.webp'
 import Img2 from './creditos/img02.webp'
 import Img3 from './creditos/img03.webp'
+import Agente from './creditos/agente-inmobiliario.png'
 import BannerBanks from './creditos/banner-bancos.webp'
 import Banorte from './icons/banorte.svg'
-import BBVA from './icons/bbva-bancomer.svg'
+import Bbva from './icons/bbva-bancomer.svg'
 import Calednar from './icons/calednar.svg'
 import HSBC from './icons/hsbc.svg'
 import Santander from './icons/santander.svg'
@@ -67,8 +68,10 @@ import Material from './icons/material.svg'
 import Alcance from './icons/alcance.svg'
 import Asesoria from './icons/asesoria.svg'
 import Credito from './conocenos/credito.webp'
-
-
+import CoverLanding from './landing/cover-background.webp'
+import SecondCoverLanding from './landing/cover.webp'
+import ImagenVende1 from './landing/img01.webp'
+import Enviando from './icons/sending.svg'
 
 
 export {
@@ -107,7 +110,7 @@ export {
     Img3,
     BannerBanks,
     Banorte,
-    BBVA,
+    Bbva,
     Calednar,
     HSBC,
     Santander,
@@ -140,5 +143,10 @@ export {
     Material,
     Alcance,
     Asesoria,
-    Credito
+    Credito,
+    Agente,
+    CoverLanding,
+    SecondCoverLanding,
+    ImagenVende1,
+    Enviando
 }

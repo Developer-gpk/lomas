@@ -182,21 +182,21 @@ export default function Conocenos(){
                                 <ol className="list-group list-group-numbered">
                                     <li className="list-group-item d-flex justify-content-between align-items-start my-4">
                                         <Image src={Detalles} alt="pin" width="50" height="50" layout={"fixed"} />
-                                        <div className="ms-3 me-auto">
+                                        <div className="me-auto list-text">
                                             <div className="fw-bold">Detalles de las propiedades </div>
                                             Todos los bienes de nuestro catálogo cuentan con las especificaciones necesarias para que conozcas a detalle las propiedades de tu interés.
                                         </div>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-start my-4">
                                         <Image src={Grados} alt="pin" width="50" height="50" layout={"fixed"} />
-                                        <div className="ms-3 me-auto">
+                                        <div className="me-auto list-text">
                                             <div className="fw-bold">Experiencia visual</div>
                                             Queremos que descubras los espacios con fotografías profesionales y REALES, además de recorridos virtuales que te transportarán a la casa de tus sueños desde tu asiento.
                                         </div>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-start my-4">
                                         <Image src={Planos} alt="pin" width="50" height="50" layout={"fixed"} />
-                                        <div className="ms-3 me-auto">
+                                        <div className="me-auto list-text">
                                             <div className="fw-bold">Planos arquitectónicos</div>
                                             Lo más esencial es ofrecerte información sin engaños, visualiza los planos de cada propiedad para tener la información completa.
                                         </div>
@@ -234,21 +234,21 @@ export default function Conocenos(){
                                 <ol className="list-group list-group-numbered">
                                     <li className="list-group-item d-flex justify-content-between align-items-start my-4">
                                         <Image src={Material} alt="pin" width="50" height="50" layout={"fixed"} />
-                                        <div className="ms-3 me-auto">
+                                        <div className="me-auto list-text">
                                             <div className="fw-bold">Levantamiento de material </div>
                                             Nos encargamos de tomar fotografías profesionales del inmueble y generamos recorridos virtuales de tu propiedad.
                                         </div>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-start my-4">
                                         <Image src={Alcance} alt="pin" width="50" height="50" layout={"fixed"} />
-                                        <div className="ms-3 me-auto">
+                                        <div className="me-auto list-text">
                                             <div className="fw-bold">Alcance y publicidad</div>
                                             Hacemos estrategias de marketing digital para mostrarnos en diferentes puntos clave donde se encuentran todas aquellas personas que buscan una propiedad como la tuya.
                                         </div>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-start my-4">
                                         <Image src={Asesoria} alt="pin" width="50" height="50" layout={"fixed"} />
-                                        <div className="ms-3 me-auto">
+                                        <div className="me-auto list-text">
                                             <div className="fw-bold">Asesoría integral</div>
                                             Tendrás disponible al equipo de Lomas Home para brindar acompañamiento en todo momento y resolver tus dudas durante el proceso.
                                         </div>

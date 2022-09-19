@@ -181,6 +181,74 @@
     color: #CC9964;
     margin-bottom: 30px;
 }
+#form-multistep{
+
+}
+#form-multistep .holder{
+    margin: 150px auto;
+    max-width: 1330px;
+    width: 100%;
+    padding: 0px 70px;
+}
+#form-multistep .holder h3{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 34px;
+    color: #181D24;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 46px;
+}
+#form-multistep .holder h3 span{
+    font-family: 'Silka-bold';
+    font-size: 34px;
+    color: #CC9964;
+}
+#form-multistep .form .row > *{
+    
+}
+#form-multistep .form h5{
+    font-family: 'Silka-bold';
+    font-size: 22px;
+    color: #CC9964;
+}
+#form-multistep .form .form-select{
+    margin: 15px 13px 15px 0px;
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 12px;
+    background: #EEEEEE;
+    height: 50px;
+    padding: 15px 16px 15px 16px;
+}
+#form-multistep .form .form-select:focus{
+    box-shadow: none;
+}
+#form-multistep .form .form-control{
+    margin: 15px 13px 15px 0px;
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 12px;
+    background: #EEEEEE;
+    height: 50px;
+    padding: 15px 16px 15px 16px;
+}
+#form-multistep .form .form-control:focus{
+    box-shadow: none;
+}
+#form-multistep .form .relleno{
+    height: 65px;
+    margin-bottom: 15px;
+}
+#form-multistep .stepControl a.action{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 12px;
+    color: #515761;
+    text-decoration: none;
+    text-align: center;
+}
+#form-multistep .stepControl a.submit{
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+}
 @media (max-width: 767px){
     #banner-creditos .parallax-creditos-desk .carousel-caption.content-creditos h1{
         font-size: 26px;
@@ -201,6 +269,8 @@
     }
     #pasos-creditos .holder .row .left{
         width: 100%;
+        padding-left: 0;
+        padding-right: 0;
     }
     #pasos-creditos .holder .row .left .stocked{
         padding-top: 0px;
@@ -234,5 +304,28 @@
     #banks .parallax-banks-mobile .banks{
         position: absolute;
         bottom: 0%;
+    }
+    #form-multistep .holder h3{
+        font-family: 'Silka-regular', sans-serif;
+        font-size: 34px;
+        color: #181D24;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 0px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #form-multistep .holder{
+        margin: 110px auto;
+        padding: 0px 17px;
+    }
+    #form-multistep form{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    #form-multistep .image{
+        padding-left: 17px;
+        padding-right: 17px;
+        margin-top: 91px;
     }
 }

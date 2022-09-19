@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Layout from "../src/Layout/Layout"
+import { Formik, Form, Field } from 'formik'
 import { ParallaxBanner } from 'react-scroll-parallax'
 import { Cover1, 
         Cover2, 
@@ -21,7 +22,8 @@ import { Cover1,
         Call,
         Wa,
         Mail,
-        Pin   } from "ui/constants"
+        Pin,
+        Enviando   } from "ui/constants"
 import SearchDesk from "../src/Components/Search/SearchDesk"
 import SearchMobile from "../src/Components/Search/SearchMobile"
 import PropiedadList from '../src/Components/List/propiedad'
@@ -198,6 +200,7 @@ export default function Web() {
             className='conocenos-parallax-desk'
             style={{ 
               aspectRatio: '2 / 1',
+              zIndex: "2"
             }}
             layers={[
               {
@@ -238,8 +241,7 @@ export default function Web() {
           style={{ 
             aspectRatio: '1 / 2',
             height: '1116px',
-            marginTop: '-200px',
-            zIndex: '-1'
+            marginTop: '-200px'
           }}
           layers={[
             {
@@ -250,58 +252,86 @@ export default function Web() {
             {
               children: (
                 <div className='holder'>
-                  <form className='my-5'>
+                  <div className='my-5'>
                     <div className='row'>
                       <div className='container-fluid'>
                         <h3 className='text-center'>Contacto</h3>
                         <p className='text-center'><span>Envíanos un mensaje o llámanos,</span><br/>con gusto te atenderemos.</p>
                       </div>
                     </div>
-                    <div className='row'>
-                      <div className='col-12 col-md-6'>
-                        <div className='mb-4 input-contact'>
-                          <input type="text" className="form-control" id="nameTextInput" aria-describedby="emailHelp" placeholder='Nombre*' />
-                        </div>
-                        <div className='mb-4 input-contact'>
-                          <input type="email" className="form-control" id="emailTextInput" aria-describedby="emailHelp" placeholder='Correo*' />
-                        </div>
-                        <div className='mb-4 input-contact'>
-                          <input type="text" className="form-control" id="phoneTextInput" aria-describedby="emailHelp" placeholder='Telefono de 10 dígitos*' />
-                        </div>
-                        <div className='mb-4'>
-                          <h6>¿Cómo prefieres que te contactemos?*</h6>
-                          <div className='row'>
-                            <div className='col-4 col-md-4 options-contact'>
-                              <input className="form-check-input" type="radio" name="contacto" id="whatsapp" />
-                              <label className="form-check-label" htmlFor="whatsapp">
-                                Whatsapp
-                              </label>
-                            </div>
-                            <div className='col-4 col-md-4 options-contact'>
-                              <input className="form-check-input" type="radio" name="contacto" id="correo" />
-                              <label className="form-check-label" htmlFor="correo">
-                                Correo
-                              </label>
-                            </div>
-                            <div className='col-4 col-md-4 options-contact'>
-                              <input className="form-check-input" type="radio" name="contacto" id="llamada" />
-                              <label className="form-check-label" htmlFor="llamada">
-                                Llamada
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='col-12 col-md-6'>
-                        <div className='mb-4'>
-                          <textarea className="form-control" id="messajeTextInputo" rows="7" placeholder='Mensaje'></textarea>
-                        </div>
-                        <div className='mb-4 submit-contact'>
-                          <button type="submit" className="btn">Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} /></button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
+                      <Formik
+                        initialValues={{
+                          nombre: '',
+                          email: '',
+                          telefono: '',
+                          contacto: '',
+                          mensaje: ''
+                        }}
+                        onSubmit={async (values, { setSubmitting }) =>{
+                          console.log(values)
+                          await setTimeout(() =>{
+                            setSubmitting(true)
+                          }, 5000)
+                          setSubmitting(false)
+                        }}
+                      >
+                        {({isSubmitting}) =>(  
+                          <Form>
+                            {!isSubmitting ? (
+                              <div className='row'>
+                                <div className='col-12 col-md-6'>
+                                  <div className='mb-4 input-contact'>
+                                    <Field name="nombre" type="text" className="form-control" aria-describedby="emailHelp" placeholder='Nombre*' />
+                                  </div>
+                                  <div className='mb-4 input-contact'>
+                                    <Field name='email' type="email" className="form-control" aria-describedby="emailHelp" placeholder='Correo*' />
+                                  </div>
+                                  <div className='mb-4 input-contact'>
+                                    <Field name='telefono' type="text" className="form-control" aria-describedby="emailHelp" placeholder='Telefono de 10 dígitos*' />
+                                  </div>
+                                  <div className='mb-4'>
+                                    <h6>¿Cómo prefieres que te contactemos?*</h6>
+                                    <div className='row'>
+                                      <div className='col-4 col-md-4 options-contact'>
+                                        <Field className="form-check-input" type="radio" name="contacto" id="whatsapp" value="WhatsApp" />
+                                        <label className="form-check-label" htmlFor="whatsapp">
+                                          Whatsapp
+                                        </label>
+                                      </div>
+                                      <div className='col-4 col-md-4 options-contact'>
+                                        <Field className="form-check-input" type="radio" name="contacto" id="correo" value="Correo" />
+                                        <label className="form-check-label" htmlFor="correo">
+                                          Correo
+                                        </label>
+                                      </div>
+                                      <div className='col-4 col-md-4 options-contact'>
+                                        <Field className="form-check-input" type="radio" name="contacto" id="llamada" value="Llamada" />
+                                        <label className="form-check-label" htmlFor="llamada">
+                                          Llamada
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className='col-12 col-md-6'>
+                                  <div className='mb-4'>
+                                    <Field as="textarea" name='mensaje' className="form-control" rows="7" placeholder='Mensaje'></Field>
+                                  </div>
+                                  <div className='mb-4 submit-contact'>
+                                    <button type="submit" className="btn">Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} /></button>
+                                  </div>
+                                </div>
+                              </div>
+                            ) : (
+                              <div className='row text-center finalizado'>
+                                <Image src={Enviando} alt="pin" width="50" height="50" style={{ margin: '0 auto'}} />
+                                <h3>Enviando mensaje...</h3>
+                              </div>
+                            )}
+                          </Form>
+                        )}
+                      </Formik>
+                  </div>
                   <div className='row mx-auto'>
                     <div className='col-md-2'>
                       <Image src={Call} alt="pin" width="15" height="15" layout={"fixed"} /> (222) 226 7440

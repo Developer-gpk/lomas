@@ -10,6 +10,7 @@ import '../src/css/propiedad.css'
 import '../src/css/search.css'
 import '../src/css/category.css'
 import '../src/css/conocenos.css'
+import '../src/css/vende.css'
 
 function MyApp({ Component, pageProps }) {
     useEffect(() => {

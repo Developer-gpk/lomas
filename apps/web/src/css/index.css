@@ -21,17 +21,29 @@
 }
 #portada .portada-carousel .carousel-caption{
     z-index: 2;
+    padding-left: 180px;
+    padding-right: 181px;
+    padding-bottom: 70px;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1330px;
+    right: 0;
+    left: 0;
 }
 #portada .portada-carousel .carousel-caption h3{
     font-family: 'Silka-bold';
     font-size: 34px;
     color: #EEEEEE;
+    margin-bottom: 30px;
 }
 #portada .portada-carousel .carousel-caption .menu{
     width: 100%;
     background: #FFFFFF;
     padding: 15px;
     border-radius: 5px;
+    max-width: 1080px;
+    max-height: 80px;
+    height: 100%;
 }
 #portada .portada-carousel .carousel-caption .menu select{
     font-family: 'Silka-regular', sans-serif;
@@ -120,7 +132,7 @@
     color: #FFFFFF;
 }
 #propiedades{
-
+    margin-top: 70px;
 }
 #propiedades .holder{
     margin: 0 auto;
@@ -133,6 +145,7 @@
     font-weight: bold;
     font-size: 34px;
     color: #181D24;
+    margin-bottom: 50px;
 }
 #propiedades .categorias .nav-tabs{
     --bs-nav-tabs-border-width: 0px;
@@ -200,6 +213,9 @@
     width: 196px !important;
     height: 186px !important;
 }
+#logo span{
+    z-index: 2;
+}
 #contacto{
 
 }
@@ -248,6 +264,9 @@
 #contacto form .options-contact input{
     background: #D1CFC9;
 }
+#contacto form .options-contact input:checked{
+    background: #CC9964;
+}
 #contacto form .options-contact label{
     font-family: 'Silka-regular', sans-serif;
     font-size: 14px;
@@ -268,6 +287,22 @@
     font-size: 18px;
     color: #EEEEEE;
     width: 30%;
+}
+#contacto form .finalizado{
+    align-items: center;
+    height: 299px;
+}
+#contacto form .finalizado span{
+    margin: 0 auto !important;
+    width: 50px !important;
+    margin-top: 98px !important;
+    height: 50px !important;
+}
+#contacto form .finalizado h3{
+    margin-top: 16px;
+    font-family: 'Silka-bold';
+    font-size: 24px;
+    color: #181D24;
 }
 #lugares{
     background: #EEEEEE;
@@ -314,14 +349,22 @@
         right: 0;
         left: 0;
         width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        bottom: 50px;
     }
     #portada .portada-carousel .carousel-caption .menu{
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 7px;
+        margin-right: 7px;
         width: auto;
+        max-height: 140px;
     }
     #portada .portada-carousel .carousel-caption h3{
         font-size: 26px;
+        padding-left: 17px;
+        padding-right: 17px;
+        margin-bottom: 32px;
     }
     #portada .portada-carousel .carousel-caption .menu .inputs-range {
         padding-left: 0px;
@@ -338,6 +381,10 @@
     }
     #propiedades h2{
         font-size: 26px;
+        margin-bottom: 31px;
+    }
+    #propiedades{
+        margin-top: 30px;
     }
     #propiedades .holder{
         padding: 0px 0px;
@@ -351,6 +398,7 @@
     #logo span{
         width: 63px !important;
         height: 60px !important;
+        z-index: 2;
     }
     #conocenos .holder{
         padding: 0px 0px;
@@ -371,7 +419,7 @@
     }
     #contacto .holder{
         padding: 0px 17px;
-        margin: 50% auto;
+        margin: 70% auto;
     }
     #contacto .parallax-contacto-desk {
         height: 1345px !important;
