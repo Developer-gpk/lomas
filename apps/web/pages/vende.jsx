@@ -66,23 +66,23 @@ export default function Vende(){
                 <section className='block' id='static'>
                     <div className='holder' id="container">
                         <div id="component">
-                            <Image src={ImagenVende1} width="417" height="478" />
+                            <Image src={ImagenVende1} width="417" height="478" alt='Vende tu propiedad' />
                             <p>Queremos hacer de este proceso una experiencia extraordinaria.</p>
                         </div>
                         <div id="component">
-                            <Image src={ImagenVende1} width="417" height="478" />
+                            <Image src={ImagenVende1} width="417" height="478" alt='Vende tu propiedad' />
                             <p>Queremos hacer de este proceso una experiencia extraordinaria.</p>
                         </div>
                         <div id="component">
-                            <Image src={ImagenVende1} width="417" height="478" />
+                            <Image src={ImagenVende1} width="417" height="478" alt='Vende tu propiedad' />
                             <p>Queremos hacer de este proceso una experiencia extraordinaria.</p>
                         </div>
                         <div id="component">
-                            <Image src={ImagenVende1} width="417" height="478" />
+                            <Image src={ImagenVende1} width="417" height="478" alt='Vende tu propiedad' />
                             <p>Queremos hacer de este proceso una experiencia extraordinaria.</p>
                         </div>
                         <div id="component">
-                            <Image src={ImagenVende1} width="417" height="478" />
+                            <Image src={ImagenVende1} width="417" height="478" alt='Vende tu propiedad' />
                             <p>Queremos hacer de este proceso una experiencia extraordinaria.</p>
                         </div>
                     </div>
