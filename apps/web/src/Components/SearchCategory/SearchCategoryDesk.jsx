@@ -16,7 +16,7 @@ export default function SearchCategoryDesk(){
 		.catch(console.error);
 	}, []);
     return(
-        <div className='menu shadow p-3 bg-body rounded'>
+        <div className='menu shadow p-3 bg-body rounded d-none d-sm-none d-md-block'>
             <Formik
                 initialValues={{
                     ubicacion: '',

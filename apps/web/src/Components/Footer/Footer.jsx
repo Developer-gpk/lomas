@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Logo, Tiktok, Ig, Fb, Goplek } from 'ui/constants'
+import Link from 'next/link'
 
 export default function Footer(){
     return(
@@ -16,13 +17,27 @@ export default function Footer(){
                         </div>
                         <div className='col-12 col-md-6 fcc-link'>
                             <ul className="nav justify-content-start">
-                                <a className="nav-link" href="#">Casas</a>
-                                <a className="nav-link" href="#">Departamentos</a>
-                                <a className="nav-link" href="#">Terrenos</a>
-                                <a className="nav-link" href="#">Local comercial</a>
-                                <a className="nav-link" href="#">Oficinas</a>
-                                <a className="nav-link" href="#">Nosotros</a>
-                                <a className="nav-link" href="#">Contacto</a>
+                                <Link href={{ pathname: '/[category]', query: { category: 'casa'}}}>
+                                    <a className="nav-link">Casas</a>
+                                </Link>
+                                <Link href={{ pathname: '/[category]', query: { category: 'departamento'}}}>
+                                    <a className="nav-link">Departamentos</a>
+                                </Link>
+                                <Link href={{ pathname: '/[category]', query: { category: 'terreno'}}}>
+                                    <a className="nav-link">Terrenos</a>
+                                </Link>
+                                <Link href={{ pathname: '/[category]', query: { category: 'local'}}}>
+                                    <a className="nav-link">Local comercial</a>
+                                </Link>
+                                <Link href={{ pathname: '/[category]', query: { category: 'oficina'}}}>
+                                    <a className="nav-link">Oficinas</a>
+                                </Link>
+                                <Link href="/">
+                                    <a className="nav-link">Nosotros</a>
+                                </Link>
+                                <Link href='/#contacto'>
+                                    <a className="nav-link">Contacto</a>
+                                </Link>
                             </ul>
                         </div>
                     </div>

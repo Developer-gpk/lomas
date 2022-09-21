@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
+import '../src/css/normalize.css'
+import '../src/css/global.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import "bootstrap-icons/font/bootstrap-icons.css"
-import '../src/css/global.css'
 import '../src/css/layout.css'
 import '../src/css/index.css'
 import '../src/css/list.css'

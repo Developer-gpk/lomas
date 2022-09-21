@@ -28,6 +28,11 @@
     padding-top: 0;
     font-size: 0;
 }
+.wrapper{
+    contain: none;
+    overflow-x: hidden;
+          overflow-y: visible;
+}
 #landing{
     background-image: url('../../../../packages/ui/constants/landing/cover-background.webp');
     height: 680px;
@@ -98,20 +103,97 @@
 #static{
 
 }
-#static .holder{
+#que-hacemos{
+    background: url('../../../../packages/ui/constants/landing/vender-back.webp');
+    height: 930px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#que-hacemos .holder{
     margin: 0 auto;
     max-width: 1330px;
     width: 100%;
-    margin-top: 37px;
+    margin-top: 89px;
+    padding-right: 180px;
+    padding-left: 180px;
 }
-#container{
-    display: flex !important;
-    width:500% !important;
-  }
-#component{
-    width: 100% !important;
-    height: 100vh !important;
-  }
+#que-hacemos h2{
+    font-family: 'Silka-bold';
+    color: #CC9964;
+    font-size: 34px;
+    margin-top: 150px;
+}
+#que-hacemos ul li{
+    background: transparent;
+    color: #FFFFFF;
+    font-family: 'Silka-regular';
+    font-size: 16px;
+    width: 250px;
+    margin: 15px auto;
+}
+#que-hacemos .image{
+    margin-top: 350px;
+}
+#que-hacemos .image .row span{
+    position: absolute !important;
+    right: 17px !important;
+    z-index: 2 !important;
+    margin-top: -88px !important;
+    width: 50px !important;
+    height: 48px !important;
+}
+#llegaste{
+
+}
+#llegaste .holder{
+
+}
+
+.block.llegaste{
+    position: relative;
+}
+
+@media (min-width: 768px){
+    .block.llegaste{
+        min-height: 100vh;
+        padding-bottom: 0;
+        position: relative;
+    }
+    .block.llegaste .wrapper-sections{
+        display: flex;
+        left: 0;
+        max-width: unset;
+        position: relative;
+        top: 0;
+        width: fit-content;
+    }
+    .item {
+        height: 100vh;
+        padding: unset;
+    }
+    .block.llegaste .item-one{
+        min-width: 100vw;
+        width: 100vw;
+    }
+    .block.llegaste .item-two{
+        position: relative;
+        max-width: none;
+        height: 100vh;
+        padding: initial;
+    }
+}
+
+
+.container-horizantal{
+    width: 500% !important;
+    height: 100% !important;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.panel{
+    width: 100vw;
+    height: 100vh;
+}
 @media (max-width: 767px){
     .navi .navbar-brand{
         margin: 20px 0px 20px 150px;
@@ -155,5 +237,48 @@
     }
     #landing .holder .image div div{
         inset: 0px 0px !important;
+    }
+    #title-statick .holder{
+        margin: 0 auto;
+        max-width: 1330px;
+        width: 100%;
+        margin-top: 260px;
+    }
+    #title-statick .holder h2{
+        text-align: center;
+        font-family: 'Silka-regular';
+        font-size: 34px;
+        color: #181D24;
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+    #que-hacemos{
+        background: url('../../../../packages/ui/constants/landing/vender-back.webp');
+        height: 1529px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #que-hacemos .holder{
+        margin-top: 93px;
+        padding-right: 42px;
+        padding-left: 42px;
+    }
+    #que-hacemos h2{
+        font-size: 28px;
+        margin-top: 109px;
+        text-align: center;
+    }
+    #que-hacemos .list-group li{
+        font-size: 14px;
+        margin: 14px auto;
+        width: 318px;
+    }
+    #que-hacemos .image{
+        margin-top: 67px;
+        text-align: center;
+    }
+    #que-hacemos .image span{
+        width: 280px;
+        height: 359px;
     }
 }

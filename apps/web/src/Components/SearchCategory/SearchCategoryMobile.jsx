@@ -1,36 +1,38 @@
-import React, { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
+import React, { useState, useEffect} from 'react'
 import { Formik, Field, Form } from 'formik';
+import { useRouter } from 'next/router'
 import sanityClient from '../../../libs/Client'
 
-export default function SearchMobile(){
-    const [categories, setCategories] = useState(null)
+export default function SearchCategoryDesk(){
+    const [ ubicaciones, setUbicaciones ] = useState(null)
     const router = useRouter()
     useEffect(() => {
 		sanityClient.fetch(
-		    `*[_type == "category"]{
+		    `*[_type == "ubicaciones"]{
                 ...
             }`
 		)
-		.then((data) => setCategories(data))
+		.then((data) => setUbicaciones(data))
 		.catch(console.error);
 	}, []);
     return(
-        <div className='menu'>
+        <div className='menu shadow p-3 bg-body rounded d-block d-sm-block d-md-none'>
             <Formik
                 initialValues={{
-                    propiedad: '',
-                    tipo: "",
-                    min: "0",
-                    max: "10000000"
+                    ubicacion: '',
+                    tipo: '',
+                    habitaciones: '',
+                    min: '0',
+                    max: '10000000'
                 }}
                 onSubmit={ async (values) => {
                     console.log(values)
                     router.push({
-                        pathname: "/search",
+                        pathname: `/${router.query.category}`,
                         query: {
-                            propiedad: values.propiedad,
+                            ubicacion: values.ubicacion,
                             tipo: values.tipo,
+                            habitaciones: values.habitaciones,
                             min: values.min,
                             max: values.max
                         },
@@ -41,10 +43,10 @@ export default function SearchMobile(){
                     <Form>
                         <div className='row'>
                             <div className='col-6'>
-                                <Field name="propiedad" as="select" className="form-select" aria-label="Default select example">
-                                    <option defaultValue>Tipo de propiedad</option>
-                                    {categories?.map((category, index) =>(
-                                        <option value={category.category} key={index}>{category.category}</option>
+                                <Field name="ubicacion" as="select" className="form-select" aria-label="Default select example">
+                                    <option defaultValue>Ubicación</option>
+                                    {ubicaciones?.map((ubicacion, index) =>(
+                                        <option value={ubicacion.slug.current} key={index}>{ubicacion.nombre}</option>
                                     ))}
                                 </Field>
                             </div>
@@ -56,8 +58,17 @@ export default function SearchMobile(){
                                 </Field>
                             </div>
                         </div>
-                        <div className='row mt-2'>
-                            <div className='col-10'>
+                        <div className='row mt-3'>
+                            <div className='col-4'>
+                                <Field name="habitaciones" as="select" className="form-select" aria-label="Default select example">
+                                    <option defaultValue>No. de hab.</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </Field>
+                            </div>
+                            <div className='col-8'>
                                 <div className='inputs-range'>
                                     <div className='range'>
                                         <input type="range" name="min" className="" min="0" max="20000000" step="100000" onChange={props.handleChange} onBlur={props.handleBlur} value={props.values.min} />
@@ -73,8 +84,10 @@ export default function SearchMobile(){
                                     </div>
                                 </div>
                             </div>
-                            <div className='col-2'>
-                                <button type="submit" className="btn w-75"><i className="bi bi-search"></i></button>
+                        </div>
+                        <div className='row mt-3 text-center'>
+                            <div className='col-12'>
+                                <button type="submit" className="btn w-50">Buscar</button>
                             </div>
                         </div>
                     </Form>

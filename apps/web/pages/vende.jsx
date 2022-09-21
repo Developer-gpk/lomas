@@ -1,15 +1,59 @@
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Logo, CoverLanding, ArrowSend, SecondCoverLanding, ImagenVende1 } from 'ui/constants'
+import { Logo, CoverLanding, ArrowSend, SecondCoverLanding, ImagenVende1, phone, LomasHomeIcon, Camera } from 'ui/constants'
 import { ParallaxBanner, ParallaxProvider } from 'react-scroll-parallax'
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-gsap.registerPlugin(ScrollTrigger);
 
 
 export default function Vende(){
+    setTimeout(() =>{
+        let backgroundElement = document.querySelector('.block.llegaste .background');
+        if (backgroundElement) {
+            let background = backgroundElement.getAttribute('data-background');
+            backgroundElement.style.background = 'url(' + background + ')';
+        }
+        if (window.innerWidth > 767) {
     
+            let section = document.querySelector('.block.llegaste');
+    
+            if (section) {
+                let wrapper = section.querySelector('.wrapper-sections'),
+                    variable = window.innerWidth - window.innerHeight,
+                    width = wrapper.offsetWidth;
+                
+                section.style.height = (width - variable) + 'px';
+    
+                const handleScroll = event => {
+                    let sectionRect = section.getBoundingClientRect();
+    
+                    if (sectionRect.top < 0) {
+                        wrapper.style.position = 'fixed';
+                        wrapper.style.top = 0;
+                        wrapper.style.bottom = 'unset';
+                        wrapper.style.transform = 'translateX(' + sectionRect.top + 'px)';
+                    }
+                    
+                    if (sectionRect.top > 0) {
+                        wrapper.style.position = 'absolute';
+                        wrapper.style.top = 0;
+                        wrapper.style.bottom = 'unset';
+                        wrapper.style.transform = 'translateX(0)';
+                    }
+                    
+                    if ((sectionRect.bottom - window.innerHeight) < 0) {
+                        wrapper.style.position = 'absolute';
+                        wrapper.style.top = 'unset';
+                        wrapper.style.bottom = 0;
+                        wrapper.style.transform = 'translateX(-' + (width - window.innerWidth) + 'px)';
+                    }
+    
+                };
+                
+                window.addEventListener('scroll', handleScroll);
+            }
+        }
+        console.log(backgroundElement)
+    })
     return(
         <ParallaxProvider>
             <section className='navi'>
@@ -25,7 +69,7 @@ export default function Vende(){
                     </nav>
                 </div>
             </section>
-            <div className='outer-wrapper'>
+            <div className='wrapper'>
                 <section className='block' id='landing'>
                     <div className='holder'>
                         <div className='row'>
@@ -63,52 +107,72 @@ export default function Vende(){
                         </div>
                     </div>
                 </section>
-                <section className='block' id='static'>
-                    <div className='holder' id="container">
-                        <div id="component">
-                            <Image src={ImagenVende1} width="417" height="478" alt='Vende tu propiedad' />
-                            <p>Queremos hacer de este proceso una experiencia extraordinaria.</p>
-                        </div>
-                        <div id="component">
-                            <Image src={ImagenVende1} width="417" height="478" alt='Vende tu propiedad' />
-                            <p>Queremos hacer de este proceso una experiencia extraordinaria.</p>
-                        </div>
-                        <div id="component">
-                            <Image src={ImagenVende1} width="417" height="478" alt='Vende tu propiedad' />
-                            <p>Queremos hacer de este proceso una experiencia extraordinaria.</p>
-                        </div>
-                        <div id="component">
-                            <Image src={ImagenVende1} width="417" height="478" alt='Vende tu propiedad' />
-                            <p>Queremos hacer de este proceso una experiencia extraordinaria.</p>
-                        </div>
-                        <div id="component">
-                            <Image src={ImagenVende1} width="417" height="478" alt='Vende tu propiedad' />
-                            <p>Queremos hacer de este proceso una experiencia extraordinaria.</p>
-                        </div>
-                    </div>
-                </section>
-                <section className='block' id='static'>
+                <section className='block' id='que-hacemos'>
                     <div className='holder'>
                         <div className='container-fluid'>
-
+                            <div className='row'>
+                                <div className='col-12 col-md-6'>
+                                    <h2>¿Qué hacemos para vender tu propiedad?</h2>
+                                    <div className='row'>
+                                        <div className='col-12 col-md-6'>
+                                            <ul className="">
+                                                <li className="">
+                                                    <Image src={Camera} alt="Camara" width="50" height="50" layout={"fixed"} /> 
+                                                    <div>
+                                                        Levantamiento de fotografías profesionales.
+                                                    </div>
+                                                    </li>
+                                                <li className="">Mostramos los recorridos virtuales de tu propiedad.</li>
+                                                <li className="">Proporcionamos los planos arquitectónicos.</li>
+                                                <li className="">Damos visibilidad de la propiedad en distintas plataformas digitales.</li>
+                                                <li className="">Asignamos a un consultor altamente capacitado.</li>
+                                                <li className="">Colocamos material promocional en zonas digitales estratégicas.</li>
+                                            </ul>
+                                        </div>
+                                        <div className='col-12 col-md-6'>
+                                            <ul className="">
+                                                <li className="">Valoración gratuita.</li>
+                                                <li className="">Asignamos a un ejecutivo de cuenta.</li>
+                                                <li className="">Elaboramos el contrato privado de compra-venta.</li>
+                                                <li className="">Verificamos la legalidad de la propiedad.</li>
+                                                <li className="">Brindamos acompañamiento en citas y escritura.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='col-12 col-md-6 image'>
+                                    <div className='row'>
+                                        <Image src={LomasHomeIcon} width="115" height="110" className='' />
+                                    </div>
+                                    <Image src={phone} width="417" height="534" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
-                <section className='block' id='static'>
+                <section className='block llegaste' id='llegaste'>
                     <div className='holder'>
                         <div className='container-fluid'>
+                            <div className='wrapper-sections'>
+                                <div className='item item-one'>
 
+                                </div>
+                                <div className='item item-two'>
+
+                                </div>
+                                <div className='item item-three'>
+
+                                </div>
+                                <div className='item item-four'>
+
+                                </div>
+                                <div className='item item-five'>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
-                <section className='block' id='static'>
-                    <div className='holder'>
-                        <div className='container-fluid'>
-
-                        </div>
-                    </div>
-                </section>
-                
             </div>
         </ParallaxProvider>
     )

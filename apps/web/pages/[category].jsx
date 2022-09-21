@@ -7,13 +7,15 @@ import Layout from '../src/Layout/Layout'
 import BannerCategory from '../src/Components/BannerCategory/BannerCategory'
 import BannerCategoryFooter from '../src/Components/BannerCategoryFooter/BannerCategoryFooter'
 import SearchCategoryDesk from '../src/Components/SearchCategory/SearchCategoryDesk'
+import SearchCategoryMobile from '../src/Components/SearchCategory/SearchCategoryMobile'
 import sanityClient from '../libs/Client'
 import { M2_Const, Rec, Banios_comp, Arrow1 } from 'ui/constants'
 const builder = imageUrlBuilder(sanityClient)
 
+
 function Category(){
     const [search, setSearch] = useState(null)
-    const [update, setUpdate] = useState(null);
+    const [update, setUpdate] = useState(null)
     const route = useRouter()
     const ubi = String(route.query.ubicacion)
     const tipo = String(route.query.tipo)
@@ -25,39 +27,44 @@ function Category(){
         const img = builder.image(soruce)
         return img
     }
+    function fetchPropieadesWithOutFilter(){
+        if(update == search){
+            sanityClient.fetch(
+                `*[_type == "propiedades" && categoria->.slug.current == $category] | order(_id) [0..11]{
+                    ...,
+                    categoria->
+                }`, {category}
+            )
+            .then((data) =>{
+                setSearch(data)
+                setUpdate(data)
+            })
+            .catch(console.error);
+        }
+    }
+    function fetchPropieadesWithFilter(){
+        if(update == search){
+            sanityClient.fetch(
+                `*[_type == "propiedades" && categoria->.slug.current == $category && ubicacion->.slug.current == $ubi && availability == $tipo && bathroom == $habi && sale > $min && sale < $max]| order(_id) [0..11]{
+                    ...,
+                    categoria->,
+                    ubicacion->
+                }`, {category, ubi, tipo, habi, min, max}
+            )
+            .then((data) =>{
+                setSearch(data)
+                setUpdate(data)
+            })
+            .catch(console.error);
+        }
+    }
     useEffect(() => {
         if(ubi == null || tipo == null || habi == null || min == null || max == null){
-            if(update == search){
-                sanityClient.fetch(
-                    `*[_type == "propiedades" && categoria->.slug.current == $category]{
-                        ...,
-                        categoria->
-                    }`, {category}
-                )
-                .then((data) =>{
-                    setSearch(data)
-                    setUpdate(data)
-                })
-                .catch(console.error);
-            }
+            fetchPropieadesWithOutFilter()
         } else {
-            if(update == search){
-                sanityClient.fetch(
-                    `*[_type == "propiedades" && categoria->.slug.current == $category && ubicacion->.slug.current == $ubi && availability == $tipo && bathroom == $habi && sale > $min && sale < $max]{
-                        ...,
-                        categoria->,
-                        ubicacion->
-                    }[0..11]`, {category, ubi, tipo, habi, min, max}
-                )
-                .then((data) =>{
-                    setSearch(data)
-                    setUpdate(data)
-                })
-                .catch(console.error);
-            }
+            fetchPropieadesWithFilter()
         }
 	}, [update, search, category, ubi, tipo, habi, min, max]);
-
     return(
         <Layout>
             <section className='block' id='category-banner'>
@@ -72,6 +79,7 @@ function Category(){
                 <div className='holder'>
                     <div className='container-fluid'>
                         <SearchCategoryDesk />
+                        <SearchCategoryMobile />
                     </div>
                 </div>
             </section>

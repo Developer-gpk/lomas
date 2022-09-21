@@ -1,13 +1,6 @@
-*{
-    box-sizing: border-box;
-}
-body{
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-}
 .outer-wrapper{
     contain: paint;
+    position: relative;
 }
 @font-face{
     font-family: "Silka-bold";

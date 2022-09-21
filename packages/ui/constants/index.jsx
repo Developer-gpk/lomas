@@ -72,6 +72,8 @@ import CoverLanding from './landing/cover-background.webp'
 import SecondCoverLanding from './landing/cover.webp'
 import ImagenVende1 from './landing/img01.webp'
 import Enviando from './icons/sending.svg'
+import phone from './landing/phone.webp'
+import Camera from './icons/camara.svg'
 
 
 export {
@@ -148,5 +150,7 @@ export {
     CoverLanding,
     SecondCoverLanding,
     ImagenVende1,
-    Enviando
+    Enviando,
+    phone,
+    Camera
 }

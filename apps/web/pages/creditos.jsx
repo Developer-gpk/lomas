@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { ParallaxBanner } from 'react-scroll-parallax'
 import { CoverCreditos1, ArrowSend, Img1, Img2, Img3, BannerBanks, Banorte, Bbva, HSBC, Santander, Scotiabank, Agente } from 'ui/constants'
 import Forms from '../src/Components/Forms/Form'
+import Link from 'next/link'
 
 export default function Creditos(){
     const [element1, setElement1] = useState(false)
@@ -65,7 +66,9 @@ export default function Creditos(){
                             <section className='row text-center carousel-caption content-creditos'>
                                 <h1>Te ayudamos a conseguir el financiamiento que mejor se adapte a ti.</h1>
                                 <div className='button'>
-                                    <a className='btn'>Empezar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} /></a>
+                                    <Link href="/creditos#form-multistep">
+                                        <a className='btn'>Empezar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} /></a>
+                                    </Link>
                                 </div>
                             </section>
                         )
