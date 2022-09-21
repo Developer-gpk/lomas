@@ -6,54 +6,7 @@ import { ParallaxBanner, ParallaxProvider } from 'react-scroll-parallax'
 
 
 export default function Vende(){
-    setTimeout(() =>{
-        let backgroundElement = document.querySelector('.block.llegaste .background');
-        if (backgroundElement) {
-            let background = backgroundElement.getAttribute('data-background');
-            backgroundElement.style.background = 'url(' + background + ')';
-        }
-        if (window.innerWidth > 767) {
     
-            let section = document.querySelector('.block.llegaste');
-    
-            if (section) {
-                let wrapper = section.querySelector('.wrapper-sections'),
-                    variable = window.innerWidth - window.innerHeight,
-                    width = wrapper.offsetWidth;
-                
-                section.style.height = (width - variable) + 'px';
-    
-                const handleScroll = event => {
-                    let sectionRect = section.getBoundingClientRect();
-    
-                    if (sectionRect.top < 0) {
-                        wrapper.style.position = 'fixed';
-                        wrapper.style.top = 0;
-                        wrapper.style.bottom = 'unset';
-                        wrapper.style.transform = 'translateX(' + sectionRect.top + 'px)';
-                    }
-                    
-                    if (sectionRect.top > 0) {
-                        wrapper.style.position = 'absolute';
-                        wrapper.style.top = 0;
-                        wrapper.style.bottom = 'unset';
-                        wrapper.style.transform = 'translateX(0)';
-                    }
-                    
-                    if ((sectionRect.bottom - window.innerHeight) < 0) {
-                        wrapper.style.position = 'absolute';
-                        wrapper.style.top = 'unset';
-                        wrapper.style.bottom = 0;
-                        wrapper.style.transform = 'translateX(-' + (width - window.innerWidth) + 'px)';
-                    }
-    
-                };
-                
-                window.addEventListener('scroll', handleScroll);
-            }
-        }
-        console.log(backgroundElement)
-    })
     return(
         <ParallaxProvider>
             <section className='navi'>
