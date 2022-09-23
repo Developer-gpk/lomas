@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 .outer-wrapper{
     contain: paint;
     position: relative;

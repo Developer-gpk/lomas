@@ -44,7 +44,7 @@ export default function Forms(){
         estado: ''
     }
     const submitHandler = (values, onSubmitProp) =>{
-        console.log("enviado")
+        console.log(values)
     }
     const [page, setPage] = useState(0);
     return(
@@ -52,15 +52,30 @@ export default function Forms(){
             <FormContext.Provider value={{ state: state, dispatch: dispatch}} >
                 <Formik
                     initialValues={initialValues}
-                    onSubmit={submitHandler}
+                    onSubmit={async (values, { setSubmitting }) =>{
+                        console.log(values)
+                        await setTimeout(() =>{
+                          setSubmitting(true)
+                        }, 5000)
+                        setSubmitting(false)
+                    }}
                 >
                     {(formik) => {
+                        console.log(formik)
                         return(
                             <Form autoComplete='off'>
-                                {state.step === 1 ? <PersonalData /> : null}
-                                {state.step === 2 ? <NumbersData /> : null}
-                                {state.step === 3 ? <DomicilioData /> : null}
-                                <StepperControl />
+                                {!formik.isSubmitting ? (
+                                    <div>
+                                        {state.step === 1 ? <PersonalData /> : null}
+                                        {state.step === 2 ? <NumbersData /> : null}
+                                        {state.step === 3 ? <DomicilioData /> : null}
+                                        <StepperControl />
+                                    </div>
+                                ): (
+                                    <div>
+                                        Enviando
+                                    </div>
+                                )}
                             </Form>
                         )
                     }}

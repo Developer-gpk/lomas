@@ -41,7 +41,7 @@ export default function SearchDesk(){
                     <Form>
                         <div className='row'>
                             <div className='col'>
-                                <Field name="propiedad" as="select" className="form-select" aria-label="Default select example">
+                                <Field name="propiedad" as="select" className="form-select propiedad" aria-label="Default select example">
                                     <option defaultValue>Tipo de propiedad</option>
                                     {categories?.map((category, index) =>(
                                         <option value={category.category} key={index}>{category.category}</option>
@@ -49,14 +49,14 @@ export default function SearchDesk(){
                                 </Field>
                             </div>
                             <div className='col'>
-                                <Field name="tipo" as="select" className="form-select" aria-label="Default select example">
+                                <Field name="tipo" as="select" className="form-select tipo" aria-label="Default select example">
                                     <option defaultValue>¿Venta o Renta?</option>
                                     <option value="Venta">Venta</option>
                                     <option value="Renta">Renta</option>
                                 </Field>
                             </div>
                             <div className='col'>
-                                <div className='inputs-range'>
+                                <div className='inputs-range min-max'>
                                     <div className='range'>
                                         <input type="range" name="min" className="" min="0" max="20000000" step="100000" onChange={props.handleChange} onBlur={props.handleBlur} value={props.values.min} />
                                         <input type="range" name="max" className="" min="0" max="20000000" step="100000" onChange={props.handleChange} onBlur={props.handleBlur} value={props.values.max} />    

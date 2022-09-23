@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Logo, Dropdown } from 'ui/constants'
+import { Logo, Dropdown, LomasMobile } from 'ui/constants'
 
 export default function Navbar(){
     const route = useRouter()
@@ -25,17 +25,27 @@ export default function Navbar(){
                 <nav className="navbar navbar-expand-lg">
                     <div className="container-fluid">
                         <Link href="/">
-                            <a className="navbar-brand" href="#">
+                            <a className={`navbar-brand d-none d-sm-none d-md-block ${isActive ? "Active" : ""}`} href="#">
                                 <Image src={Logo} alt="Logo Lomas Home" width="114" height="70" />
+                            </a>
+                        </Link>
+                        <Link href="/">
+                            <a className={`navbar-brand d-block d-sm-block d-md-none ${isActive ? "Active" : ""}`} href="#">
+                                <div className={`${isActive ? "Hidden" : "Show"}`}>
+                                    <Image className={`${isActive ? "Hidden" : "Show"}`} src={Logo} alt="Logo Lomas Home" width="114" height="70" />
+                                </div>
+                                <div className={`${isActive ? "Show" : "Hidden"}`}>
+                                    <Image  src={LomasMobile} alt="Logo Lomas Home" width="114" height="13.65" />
+                                </div>
                             </a>
                         </Link>
                         <button onClick={() => setIsClick(!isClick)} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <i className="bi bi-list"></i>
                         </button>
-                        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div className={`collapse navbar-collapse ${isActive ? "Active" : ""}`} id="navbarNavAltMarkup">
                             <div className="navbar-nav ms-auto">
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Comprar
                                         <Image src={Dropdown} alt="pin" width="15" height="10" layout={"fixed"} />
                                     </a>

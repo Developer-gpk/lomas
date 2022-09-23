@@ -1,23 +1,140 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Logo, CoverLanding, ArrowSend, SecondCoverLanding, ImagenVende1, phone, LomasHomeIcon, Camera } from 'ui/constants'
+import { Logo, LomasMobile, CoverLanding, Dropdown, ArrowSend, SecondCoverLanding, ImagenVende1, phone, LomasHomeIcon, Camera, ImagenVende2, ImagenVende3, ImagenVende4, ImagenVende5, Asesor, Asesor2, Asesor3 } from 'ui/constants'
 import { ParallaxBanner, ParallaxProvider } from 'react-scroll-parallax'
+import Footer from '../src/Components/Footer/Footer'
+import FormSteps from '../src/Components/FormSteps/FormSteps'
 
 
 export default function Vende(){
+    const [isActive, setIsActive] = useState(false)
+    const [isClick, setIsClick] = useState(false)
+    const chageBackground = () =>{
+        if(window.scrollY >= 80){
+            setIsActive(true)
+        } else {
+            setIsActive(false)
+        }
+    }
+    useEffect(() =>{
+        if (window.innerWidth > 767) {
     
+            let section = document.querySelector('#llegaste');
+    
+            if (section) {
+                let wrapper = section.querySelector('.wrapper-sections'),
+                    variable = window.innerWidth - window.innerHeight,
+                    width = wrapper.offsetWidth;
+                
+                section.style.height = (width - variable) + 'px';
+                
+                const handleScroll = event => {
+                    let sectionRect = section.getBoundingClientRect();
+    
+                    if (sectionRect.top < 0) {
+                        wrapper.style.position = 'fixed';
+                        wrapper.style.top = 0;
+                        wrapper.style.bottom = 'unset';
+                        wrapper.style.transform = 'translateX(' + sectionRect.top + 'px)';
+                    }
+                    
+                    if (sectionRect.top > 0) {
+                        wrapper.style.position = 'absolute';
+                        wrapper.style.top = 0;
+                        wrapper.style.bottom = 'unset';
+                        wrapper.style.transform = 'translateX(0)';
+                    }
+                    
+                    if ((sectionRect.bottom - window.innerHeight) < 0) {
+                        wrapper.style.position = 'absolute';
+                        wrapper.style.top = 'unset';
+                        wrapper.style.bottom = 0;
+                        wrapper.style.transform = 'translateX(-' + (width - window.innerWidth) + 'px)';
+                    }
+    
+                };
+                
+                window.addEventListener('scroll', handleScroll);
+            }
+        }
+        chageBackground()
+        window.addEventListener('scroll', chageBackground)
+    }, [])
     return(
         <ParallaxProvider>
-            <section className='navi'>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div className="navbar-nav ms-auto">
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Comprar
+                                <Image src={Dropdown} alt="pin" width="20" height="13" layout={"fixed"} />
+                            </a>
+                            <ul className="dropdown-menu text-center">
+                                <li>
+                                    <Link href={{ pathname: '/[category]', query: { category: 'casa'}}}>
+                                        <a className="dropdown-item">Casas</a>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={{ pathname: '/[category]', query: { category: 'departamento'}}}>
+                                        <a className="dropdown-item">Departamentos</a>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={{ pathname: '/[category]', query: { category: 'terreno'}}}>
+                                        <a className="dropdown-item">Terrenos</a>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={{ pathname: '/[category]', query: { category: 'local'}}}>
+                                        <a className="dropdown-item">Locales comerciales</a>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={{ pathname: '/[category]', query: { category: 'oficina'}}}>
+                                        <a className="dropdown-item">Oficinas</a>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <Link href="/vende">
+                            <a className="nav-link">Vende tu propiedad</a>
+                        </Link>
+                        <Link href="/creditos">
+                            <a className="nav-link">Créditos</a>
+                        </Link>
+                        <Link href="/conocenos">
+                            <a className="nav-link">Conócenos</a>
+                        </Link>
+                        <Link href='/#contacto'>
+                            <a className="nav-link">Contacto</a>
+                        </Link>
+                    </div>           
+                </div>
+            </div>
+            <section className={`navi ${isActive ? "isActive" : ""}`}>
                 <div className='holder'>
                     <nav className='navbar navbar-expand-lg'>
                         <div className='container-fluid'>
                             <Link href="/">
-                                <a className="navbar-brand" href="#">
+                                <a className={`navbar-brand d-none d-sm-none d-md-block ${isActive ? "Active" : ""}`} href="#">
                                     <Image src={Logo} alt="Logo Lomas Home" width="114" height="70" />
                                 </a>
                             </Link>
+                            <Link href="/">
+                                <a className={`navbar-brand d-block d-sm-block d-md-none ${isActive ? "Active" : ""}`} href="#">
+                                    <Image className={`${isActive ? "Show" : "Hidden"}`} src={LomasMobile} alt="Logo Lomas Home" width="114" height="13.65" />
+                                </a>
+                            </Link>
+                            <button onClick={() => setIsClick(!isClick)} className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                <i className="bi bi-list"></i>
+                            </button>
+                            
                         </div>
                     </nav>
                 </div>
@@ -56,6 +173,75 @@ export default function Vende(){
                         <div className='container-fluid'>
                             <div className='row'>
                                 <h2><span>¿Por qué vender tu propiedad</span> con Lomas Home Inmobiliaria?</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className='block llegaste' id='llegaste'>
+                    <div className='holder'>
+                        <div className='container-fluid'>
+                            <div className='wrapper-sections'>
+                                <div className='item item-one'>
+                                    <div className='content'>
+                                        <div className='flex-content'>
+                                        
+                                            <div className='image-wrapper'>
+                                                <Image src={ImagenVende1} />
+                                            </div>
+                                            <div className='text-wrapper'>
+                                                <p>Queremos hacer de este proceso una experiencia extraordinaria.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='item item-two'>
+                                    <div className='content'>
+                                        <div className='flex-content'>
+                                            <div className='image-wrapper'>
+                                                <Image src={ImagenVende2} />
+                                            </div>
+                                            <div className='text-wrapper'>
+                                                <p>Absorbemos todos los procesos operativos y entregamos un reporte con todos los movimientos relacionados con tus propiedades. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='item item-three'>
+                                    <div className='content'>
+                                        <div className='flex-content'>
+                                            <div className='image-wrapper'>
+                                                <Image src={ImagenVende3} />
+                                            </div>
+                                            <div className='text-wrapper'>
+                                                <p>Nos ocuparemos de recolectar el material visual de tus bienes, como fotografías profesionales y creación de recorridos virtuales, para ofrecer una excelente visibilidad.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='item item-four'>
+                                    <div className='content'>
+                                        <div className='flex-content'>
+                                            <div className='text-wrapper'>
+                                                <p>Contamos con asesoría integral para atender cualquier tema legal y de operación. </p>
+                                            </div>
+                                            <div className='image-wrapper'>
+                                                <Image src={ImagenVende4} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='item item-five'>
+                                    <div className='content'>
+                                        <div className='flex-content'>
+                                            <div className='image-wrapper'>
+                                                <Image src={ImagenVende5} />
+                                            </div>
+                                            <div className='text-wrapper'>
+                                                <p>Contamos con asesoría integral para atender cualquier tema legal y de operación. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -103,30 +289,125 @@ export default function Vende(){
                         </div>
                     </div>
                 </section>
-                <section className='block llegaste' id='llegaste'>
+                <section className='block' id="lugar">
                     <div className='holder'>
                         <div className='container-fluid'>
-                            <div className='wrapper-sections'>
-                                <div className='item item-one'>
-
+                            <div className='row content'>
+                                <div className='col-12 col-md-6'>
+                                    <h2><span>¡Llegaste al lugar indicado!,</span> empieza ahora a ofertar tus bienes con nosotros.</h2>
+                                    <a>Quiero vender mi propiedad <Image src={ArrowSend} alt="pin" width="13" height="12" /></a>
                                 </div>
-                                <div className='item item-two'>
-
-                                </div>
-                                <div className='item item-three'>
-
-                                </div>
-                                <div className='item item-four'>
-
-                                </div>
-                                <div className='item item-five'>
-
+                                <div className='col-12 col-md-6 d-none d-sm-none d-md-block'>
+                                    <Image src={Asesor} />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
+                <section className='block' id='vender'>
+                    <div className='holder'>
+                        <div className='container-fluid'>
+                            <div className='row'>
+                                <h2><span>¿Qué necesitas para vender</span> tu propiedad con nosotros?</h2>
+                            </div>
+                            <div className='row'>
+                                <div className='col-12 col-md-6 images'>
+                                    <Image src={Asesor2} />
+                                </div>
+                                <div className='col-12 col-md-6'>
+                                    <div className='row requisitos'>
+                                        <h3>Requisitos</h3>
+                                        <div className='row requi'>
+                                            <div className='col-12 col-md-6'>
+                                                <ul className="">
+                                                    <li className=""><span>Información y copia de la escritura (con sello del Registro Público de la Propiedad)</span></li>
+                                                    <li className=""><span>Copia de último pago de predial y agua.</span></li>
+                                                    <li className=""><span>Comprobante de domicilio (no mayor a 3 meses).</span></li>
+                                                    <li className=""><span>Información de las dimensiones y detalles de la propiedad (para valuación).</span></li>
+                                                </ul>
+                                            </div>
+                                            <div className='col-12 col-md-6'>
+                                                <ul className="">
+                                                    <li className=""><span>Fotografías del inmueble.</span></li>
+                                                    <li className=""><span>Constancia de situación fiscal.</span></li>
+                                                    <li className=""><span>Certificado de libertad de gravamen.</span></li>
+                                                    <li className=""><span>Identificación del propietario.</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className='block' id='form-landing'>
+                    <div className='holder'>
+                        <div className='container-fluid'>
+                            <div className='row'>
+                                <div className='col-12 col-md-5 images'>
+                                    <div className='row'>
+                                        <h2><span>¡Felicidades!</span> estás a punto de comenzar el proceso de venta de tu propiedad</h2>
+                                    </div>
+                                    <div className='row text-center justify-content-center asesor'>
+                                        <Image src={Asesor3} />
+                                    </div>
+                                </div>
+                                <div className='col-12 col-md-7 form'>
+                                    <FormSteps />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className='block' id="lugares">
+                    <div className='holder'>
+                        <div className='row mx-auto'>
+                            <div className='col-md-2 col-12'>
+                                <h4>Casas en Venta Puebla</h4>
+                                <ul>
+                                    <li><a>Casas en Venta en Lomas de Angelópolis</a></li>
+                                    <li><a>Casas en Venta Recta a Cholula</a></li>
+                                    <li><a>Casas en Venta en Forjadores</a></li>
+                                    <li><a>Casas en Venta en San Andrés Cholula</a></li>
+                                    <li><a>Casas en Venta en Cuautlancingo</a></li>
+                                    <li><a>Casas en Venta en Momoxpan</a></li>
+                                </ul>
+                            </div>
+                            <div className='col-md-2 col-12'>
+                                <h4>Terreno en Venta en Puebla</h4>
+                                <ul>
+                                    <li><a>Terrenos en Venta en Lomas de Angelópolis</a></li>
+                                    <li><a>Terrenos en Venta en San Andrés Cholula </a></li>
+                                    <li><a>Terrenos en Venta en San Martín Texmelucan</a></li>
+                                    <li><a>Terrenos en Venta Bioparque Estrella</a></li>
+                                </ul>
+                            </div>
+                            <div className='col-md-2 col-12'>
+                                <h4>Departamentos en Venta en Puebla</h4>
+                                <ul>
+                                    <li><a>Departamentos en Venta en La Vista</a></li>
+                                    <li><a>Departamentos en Venta junto a Lomas de Angelópolis</a></li>
+                                </ul>
+                            </div>
+                            <div className='col-md-2 col-12'>
+                                <h4>Departamentos en Renta en Puebla</h4>
+                                <ul>
+                                    <li><a>Departamentos en Renta en Tlaxclancingo </a></li>
+                                    <li><a>Departamentos en Renta junto a Lomas de Angelópolis</a></li>
+                                </ul>
+                            </div>
+                            <div className='col-md-2 col-12'>
+                                <h4>Oficinas en Renta en Puebla </h4>
+                                <ul>
+                                    <li><a>Oficinas en Renta en Atlixcayotl</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
+            <Footer />
         </ParallaxProvider>
     )
 }

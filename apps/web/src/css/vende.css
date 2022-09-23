@@ -1,3 +1,24 @@
+.offcanvas{
+    background: #181D24;
+    width: 920px;
+}
+.offcanvas .offcanvas-header{
+    justify-content: end;
+}
+.offcanvas .offcanvas-body{
+    padding-left: 110px;
+}
+.offcanvas .offcanvas-body .navbar-nav a{
+    color: #FFFFFF;
+    font-family: 'Silka-bold';
+    font-size: 26px;
+}
+.offcanvas .offcanvas-body .navbar-nav .dropdown a::after{
+    display: none;
+}
+.offcanvas .offcanvas-body .navbar-nav .dropdown a span{
+    margin-left: 10px !important;
+}
 .navi{
     left: 0;
     padding: 0px 0px;
@@ -10,9 +31,27 @@
     background: rgba(24,29,36, 0.2);
     height: 110px;
 }
+.navi.isActive{
+    background: #181D24;
+    -webkit-transition: height 550ms ease-in-out;
+    transition: height 550ms ease-in-out;
+    padding: 0px 0px;
+    height: 90px;
+}
+.navi .navbar-brand.Active span{
+    -webkit-transition: witdth height 550ms ease-in-out;
+    transition: witdth height 550ms ease-in-out;
+    width: 97.71px !important;
+    height: 60px !important;
+}
+.navi .navbar-brand.Active{
+    margin: 15px 0px 15px 70px;
+    -webkit-transition: margin 550ms ease-in-out;
+    transition: margin 550ms ease-in-out;
+}
 .navi .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
 }
 .navi .navbar{
@@ -28,6 +67,16 @@
     padding-top: 0;
     font-size: 0;
 }
+.navi .bi.bi-list{
+    color: #CC9964;
+    font-size: 35px;
+}
+.navi .navbar-toggler:focus{
+    box-shadow: none;
+}
+.navi .navbar-expand-lg .navbar-toggler{
+    display: block;
+}
 .wrapper{
     contain: none;
     overflow-x: hidden;
@@ -39,7 +88,7 @@
 }
 #landing .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
     display: flex;
 }
@@ -83,7 +132,7 @@
 }
 #title-statick .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
     margin-top: 190px;
 }
@@ -111,7 +160,7 @@
 }
 #que-hacemos .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
     margin-top: 89px;
     padding-right: 180px;
@@ -152,6 +201,10 @@
 .block.llegaste{
     position: relative;
 }
+.block.llegaste .image-wrapper{
+    position: relative;
+    width: 100%;
+}
 
 @media (min-width: 768px){
     .block.llegaste{
@@ -172,18 +225,356 @@
         padding: unset;
     }
     .block.llegaste .item-one{
-        min-width: 100vw;
-        width: 100vw;
+        min-width: 70vw;
+        width: 70vw;
+    }
+    .block.llegaste .item-one .content{
+        position: relative;
+        top: 60%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .block.llegaste .item-one .flex-content{
+        display: flex;
+    }
+    .block.llegaste .item-one .image-wrapper{
+        width: 417px;
+        height: 478px;
+        max-width: 50%;
+        padding-bottom: 0;
+        margin-left: 179px;
+    }
+    .block.llegaste .item-one .text-wrapper{
+        max-width: 41%;
+        padding-right: 100px;
+        padding-top: 70px;
+        padding-left: 26px;
+    }
+    .block.llegaste .item-one .text-wrapper p{
+        font-size: 22px;
+        font-family: 'Silka-regular';
+        color: #181D24;
+        width: 305px;
+        height: 81px;
     }
     .block.llegaste .item-two{
         position: relative;
         max-width: none;
-        height: 100vh;
-        padding: initial;
+    }
+    .block.llegaste .item-two .content{
+        position: relative;
+        top: 58%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .block.llegaste .item-two .flex-content{
+        display: block;
+        justify-content: space-between;
+    }
+    .block.llegaste .item-two .image-wrapper{
+        width: 527px;
+        height: 340px;
+        padding-bottom: 6px;
+    }
+    .block.llegaste .item-two    .text-wrapper{
+        padding-right: 111px;
+        padding-top: 30px;
+    }
+    .block.llegaste .item-two    .text-wrapper p{
+        font-size: 22px;
+        font-family: 'Silka-regular';
+        color: #181D24;
+        width: 416px;
+        height: 108px;
+    }
+    .block.llegaste .item-three{
+        position: relative;
+        max-width: 80vw;
+        width: 80vw;
+    }
+    .block.llegaste .item-three .content{
+        position: relative;
+        top: 58%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .block.llegaste .item-three .flex-content{
+        display: flex;
+        justify-content: space-between;
+    }
+    .block.llegaste .item-three .image-wrapper{
+        max-width: 50%;
+        min-width: 416px;
+        min-height: 478px;
+        margin-left: 136px;
+    }
+    .block.llegaste .item-three    .text-wrapper{
+        padding-top: 310px;
+        padding-left: 26px;
+    }
+    .block.llegaste .item-three    .text-wrapper p{
+        font-size: 22px;
+        font-family: 'Silka-regular';
+        color: #181D24;
+        width: 416px;
+        height: 108px;
+    }
+    .block.llegaste .item-four{
+        position: relative;
+        max-width: none;
+    }
+    .block.llegaste .item-four .content{
+        position: relative;
+        top: 60%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .block.llegaste .item-four .flex-content{
+        display: block;
+        justify-content: space-between;
+    }
+    .block.llegaste .item-four .image-wrapper{
+        max-width: 50%;
+        min-width: 416px;
+        min-height: 478px;
+    }
+
+
+    .block.llegaste .item-five{
+        min-width: 100vw;
+        width: 100vw;
+        position: relative;
+    }
+    .block.llegaste .item-five .content{
+        position: relative;
+        top: 60%;
+        transform: translateY(-50%);
+    }
+    .block.llegaste .item-five .flex-content{
+        display: block;
+        justify-content: space-between;
+        padding: 90px 150px;
+    }
+    .block.llegaste .item-five .image-wrapper{
+        max-width: 100%;
+        min-width: 416px;
+        min-height: 478px;
     }
 }
 
+#lugar{
+    background: url('../../../../packages/ui/constants/landing/asesor-back.webp');
+    height: 890px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#lugar .holder{
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 100%;
+    padding: 150px 180px;
+}
+#lugar .holder .content{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#lugar h2{
+    font-family: 'Silka-regular';
+    font-size: 34px;
+    color: #181D24;
+}
+#lugar h2 span{
+    font-family: 'Silka-bold';
+    font-size: 34px;
+    color: #CC9964;
+}
+#lugar .content a{
+    margin-top: 40px;
+    padding: 15px 30px;
+    background: #CC9964;
+    border-radius: 24px;
+    height: 48px;
+    width: 303px;
+    display: inline-table;
+    color: #FFFFFF;
+}
+#vender{
+    background: #FAFAFA;
+}
+#vender .holder{
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 100%;
+    padding: 150px 70px;
+}
+#vender h2{
+    font-family: 'Silka-regular';
+    font-size: 34px;
+    color: #181D24;
+    text-align: center;
+    padding-left: 401px;
+    padding-right: 401px;
+    padding-bottom: 80px;
+}
+#vender h2 span{
+    font-family: 'Silka-bold';
+    font-size: 34px;
+    color: #CC9964;
+}
+#vender .images span{
+    border-radius: 24px;
+}
+#vender .requisitos h3{
+    font-family: 'Silka-bold';
+    font-size: 22px;
+    color: #181D24;
+}
+#vender .requisitos .requi{
+    margin-top: 49px;
+}
+#vender .requisitos .requi ul li{
+    color: #CC9964;
+    margin-bottom: 30px;
+}
+#vender .requisitos .requi ul li span{
+    margin-bottom: 30px;
+    color: #515761;
+    font-family: 'Silka-regular';
+    font-size: 16px;
+}
+#form-landing{
 
+}
+#form-landing .holder{
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 100%;
+}
+#form-landing .images{
+    background: url('../../../../packages/ui/constants/landing/form-back.webp');
+    height: 840px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#form-landing .images h2{
+    font-family: 'Silka-regular';
+    font-size: 24px;
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 142px;
+    padding-left: 108px;
+    padding-right: 108px;
+    padding-bottom: 30px;
+}
+#form-landing .images h2 span{
+    font-family: 'Silka-bold';
+    color: #CC9964;
+}
+#form-landing .images .asesor span{
+    width: 435px !important;
+    height: 441px !important;
+}
+
+#form-landing .form h4{
+    margin-top: 223px;
+    font-family: 'Silka-bold';
+    font-size: 22px;
+    color: #CC9964;
+}
+#form-landing .form span{
+    margin-top: 20px;
+    font-family: 'Silka-regular';
+    font-size: 16px;
+    color: #181D24;
+}
+#form-landing .form .title{
+    margin-top: 39px;
+    padding-right: 220px;
+}
+#form-landing .form .lectura{
+    padding-left: 10px;
+}
+#form-landing .form .title h6{
+    font-family: 'Silka-regular';
+    font-size: 14px;
+    color: #181D24;
+}
+#form-landing .form .contrato {
+    height: 266px;
+    overflow-y: scroll;
+    background: #EEEEEE;
+    padding: 16px;
+    border-radius: 10px;
+}
+#form-landing .form .contrato::-webkit-scrollbar{
+    width: 5px;
+    margin-left: 6px;
+}
+#form-landing .form .contrato::-webkit-scrollbar-thumb{
+    background: #CC9964;
+    border-radius: 5px;
+}
+#form-landing .form .checkbox {
+    margin-top: 40px;
+}
+#form-landing .form .checkbox input {
+    width: 20px;
+    height: 20px;
+}
+#form-landing .form .checkbox label{
+    font-family: 'Silka-regular';
+    font-size: 9px;
+    color: #515761;
+    padding-left: 5px;
+}
+#form-landing .form .contacto{
+    height: 352px;
+}
+#form-landing .form .contacto input{
+    height: 50px;
+    font-family: 'Silka-regular';
+    background: #EEEEEE;
+    font-size: 12px;
+}
+#form-landing .form .propiedad{
+    height: 335px;
+}
+#form-landing .form .propiedad input{
+    height: 50px;
+    font-family: 'Silka-regular';
+    background: #EEEEEE;
+    font-size: 12px;
+}
+#form-landing .form .propiedad select{
+    height: 50px;
+    font-family: 'Silka-regular';
+    background: #EEEEEE;
+    font-size: 12px;
+}
+#form-landing .form .atras a{
+    font-family: 'Silka-regular';
+    color: #515761;
+    font-size: 12px;
+    text-decoration: none;
+}
+#form-landing .form .atras span{
+    transform: rotateZ(180deg);
+}
+#form-landing .form .siguiente a{
+    font-family: 'Silka-regular';
+    color: #515761;
+    font-size: 12px;
+    text-decoration: none;
+}
+#form-landing .form .siguiente .submit{
+    background: #CC9964;
+    width: 148px;
+    height: 45px;
+    font-family: 'Silka-bold';
+    font-size: 18px;
+    color: #FFFFFF;
+}
 .container-horizantal{
     width: 500% !important;
     height: 100% !important;
@@ -195,8 +586,40 @@
     height: 100vh;
 }
 @media (max-width: 767px){
+    .offcanvas .offcanvas-body{
+        padding-left: 55px;
+    }
+    .navi{
+        height: 60px;
+    }
+    .navi.isActive{
+        height: 60px;
+    }
     .navi .navbar-brand{
-        margin: 20px 0px 20px 150px;
+        margin: 23px 0px 23px 150px;
+    }
+    .navi .navbar-brand.Active{
+        margin: 23px 0px 23px 150px;
+        -webkit-transition: margin 550ms ease-in-out;
+        transition: margin 550ms ease-in-out;
+    }
+    .block.llegaste .wrapper-sections{
+        display: block !important;
+        left: 0;
+        max-width: unset;
+        position: relative !important;
+        top: 0;
+        width: fit-content;
+        transform: translateX(0px) !important;
+    }
+    .navi .navbar-brand.Active span{
+        -webkit-transition: all 550ms ease-in-out;
+        transition: all 550ms ease-in-out;
+        width: 114px !important;
+        height: 13.65px !important;
+    }
+    .block.llegaste{
+        height: auto !important;
     }
     #landing .holder{
         display: block;
@@ -240,7 +663,7 @@
     }
     #title-statick .holder{
         margin: 0 auto;
-        max-width: 1330px;
+        max-width: 1300px;
         width: 100%;
         margin-top: 260px;
     }
@@ -280,5 +703,117 @@
     #que-hacemos .image span{
         width: 280px;
         height: 359px;
+    }
+    #lugar{
+        background: url('../../../../packages/ui/constants/landing/asesor-back.webp');
+        height: 630px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #lugar .holder{
+        margin: 0 auto;
+        max-width: 1300px;
+        width: 100%;
+        padding: 0px 17px;
+    }
+    #lugar .holder .content{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #lugar h2{
+        font-family: 'Silka-regular';
+        font-size: 34px;
+        color: #181D24;
+        margin-top: 213px;
+    }
+    #lugar h2 span{
+        font-family: 'Silka-bold';
+        font-size: 34px;
+        color: #CC9964;
+    }
+    #lugar .content a{
+        margin-top: 40px;
+        padding: 15px 30px;
+        background: #CC9964;
+        border-radius: 24px;
+        height: 48px;
+        width: 303px;
+        display: inline-table;
+    }
+    #vender .holder{
+        padding: 70px 17px;
+    }
+    #vender h2{
+        font-family: 'Silka-regular';
+        font-size: 34px;
+        color: #181D24;
+        text-align: center;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 80px;
+    }
+    #vender .images {
+        text-align: center;
+    }
+    #vender .images span{
+        width: 248px !important;
+        height: 278px !important;
+    }
+    #vender .requisitos h3{
+        text-align: center;
+        margin-top: 183px;
+    }
+    #form-landing .images{
+        height: 580px;
+    }
+    #form-landing .images h2{
+        font-size: 22px;
+        padding-top: 80px;
+        padding-left: 17px;
+        padding-right: 17px;
+        padding-bottom: 0px;
+    }
+    #form-landing .images .asesor span{
+        width: 305px !important;
+        height: 309px !important;
+        margin-top: 30px !important;
+    }
+    #form-landing .form {
+        padding-left: 17px;
+        padding-right: 17px;
+        margin-bottom: 100px;
+    }
+    #form-landing .form h4{
+        margin-top: 103px;
+        font-size: 20px;
+    }
+    #form-landing .form span{
+        font-size: 14px;
+    }
+    #form-landing .form .title{
+        margin-top: 20px;
+        padding-right: 0px;
+    }
+    #form-landing .form .title h6{
+        font-family: 'Silka-regular';
+        font-size: 12px;
+        color: #181D24;
+    }
+    #form-landing .form .contrato {
+        margin-top: 26px;
+    }
+    #form-landing .form .contacto {
+        height: 300px;
+    }
+    #form-landing .form .propiedad {
+        height: 420px;
+    }
+    #form-landing .form .contrato {
+        font-size: 11px;
+        color: #515761;
+    }
+    #form-landing .form .lectura {
+        padding-left: 0px;
     }
 }

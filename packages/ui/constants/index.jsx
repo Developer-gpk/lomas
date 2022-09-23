@@ -74,10 +74,18 @@ import ImagenVende1 from './landing/img01.webp'
 import Enviando from './icons/sending.svg'
 import phone from './landing/phone.webp'
 import Camera from './icons/camara.svg'
-
+import ImagenVende2 from './landing/img02.webp'
+import ImagenVende3 from './landing/img03.webp'
+import ImagenVende4 from './landing/img04.webp'
+import ImagenVende5 from './landing/img05.webp'
+import Asesor from './landing/asesor.webp'
+import Asesor2 from './landing/asesor2.webp'
+import Asesor3 from './landing/asesor3.webp'
+import LomasMobile from './icons/lomas-home-movil.svg'
 
 export {
     Logo,
+    LomasMobile,
     Cover1,
     Cover2,
     Cover3,
@@ -152,5 +160,12 @@ export {
     ImagenVende1,
     Enviando,
     phone,
-    Camera
+    Camera,
+    ImagenVende2,
+    ImagenVende3,
+    ImagenVende4,
+    ImagenVende5,
+    Asesor,
+    Asesor2,
+    Asesor3
 }

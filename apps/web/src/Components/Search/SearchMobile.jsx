@@ -74,7 +74,7 @@ export default function SearchMobile(){
                                 </div>
                             </div>
                             <div className='col-2'>
-                                <button type="submit" className="btn w-75"><i className="bi bi-search"></i></button>
+                                <button type="submit" className="btn"><i className="bi bi-search"></i></button>
                             </div>
                         </div>
                     </Form>

@@ -32,7 +32,7 @@ export default function Footer(){
                                 <Link href={{ pathname: '/[category]', query: { category: 'oficina'}}}>
                                     <a className="nav-link">Oficinas</a>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/conocenos">
                                     <a className="nav-link">Nosotros</a>
                                 </Link>
                                 <Link href='/#contacto'>

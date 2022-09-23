@@ -33,7 +33,7 @@ export default function Web() {
     <Layout>
       <section className="block" id="portada">
         <div className="portada-carousel">
-          <div id="carouselDesktop" className="carousel slide carousel-fade d-none d-sm-none d-md-block" data-bs-ride="carousel">
+          <div id="carouselDesktop" className="carousel slide d-none d-sm-none d-md-block" data-bs-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
                 <ParallaxBanner
@@ -86,7 +86,7 @@ export default function Web() {
               </div>
             </div>
           </div>
-          <div id="carouselMobile" className="carousel slide carousel-fade d-block d-sm-block d-md-none" data-bs-ride="carousel">
+          <div id="carouselMobile" className="carousel slide d-block d-sm-block d-md-none" data-bs-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
                 <ParallaxBanner
@@ -148,10 +148,10 @@ export default function Web() {
             <div className='categorias'>
               <ul className="nav nav-tabs justify-content-center" id="myTab" role="tablist">
                 <li className="nav-item" role="presentation">
-                  <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#casas-tab-panel" type="button" role="tab" aria-controls="casas-tab-panel" aria-selected="true"><Image src={Casa} alt="Logo Lomas Home" width="30" height="30" /><span>Casas</span></button>
+                  <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#casas-tab-panel" type="button" role="tab" aria-controls="casas-tab-panel" aria-selected="true"><Image src={Casa} alt="Logo Lomas Home" width="30" height="30" />Casas</button>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <button className="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#departamentos-tab-panel" type="button" role="tab" aria-controls="departamentos-tab-panel" aria-selected="false"><Image src={Depart} alt="Logo Lomas Home" width="30" height="30" /><span>Departamentos</span></button>
+                  <button className="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#departamentos-tab-panel" type="button" role="tab" aria-controls="departamentos-tab-panel" aria-selected="false"><Image src={Depart} alt="Logo Lomas Home" width="30" height="30" />Departamentos</button>
                 </li>
                 <li className="nav-item" role="presentation">
                   <button className="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#terrenos-tab-panel" type="button" role="tab" aria-controls="terrenos-tab-panel" aria-selected="false"><Image src={Terre} alt="Logo Lomas Home" width="30" height="30" />Terrenos</button>

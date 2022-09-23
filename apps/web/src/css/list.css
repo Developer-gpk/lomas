@@ -13,6 +13,7 @@
 }
 .propiedades .propiedad{
     background: #EEEEEE;
+    border: none;
 }
 .propiedad .card-body:hover{
     background: #DCDCDC;
