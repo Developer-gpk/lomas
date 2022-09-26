@@ -3,25 +3,25 @@
     padding: 0px 0px;
     position: fixed;
     top: 0;
-    -webkit-transition: all 550ms ease-in-out;
     transition: all 550ms ease-in-out;
     width: 100%;
     z-index: 999;
     background: rgba(24,29,36, 0.2);
     height: 110px;
+    -webkit-transition: all 550ms ease-in-out;
 }
 .navigation.isActive{
     background: #181D24;
     -webkit-transition: height 550ms ease-in-out;
-    transition: height 550ms ease-in-out;
     padding: 0px 0px;
     height: 90px;
+    transition: all 550ms ease-in-out;
 }
 .navigation .navbar-brand.Active span{
     -webkit-transition: witdth height 550ms ease-in-out;
-    transition: witdth height 550ms ease-in-out;
     width: 97.71px !important;
     height: 60px !important;
+    transition: all 550ms ease-in-out;
 }
 .navigation .navbar-brand.Active{
     -webkit-transition: all 550ms ease-in-out;
@@ -30,9 +30,11 @@
 }
 .navigation .navbar-brand .Show{
     display: block;
+    transition: all 550ms ease-in-out;
 }
 .navigation .navbar-brand .Hidden{
     display: none;
+    transition: all 550ms ease-in-out;
 }
 .navigation .navbar-collapse.Active{
     -webkit-transition: padding 550ms ease-in-out;

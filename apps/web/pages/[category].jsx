@@ -66,7 +66,7 @@ function Category(){
         }
 	}, [update, search, category, ubi, tipo, habi, min, max]);
     return(
-        <Layout>
+        <Layout title={`${category} | Lomas Home`}>
             <section className='block' id='category-banner'>
                 <BannerCategory category={route.query.category} />
                 <div className='holder'>

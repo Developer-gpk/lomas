@@ -27,59 +27,39 @@ import { Cover1,
 import SearchDesk from "../src/Components/Search/SearchDesk"
 import SearchMobile from "../src/Components/Search/SearchMobile"
 import PropiedadList from '../src/Components/List/propiedad'
+import SanityClient from '../libs/Client'
+import imageUrlBuilder from '@sanity/image-url'
 
-export default function Web() {
+const builder = imageUrlBuilder(SanityClient)
+
+function Web({home}) {
+  console.log(home)
+  function urlForce(soruce){
+    const img = builder.image(soruce)
+    return img
+  }
   return (
-    <Layout>
+    <Layout title="Lomas Home" description={home.descripcion} keywords={home.keywords}>
       <section className="block" id="portada">
         <div className="portada-carousel">
           <div id="carouselDesktop" className="carousel slide d-none d-sm-none d-md-block" data-bs-ride="carousel">
             <div className="carousel-inner">
-              <div className="carousel-item active">
-                <ParallaxBanner
-                  className='portada-parallax-desk'
-                  style={{ 
-                    aspectRatio: '2 / 1',
-                  }}
-                  layers={[
-                    {
-                      image:
-                        Cover1.src,
-                      speed: -10,
-                    },
-                  ]}
-                />
-              </div>
-              <div className="carousel-item">
-                <ParallaxBanner
-                  className='portada-parallax-desk'
-                  style={{ 
-                    aspectRatio: '2 / 1',
-                  }}
-                  layers={[
-                    {
-                      image:
-                        Cover2.src,
-                      speed: -10,
-                    },
-                  ]}
-                />
-              </div>
-              <div className="carousel-item">
-                <ParallaxBanner
-                  className='portada-parallax-desk'
-                  style={{ 
-                    aspectRatio: '2 / 1',
-                  }}
-                  layers={[
-                    {
-                      image:
-                        Cover3.src,
-                      speed: -10,
-                    },
-                  ]}
-                />
-              </div>
+              {home.imagenes_desk.map((img, index) =>(
+                <div className={`carousel-item ${index == 0 ? "active" : ''}`} key={index}>
+                  <ParallaxBanner
+                    className='portada-parallax-desk'
+                    style={{ 
+                      aspectRatio: '2 / 1',
+                    }}
+                    layers={[
+                      {
+                        image: urlForce(img.asset).url(),
+                        speed: -10,
+                      },
+                    ]}
+                  />
+                </div>
+              ))}
               <div className="carousel-caption">
                 <h3>¿Qué tipo de propiedad estás buscando?</h3>
                 <SearchDesk />
@@ -88,51 +68,22 @@ export default function Web() {
           </div>
           <div id="carouselMobile" className="carousel slide d-block d-sm-block d-md-none" data-bs-ride="carousel">
             <div className="carousel-inner">
-              <div className="carousel-item active">
-                <ParallaxBanner
-                  className='portada-parallax-mobile'
-                  style={{ 
-                    aspectRatio: '2 / 1',
-                  }}
-                  layers={[
-                    {
-                      image:
-                        CoverMobile1.src,
-                      speed: -10,
-                    },
-                  ]}
-                />
-              </div>
-              <div className="carousel-item">
-                <ParallaxBanner
-                  className='portada-parallax-mobile'
-                  style={{ 
-                    aspectRatio: '2 / 1',
-                  }}
-                  layers={[
-                    {
-                      image:
-                        CoverMobile2.src,
-                      speed: -10,
-                    },
-                  ]}
-                />
-              </div>
-              <div className="carousel-item">
-                <ParallaxBanner
-                  className='portada-parallax-mobile'
-                  style={{ 
-                    aspectRatio: '2 / 1',
-                  }}
-                  layers={[
-                    {
-                      image:
-                       CoverMobile3.src,
-                      speed: -10,
-                    },
-                  ]}
-                />
-              </div>
+              {home?.imagenes_mobile?.map((img, index) =>(
+                <div className={`carousel-item ${index == 0 ? "active" : ''}`} key={index}>
+                  <ParallaxBanner
+                    className='portada-parallax-mobile'
+                    style={{ 
+                      aspectRatio: '2 / 1',
+                    }}
+                    layers={[
+                      {
+                        image: urlForce(img.asset).url(),
+                        speed: -10,
+                      },
+                    ]}
+                  />
+                </div>
+              ))}
               <div className="carousel-caption">
                 <h3>¿Qué tipo de propiedad estás buscando?</h3>
                 <SearchMobile />
@@ -213,10 +164,10 @@ export default function Web() {
                   <section className='container-fluid'>
                     <section className='row content'>
                       <p>
-                        Somos una empresa creada para ofrecer soluciones inmobiliarias a través de un amplio catálogo de propiedades en las zonas más exclusivas en Puebla. 
+                        {home.texto1} 
                         <br/><br/>Buscamos hacer de este proceso una experiencia extraordinaria.
                         <br/><br/>
-                        <span>El valor intangible que necesitas está aquí</span>
+                        <span>{home.texto2}</span>
                         <br/><br/>
                         <a>Conoce más <Image src={Arrow1} alt="pin" width="13" height="12" layout={"fixed"} /></a>
                       </p>
@@ -401,3 +352,20 @@ export default function Web() {
     </Layout>
   );
 }
+
+export async function getStaticProps(context) {
+  // It's important to default the slug so that it doesn't return "undefined"
+  const home = await SanityClient.fetch(
+    `
+      *[_type == "home" ][0]{
+        ...
+      }
+    `)
+  return {
+    props: {
+      home
+    }
+  }
+}
+
+export default Web

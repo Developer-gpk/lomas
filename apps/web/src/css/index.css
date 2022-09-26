@@ -189,7 +189,7 @@
     border-bottom: 4px solid #CC9964;
 }
 #conocenos{
-
+    margin-top: 150px;
 }
 #conocenos .holder{
     margin: 0 auto;
@@ -351,7 +351,7 @@
         height: 1300px !important;
     }
     #contacto .holder{
-        margin: 20% auto;
+        margin: 25% auto;
     }
 }
 @media (max-width: 1330px){
@@ -359,7 +359,7 @@
         height: 1116px !important;
     }
     #contacto .holder{
-        margin: 20% auto;
+        margin: 28% auto;
     }
 }
 @media (max-width: 767px){

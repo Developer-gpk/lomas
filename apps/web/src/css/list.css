@@ -17,6 +17,9 @@
 }
 .propiedad .card-body:hover{
     background: #DCDCDC;
+    border-radius: 6px;
+    -webkit-transition: all 550ms ease-in-out;
+    transition: all 550ms ease-in-out;
 }
 .propiedad .card-body .row{
     margin-bottom: 10px;

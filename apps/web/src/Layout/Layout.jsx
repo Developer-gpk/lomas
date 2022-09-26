@@ -1,12 +1,22 @@
 import React from 'react'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '../Components/Footer/Footer';
 import { ParallaxProvider } from "react-scroll-parallax";
 
 
-export default function Layout({children}){
+export default function Layout({children, title, description, keywords}){
+    const router = useRouter()
     return(
-        <ParallaxProvider> 
+        <ParallaxProvider>
+            <Head>
+                <title>{title}</title>
+                <meta name="description" content={description} />
+                <meta name="keywords" content={keywords} />
+                <meta name="author" content="Goplek" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Head>
             <Navbar />
             <div className="whats d-none d-sm-none d-md-block">
                 <ul>
@@ -14,7 +24,7 @@ export default function Layout({children}){
                     <li className="phone"><a href="tel:" target="_blank" rel="noreferrer" className="icon-number"></a></li>
                 </ul>
             </div>
-            <div className='outer-wrapper'>
+            <div className='outer-wrapper' style={router.route == "/propiedad/[slug]" ? {contain: "inherit"} : {}}>
                 {children}
             </div>
             <Footer />

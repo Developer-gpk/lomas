@@ -61,7 +61,6 @@ export default function Forms(){
                     }}
                 >
                     {(formik) => {
-                        console.log(formik)
                         return(
                             <Form autoComplete='off'>
                                 {!formik.isSubmitting ? (

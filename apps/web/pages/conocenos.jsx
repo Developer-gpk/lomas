@@ -4,8 +4,12 @@ import Link from 'next/link'
 import { ParallaxBanner } from 'react-scroll-parallax'
 import Layout from '../src/Layout/Layout'
 import { BannerConocenos1, AboutUs, ConocenosImg1, ConocenosImg2, ConocenosImg3, Compra, Venta, Detalles, Grados, Planos, Material, Alcance, Asesoria, ArrowSend, Credito, Arrow1 } from 'ui/constants'
+import SanityClient from '../libs/Client'
+import imageUrlBuilder from '@sanity/image-url'
 
-export default function Conocenos(){
+const builder = imageUrlBuilder(SanityClient)
+
+function Conocenos({conocenos}){
     const [element1, setElement1] = useState(false)
     const [element2, setElement2] = useState(false)
     const [element3, setElement3] = useState(false)
@@ -35,6 +39,10 @@ export default function Conocenos(){
         } else{
             setElement3(false)
         }
+    }
+    function urlForce(soruce){
+        const img = builder.image(soruce)
+        return img
     }
     useEffect(() => {
         changeElement1()
@@ -78,8 +86,8 @@ export default function Conocenos(){
                                 <Image src={AboutUs} alt="pin" width="626" height="530" layout={"fixed"} />
                             </div>
                             <div className='col-12 col-md-6 my-auto'>
-                                <p>Fundada en el 2016, Lomas Home Inmobiliaria se ha desarrollado dentro del mercado inmobiliario, ofreciendo servicios en el sector tanto público como privados.</p>
-                                <span>Brindamos soluciones inmobiliarias integrales, que abarcan desde venta y renta de propiedades hasta el desarrollo y construcción de todo un proyecto.</span>
+                                <p>{conocenos?.fundados}</p>
+                                <span>{conocenos?.texto_fundados}</span>
                             </div>
                         </div>
                     </div>
@@ -104,25 +112,25 @@ export default function Conocenos(){
                                         <div className="accordion-item ">
                                             <div className="accordion-body">
                                                 <h2 className={`accordion-header ${element1 ? 'isElement' : ''}`} >
-                                                    Atención a nuestros socios y clientes.
+                                                    {conocenos?.detalles1}
                                                 </h2>
-                                                <p className={`${element1 ? 'isElement' : ''}`}>Para nosotros ambos son importantes, por lo tanto brindamos atención especializada y personalizada con un seguimiento estricto y eficiente.</p>
+                                                <p className={`${element1 ? 'isElement' : ''}`}>{conocenos?.texto_datalle1}</p>
                                             </div>
                                         </div>
                                         <div className="accordion-item">
                                             <div className="accordion-body text-muted">
                                                 <h2 className={`accordion-header ${element2 ? 'isElement' : ''}`}>
-                                                    Expertise de nuestro equipo Lomas Home.
+                                                    {conocenos?.detalles2}
                                                 </h2>
-                                                <p className={`${element2 ? 'isElement' : ''}`}>Entendemos la complejidad de este sector, por eso contamos con agentes inmobiliarios capacitados para lograr resultados satisfactorios, y lo más importante, crear una experiencia cálida y extraordinaria.</p>
+                                                <p className={`${element2 ? 'isElement' : ''}`}>{conocenos?.texto_datalle2}</p>
                                             </div>
                                         </div>
                                         <div className="accordion-item">
                                             <div className="accordion-body text-muted">
                                                 <h2 className={`accordion-header ${element3 ? 'isElement' : ''}`}>
-                                                    Sin preocupaciones extras.
+                                                    {conocenos?.detalles3}
                                                 </h2>
-                                                <p className={`${element3 ? 'isElement' : ''}`}>Nos hacemos cargo de todo el proceso operativo del cual estarás informado en todo momento, pues es TU propiedad y estamos en esto JUNTOS.</p>
+                                                <p className={`${element3 ? 'isElement' : ''}`}>{conocenos?.texto_datalle3}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -130,13 +138,13 @@ export default function Conocenos(){
                             </div>
                             <div className='right d-none d-sm-none d-md-block'>
                                 <div className='right-cpm' id='element1'>
-                                    <Image src={ConocenosImg1} alt="pin" width="733" height="820" layout={"fixed"} />
+                                    <Image src={urlForce(conocenos?.imagen_detalle1?.asset).url()} alt="pin" width="733" height="820" layout={"fixed"} />
                                 </div>
                                 <div className='right-cpm' id='element2'>
-                                    <Image src={ConocenosImg2} alt="pin" width="733" height="820" layout={"fixed"} />
+                                    <Image src={urlForce(conocenos?.imagen_detalle2?.asset).url()} alt="pin" width="733" height="820" layout={"fixed"} />
                                 </div>
                                 <div className='right-cpm' id='element3'>
-                                    <Image src={ConocenosImg3} alt="pin" width="733" height="820" layout={"fixed"} />
+                                    <Image src={urlForce(conocenos?.imagen_detalle3?.asset).url()} alt="pin" width="733" height="820" layout={"fixed"} />
                                 </div>
                             </div>
                         </div>
@@ -184,21 +192,21 @@ export default function Conocenos(){
                                         <Image src={Detalles} alt="pin" width="50" height="50" layout={"fixed"} />
                                         <div className="me-auto list-text">
                                             <div className="fw-bold">Detalles de las propiedades </div>
-                                            Todos los bienes de nuestro catálogo cuentan con las especificaciones necesarias para que conozcas a detalle las propiedades de tu interés.
+                                            {conocenos?.detalles}
                                         </div>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-start my-4">
                                         <Image src={Grados} alt="pin" width="50" height="50" layout={"fixed"} />
                                         <div className="me-auto list-text">
                                             <div className="fw-bold">Experiencia visual</div>
-                                            Queremos que descubras los espacios con fotografías profesionales y REALES, además de recorridos virtuales que te transportarán a la casa de tus sueños desde tu asiento.
+                                            {conocenos?.experiencia}
                                         </div>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-start my-4">
                                         <Image src={Planos} alt="pin" width="50" height="50" layout={"fixed"} />
                                         <div className="me-auto list-text">
                                             <div className="fw-bold">Planos arquitectónicos</div>
-                                            Lo más esencial es ofrecerte información sin engaños, visualiza los planos de cada propiedad para tener la información completa.
+                                            {conocenos?.planos}
                                         </div>
                                     </li>
                                 </ol>
@@ -236,21 +244,21 @@ export default function Conocenos(){
                                         <Image src={Material} alt="pin" width="50" height="50" layout={"fixed"} />
                                         <div className="me-auto list-text">
                                             <div className="fw-bold">Levantamiento de material </div>
-                                            Nos encargamos de tomar fotografías profesionales del inmueble y generamos recorridos virtuales de tu propiedad.
+                                            {conocenos?.levantamiento}
                                         </div>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-start my-4">
                                         <Image src={Alcance} alt="pin" width="50" height="50" layout={"fixed"} />
                                         <div className="me-auto list-text">
                                             <div className="fw-bold">Alcance y publicidad</div>
-                                            Hacemos estrategias de marketing digital para mostrarnos en diferentes puntos clave donde se encuentran todas aquellas personas que buscan una propiedad como la tuya.
+                                            {conocenos?.alcance}
                                         </div>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-start my-4">
                                         <Image src={Asesoria} alt="pin" width="50" height="50" layout={"fixed"} />
                                         <div className="me-auto list-text">
                                             <div className="fw-bold">Asesoría integral</div>
-                                            Tendrás disponible al equipo de Lomas Home para brindar acompañamiento en todo momento y resolver tus dudas durante el proceso.
+                                            {conocenos?.asesoria}
                                         </div>
                                     </li>
                                 </ol>
@@ -329,3 +337,20 @@ export default function Conocenos(){
         </Layout>
     )
 }
+
+export async function getStaticProps(context) {
+    // It's important to default the slug so that it doesn't return "undefined"
+    const conocenos = await SanityClient.fetch(
+      `
+        *[_type == "conocenos" ][0]{
+          ...
+        }
+      `)
+    return {
+      props: {
+        conocenos
+      }
+    }
+}
+
+export default Conocenos

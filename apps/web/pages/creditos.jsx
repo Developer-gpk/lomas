@@ -5,8 +5,12 @@ import { ParallaxBanner } from 'react-scroll-parallax'
 import { CoverCreditos1, ArrowSend, Img1, Img2, Img3, BannerBanks, Banorte, Bbva, HSBC, Santander, Scotiabank, Agente } from 'ui/constants'
 import Forms from '../src/Components/Forms/Form'
 import Link from 'next/link'
+import SanityClient from '../libs/Client'
+import imageUrlBuilder from '@sanity/image-url'
 
-export default function Creditos(){
+const builder = imageUrlBuilder(SanityClient)
+
+function Creditos({creditos}){
     const [element1, setElement1] = useState(false)
     const [element2, setElement2] = useState(false)
     const [element3, setElement3] = useState(false)
@@ -37,6 +41,10 @@ export default function Creditos(){
             setElement3(false)
         }
     }
+    function urlForce(soruce){
+        const img = builder.image(soruce)
+        return img
+    }
     useEffect(() => {
         changeElement1()
         changeElement2()
@@ -46,7 +54,7 @@ export default function Creditos(){
         window.addEventListener('scroll', changeElement3)
     }, []);
     return(
-        <Layout>
+        <Layout title="Creditos | Lomas Home" description={creditos?.descripcion} keywords={creditos?.keywords}>
             <section className='block' id='banner-creditos'>
                 <ParallaxBanner
                     className='parallax-creditos-desk'
@@ -95,25 +103,25 @@ export default function Creditos(){
                                         <div className="accordion-item ">
                                             <div className="accordion-body">
                                                 <h2 className={`accordion-header ${element1 ? 'isElement' : ''}`} >
-                                                    1. Ingresa tus datos en nuestro formulario
+                                                    1. {creditos?.titulo1}
                                                 </h2>
-                                                <p className={`${element1 ? 'isElement' : ''}`}>Ingresa tus datos en nuestro formulario y cuéntanos más sobre ti y lo que necesitas.</p>
+                                                <p className={`${element1 ? 'isElement' : ''}`}>{creditos?.texto1}</p>
                                             </div>
                                         </div>
                                         <div className="accordion-item">
                                             <div className="accordion-body text-muted">
                                                 <h2 className={`accordion-header ${element2 ? 'isElement' : ''}`}>
-                                                    2. Nuestro equipo de expertos evaluará y analizará la información proporcionada.
+                                                    2. {creditos?.titulo2}
                                                 </h2>
-                                                <p className={`${element2 ? 'isElement' : ''}`}>Valoraremos todos los datos recibidos para ofrecerte las mejores opciones dependiendo de tus necesidades.</p>
+                                                <p className={`${element2 ? 'isElement' : ''}`}>{creditos?.texto2}</p>
                                             </div>
                                         </div>
                                         <div className="accordion-item">
                                             <div className="accordion-body text-muted">
                                                 <h2 className={`accordion-header ${element3 ? 'isElement' : ''}`}>
-                                                    3. Un agente inmobiliario de nuestro equipo se pondrá en contacto contigo para informarte las distintas propuestas.
+                                                    3. {creditos?.titulo3}
                                                 </h2>
-                                                <p className={`${element3 ? 'isElement' : ''}`}>Estamos listos para asesorarte sobre tu crédito y resolver todas tus dudas.</p>
+                                                <p className={`${element3 ? 'isElement' : ''}`}>{creditos?.texto3}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -121,13 +129,13 @@ export default function Creditos(){
                             </div>
                             <div className='right d-none d-sm-none d-md-block'>
                                 <div className='right-cpm' id='element1'>
-                                    <Image src={Img1} alt="pin" width="733" height="820" layout={"fixed"} />
+                                    <Image src={urlForce(creditos?.imagen1?.asset).url()} alt="pin" width="733" height="820" layout={"fixed"} />
                                 </div>
                                 <div className='right-cpm' id='element2'>
-                                    <Image src={Img2} alt="pin" width="733" height="820" layout={"fixed"} />
+                                    <Image src={urlForce(creditos?.imagen2?.asset).url()} alt="pin" width="733" height="820" layout={"fixed"} />
                                 </div>
                                 <div className='right-cpm' id='element3'>
-                                    <Image src={Img3} alt="pin" width="733" height="820" layout={"fixed"} />
+                                    <Image src={urlForce(creditos?.imagen3?.asset).url()} alt="pin" width="733" height="820" layout={"fixed"} />
                                 </div>
                             </div>
                         </div>
@@ -295,3 +303,20 @@ export default function Creditos(){
         </Layout>
     )
 }
+
+export async function getStaticProps(context) {
+    // It's important to default the slug so that it doesn't return "undefined"
+    const creditos = await SanityClient.fetch(
+      `
+        *[_type == "credits" ][0]{
+          ...
+        }
+      `)
+    return {
+      props: {
+        creditos
+      }
+    }
+}
+
+export default Creditos

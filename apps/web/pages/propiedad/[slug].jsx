@@ -29,7 +29,19 @@ function Propiedad({propiedad}){
         setIsViewerOpen(false);
     };
     return(
-        <Layout>
+        <Layout title={`${propiedad?.name} | Lomas Home`} description={propiedad?.name} keywords={`${propiedad?.name}, ${propiedad?.availability}, ${propiedad?.categoria?.category}, ${propiedad?.address}`}>
+            {isViewerOpen && (
+                <ImageViewer
+                    src={array}
+                    currentIndex={ currentImage }
+                    disableScroll={ true }
+                    closeOnClickOutside={ true }
+                    onClose={ closeImageViewer }
+                    backgroundStyle={{
+                        backgroundColor: "rgba(0,0,0,0.9)",
+                    }}
+                />
+            )}
             <section className="block" id="galeria">
                 <div className="holder">
                     <div className="container-fluid">
@@ -44,18 +56,6 @@ function Propiedad({propiedad}){
                                     <Image src={urlForce(img).url()} alt="pin" width={637} height={420} onClick={ () => openImageViewer(index) } />
                                 </div>
                             ))}
-                            {isViewerOpen && (
-                                <ImageViewer
-                                src={array}
-                                currentIndex={ currentImage }
-                                disableScroll={ false }
-                                closeOnClickOutside={ true }
-                                onClose={ closeImageViewer }
-                                backgroundStyle={{
-                                    backgroundColor: "rgba(0,0,0,0.9)",
-                                }}
-                                />
-                            )}
                         </div>
                     </div>
                 </div>

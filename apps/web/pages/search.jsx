@@ -52,7 +52,7 @@ export default function Search(){
 	}, [update, propiedades, cat, disp, numberMin, numberMax]);
     
     return(
-        <Layout>
+        <Layout title="Buscar | Lomas Home">
             <section className="block" id="portada">
                 <div className="portada-carousel">
                     <div id="carouselDesktop" className="carousel slide carousel-fade d-none d-sm-none d-md-block" data-bs-ride="carousel">
