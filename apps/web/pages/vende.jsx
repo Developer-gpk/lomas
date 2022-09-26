@@ -63,11 +63,11 @@ export default function Vende(){
     }, [])
     return(
         <ParallaxProvider>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                <div class="offcanvas-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div className="offcanvas-header">
+                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body">
+                <div className="offcanvas-body">
                     <div className="navbar-nav ms-auto">
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -186,7 +186,7 @@ export default function Vende(){
                                         <div className='flex-content'>
                                         
                                             <div className='image-wrapper'>
-                                                <Image src={ImagenVende1} />
+                                                <Image src={ImagenVende1} alt="Asesor 1" />
                                             </div>
                                             <div className='text-wrapper'>
                                                 <p>Queremos hacer de este proceso una experiencia extraordinaria.</p>
@@ -198,7 +198,7 @@ export default function Vende(){
                                     <div className='content'>
                                         <div className='flex-content'>
                                             <div className='image-wrapper'>
-                                                <Image src={ImagenVende2} />
+                                                <Image src={ImagenVende2} alt="Asesor 2" />
                                             </div>
                                             <div className='text-wrapper'>
                                                 <p>Absorbemos todos los procesos operativos y entregamos un reporte con todos los movimientos relacionados con tus propiedades. </p>
@@ -210,7 +210,7 @@ export default function Vende(){
                                     <div className='content'>
                                         <div className='flex-content'>
                                             <div className='image-wrapper'>
-                                                <Image src={ImagenVende3} />
+                                                <Image src={ImagenVende3} alt="Asesor 2" />
                                             </div>
                                             <div className='text-wrapper'>
                                                 <p>Nos ocuparemos de recolectar el material visual de tus bienes, como fotografías profesionales y creación de recorridos virtuales, para ofrecer una excelente visibilidad.</p>
@@ -225,7 +225,7 @@ export default function Vende(){
                                                 <p>Contamos con asesoría integral para atender cualquier tema legal y de operación. </p>
                                             </div>
                                             <div className='image-wrapper'>
-                                                <Image src={ImagenVende4} />
+                                                <Image src={ImagenVende4} alt="Asesor 4" />
                                             </div>
                                         </div>
                                     </div>
@@ -234,7 +234,7 @@ export default function Vende(){
                                     <div className='content'>
                                         <div className='flex-content'>
                                             <div className='image-wrapper'>
-                                                <Image src={ImagenVende5} />
+                                                <Image src={ImagenVende5} alt="Asesor 5" />
                                             </div>
                                             <div className='text-wrapper'>
                                                 <p>Contamos con asesoría integral para atender cualquier tema legal y de operación. </p>
@@ -255,12 +255,7 @@ export default function Vende(){
                                     <div className='row'>
                                         <div className='col-12 col-md-6'>
                                             <ul className="">
-                                                <li className="">
-                                                    <Image src={Camera} alt="Camara" width="50" height="50" layout={"fixed"} /> 
-                                                    <div>
-                                                        Levantamiento de fotografías profesionales.
-                                                    </div>
-                                                    </li>
+                                                <li className="">Levantamiento de fotografías profesionales.</li>
                                                 <li className="">Mostramos los recorridos virtuales de tu propiedad.</li>
                                                 <li className="">Proporcionamos los planos arquitectónicos.</li>
                                                 <li className="">Damos visibilidad de la propiedad en distintas plataformas digitales.</li>
@@ -281,9 +276,9 @@ export default function Vende(){
                                 </div>
                                 <div className='col-12 col-md-6 image'>
                                     <div className='row'>
-                                        <Image src={LomasHomeIcon} width="115" height="110" className='' />
+                                        <Image src={LomasHomeIcon} width="115" height="110" className='' alt="Asesor 1" />
                                     </div>
-                                    <Image src={phone} width="417" height="534" />
+                                    <Image src={phone} width="417" height="534" alt="Asesor 1" />
                                 </div>
                             </div>
                         </div>
@@ -298,7 +293,7 @@ export default function Vende(){
                                     <a>Quiero vender mi propiedad <Image src={ArrowSend} alt="pin" width="13" height="12" /></a>
                                 </div>
                                 <div className='col-12 col-md-6 d-none d-sm-none d-md-block'>
-                                    <Image src={Asesor} />
+                                    <Image src={Asesor} alt="Asesor 1" />
                                 </div>
                             </div>
                         </div>
@@ -312,7 +307,7 @@ export default function Vende(){
                             </div>
                             <div className='row'>
                                 <div className='col-12 col-md-6 images'>
-                                    <Image src={Asesor2} />
+                                    <Image src={Asesor2} alt="Asesor 2" />
                                 </div>
                                 <div className='col-12 col-md-6'>
                                     <div className='row requisitos'>
@@ -350,7 +345,7 @@ export default function Vende(){
                                         <h2><span>¡Felicidades!</span> estás a punto de comenzar el proceso de venta de tu propiedad</h2>
                                     </div>
                                     <div className='row text-center justify-content-center asesor'>
-                                        <Image src={Asesor3} />
+                                        <Image src={Asesor3} alt="Asesor 3" />
                                     </div>
                                 </div>
                                 <div className='col-12 col-md-7 form'>
