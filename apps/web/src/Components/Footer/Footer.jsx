@@ -16,45 +16,39 @@ export default function Footer(){
                             Lomas Home Inmobiliaria<span> te ofrece la posibilidad de vender o comprar la propiedad que siempre quisiste tener,</span> tenemos en nuestro catálogo los bienes más exclusivos de Puebla.
                         </div>
                         <div className='col-12 col-md-6 fcc-link'>
-                            <ul className="nav justify-content-start">
+                            <ul className="nav justify-content-end">
                                 <Link href={{ pathname: '/[category]', query: { category: 'casa'}}}>
-                                    <a className="nav-link">Casas</a>
+                                    <a className="nav-link">Compra</a>
                                 </Link>
                                 <Link href={{ pathname: '/[category]', query: { category: 'departamento'}}}>
-                                    <a className="nav-link">Departamentos</a>
+                                    <a className="nav-link">Vende tu propiedad</a>
                                 </Link>
                                 <Link href={{ pathname: '/[category]', query: { category: 'terreno'}}}>
-                                    <a className="nav-link">Terrenos</a>
+                                    <a className="nav-link">Créditos</a>
                                 </Link>
                                 <Link href={{ pathname: '/[category]', query: { category: 'local'}}}>
-                                    <a className="nav-link">Local comercial</a>
+                                    <a className="nav-link">Conócenos</a>
                                 </Link>
                                 <Link href={{ pathname: '/[category]', query: { category: 'oficina'}}}>
-                                    <a className="nav-link">Oficinas</a>
-                                </Link>
-                                <Link href="/conocenos">
-                                    <a className="nav-link">Nosotros</a>
-                                </Link>
-                                <Link href='/#contacto'>
                                     <a className="nav-link">Contacto</a>
                                 </Link>
                             </ul>
                         </div>
                     </div>
                     <div className='col-12 col-md-12 fcc-aviso d-flex'>
-                        <div className='col-md-2 derechos'>
-                            <span>Lomas home © 2022.</span><br/>
+                        <div className='col-md-3 derechos'>
+                            <span>Lomas home © 2022.</span>
                             <span>Todos los derechos reservados.</span><br/>
                             <span>AVISO DE PRIVACIDAD</span>
                         </div>
-                        <div className='col-md-8'>
+                        <div className='col-md-7'>
                             <ul className="nav justify-content-start">
                                 <a className="nav-link" href="#"><Image src={Tiktok} alt="Tiktok" width="15" height="18" /></a>
                                 <a className="nav-link" href="#"><Image src={Ig} alt="Instagram" width="15" height="18" /></a>
                                 <a className="nav-link" href="#"><Image src={Fb} alt="Facebook" width="15" height="18" /></a>
                             </ul>
                         </div>
-                        <div className='col-md-2'>
+                        <div className='col-md-2 text-end'>
                             <Image src={Goplek} alt="" width="54" height="15" />
                         </div>
                     </div>

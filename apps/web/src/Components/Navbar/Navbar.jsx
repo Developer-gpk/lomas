@@ -20,7 +20,7 @@ export default function Navbar(){
         window.addEventListener('scroll', chageBackground)
     })
     return(
-        <div className={`navigation ${isActive ? "isActive" : ""} ${isClick ? "isClick" : ""} ${route.pathname == "/propiedad/[slug]" ? "isPropiedad" : ""}`}>
+        <div className={`navigation ${isActive ? "isActive" : ""} ${isClick ? "isClick" : ""} ${route.pathname == "/propiedad/[slug]" ? "isPropiedad" : ""} ${route.pathname.slice(1)}`}>
             <div className={`holder ${isClick ? "isClick" : ""}`}>
                 <nav className="navbar navbar-expand-lg">
                     <div className="container-fluid">

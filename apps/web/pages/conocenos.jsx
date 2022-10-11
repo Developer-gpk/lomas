@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ParallaxBanner } from 'react-scroll-parallax'
 import Layout from '../src/Layout/Layout'
-import { BannerConocenos1, AboutUs, ConocenosImg1, ConocenosImg2, ConocenosImg3, Compra, Venta, Detalles, Grados, Planos, Material, Alcance, Asesoria, ArrowSend, Credito, Arrow1 } from 'ui/constants'
+import { BannerConocenos1, AboutUs, ConocenosImg1, ConocenosImg2, ConocenosImg3, Compra, Venta, Detalles, Grados, Planos, Material, Alcance, Asesoria, ArrowSend, ArrowDown, Credito, Arrow1 } from 'ui/constants'
 import SanityClient from '../libs/Client'
 import imageUrlBuilder from '@sanity/image-url'
 
@@ -53,7 +53,7 @@ function Conocenos({conocenos}){
         window.addEventListener('scroll', changeElement3)
     }, []);
     return(
-        <Layout>
+        <Layout title={"Conocenos"}>
             <section className='block' id='conocenos-banner'>
                 <ParallaxBanner
                     className='parallax-conocenos-desk'
@@ -79,13 +79,13 @@ function Conocenos({conocenos}){
                 />
             </section>
             <section className='block' id='fundad'>
-                <div className='holder'>
+                <div className='holder mx-auto'>
                     <div className='continer-fluid'>
                         <div className='row'>
                             <div className='col-12 col-md-6 image'>
                                 <Image src={AboutUs} alt="pin" width="626" height="530" layout={"fixed"} />
                             </div>
-                            <div className='col-12 col-md-6 my-auto'>
+                            <div className='col-12 col-md-6 text'>
                                 <p>{conocenos?.fundados}</p>
                                 <span>{conocenos?.texto_fundados}</span>
                             </div>
@@ -169,7 +169,11 @@ function Conocenos({conocenos}){
                                     className='parallax-inmobiliarias-desk'
                                     style={{ 
                                         aspectRatio: '2 / 1',
-                                        height: "320px"
+                                        height: "320px",
+                                        width: "638px",
+                                        marginLeft: "auto",
+                                        marginRight: "auto",
+                                        borderRadius: "13px"
                                     }}
                                     layers={[
                                     {
@@ -182,27 +186,28 @@ function Conocenos({conocenos}){
                                         children: (
                                             <section className='row text-center carousel-caption content-creditos'>
                                                 <h1>Si buscas comprar / rentar una propiedad</h1>
+                                                <Image src={ArrowDown} alt="arrow" width="22" height="20" layout={"fixed"} />
                                             </section>
                                         )
                                     }
                                     ]}
                                 />
                                 <ol className="list-group list-group-numbered">
-                                    <li className="list-group-item d-flex justify-content-between align-items-start my-4">
+                                    <li className="list-group-item d-flex justify-content-between align-items-start my-3">
                                         <Image src={Detalles} alt="pin" width="50" height="50" layout={"fixed"} />
                                         <div className="me-auto list-text">
                                             <div className="fw-bold">Detalles de las propiedades </div>
                                             {conocenos?.detalles}
                                         </div>
                                     </li>
-                                    <li className="list-group-item d-flex justify-content-between align-items-start my-4">
+                                    <li className="list-group-item d-flex justify-content-between align-items-start my-3">
                                         <Image src={Grados} alt="pin" width="50" height="50" layout={"fixed"} />
                                         <div className="me-auto list-text">
                                             <div className="fw-bold">Experiencia visual</div>
                                             {conocenos?.experiencia}
                                         </div>
                                     </li>
-                                    <li className="list-group-item d-flex justify-content-between align-items-start my-4">
+                                    <li className="list-group-item d-flex justify-content-between align-items-start my-3">
                                         <Image src={Planos} alt="pin" width="50" height="50" layout={"fixed"} />
                                         <div className="me-auto list-text">
                                             <div className="fw-bold">Planos arquitectónicos</div>
@@ -211,7 +216,7 @@ function Conocenos({conocenos}){
                                     </li>
                                 </ol>
                                 <div className='row'>
-                                    <Link  href="/">
+                                    <Link  href="/#propiedades">
                                         <a className='links mx-auto my-5'>Buscar una propiedad <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} /></a>
                                     </Link>
                                 </div>
@@ -221,7 +226,11 @@ function Conocenos({conocenos}){
                                     className='parallax-inmobiliarias-desk'
                                     style={{ 
                                         aspectRatio: '2 / 1',
-                                        height: "320px"
+                                        height: "320px",
+                                        width: "638px",
+                                        marginLeft: "auto",
+                                        marginRight: "auto",
+                                        borderRadius: "13px"
                                     }}
                                     layers={[
                                     {
@@ -234,27 +243,28 @@ function Conocenos({conocenos}){
                                         children: (
                                             <section className='row text-center carousel-caption content-creditos'>
                                                 <h1>Si buscas vender tu propiedad</h1>
+                                                <Image src={ArrowDown} alt="arrow" width="22" height="20" layout={"fixed"} />
                                             </section>
                                         )
                                     }
                                     ]}
                                 />
                                 <ol className="list-group list-group-numbered">
-                                    <li className="list-group-item d-flex justify-content-between align-items-start my-4">
+                                    <li className="list-group-item d-flex justify-content-between align-items-start my-3">
                                         <Image src={Material} alt="pin" width="50" height="50" layout={"fixed"} />
                                         <div className="me-auto list-text">
                                             <div className="fw-bold">Levantamiento de material </div>
                                             {conocenos?.levantamiento}
                                         </div>
                                     </li>
-                                    <li className="list-group-item d-flex justify-content-between align-items-start my-4">
+                                    <li className="list-group-item d-flex justify-content-between align-items-start my-3">
                                         <Image src={Alcance} alt="pin" width="50" height="50" layout={"fixed"} />
                                         <div className="me-auto list-text">
                                             <div className="fw-bold">Alcance y publicidad</div>
                                             {conocenos?.alcance}
                                         </div>
                                     </li>
-                                    <li className="list-group-item d-flex justify-content-between align-items-start my-4">
+                                    <li className="list-group-item d-flex justify-content-between align-items-start my-3">
                                         <Image src={Asesoria} alt="pin" width="50" height="50" layout={"fixed"} />
                                         <div className="me-auto list-text">
                                             <div className="fw-bold">Asesoría integral</div>
@@ -263,7 +273,9 @@ function Conocenos({conocenos}){
                                     </li>
                                 </ol>
                                 <div className='row'>
-                                    <a className='links mx-auto my-5'>Vender una propiedad <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} /></a>
+                                    <Link href="/vende">
+                                        <a className='links mx-auto my-5'>Vender una propiedad <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} /></a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -278,7 +290,11 @@ function Conocenos({conocenos}){
                                 <div className='row my-auto mx-auto content-text'>
                                     <h3>¿Necesitas un crédito? </h3>
                                     <p>Que nada te impida encontrar la casa de tus sueños. Permite que nuestros agentes inmobiliarios te asesoren sobre qué tipo de crédito es el ideal para tí.</p>
-                                    <span>Solicita asesoramiento <Image src={Arrow1} alt="pin" width="13" height="12" layout={"fixed"} /></span>
+                                    <Link href="/creditos">
+                                        <a>
+                                            <span>Solicita asesoramiento <Image src={Arrow1} alt="pin" width="13" height="12" layout={"fixed"} /></span>
+                                        </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className='col-12 col-md-6 image'>
@@ -289,7 +305,7 @@ function Conocenos({conocenos}){
                 </div>
             </section>
             <section className='block' id="lugares">
-                <div className='holder'>
+                <div className='holder' data-aos="fade-up">
                     <div className='row mx-auto'>
                         <div className='col-md-2 col-12'>
                             <h4>Casas en Venta Puebla</h4>

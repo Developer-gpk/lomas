@@ -84,16 +84,16 @@ function Creditos({creditos}){
                     ]}
                 />
             </section>
-            <section className='block' id='title-creditos'>
+            <section className='block' id='title-creditos' data-aos="fade-up">
                 <div className='holder'>
                     <div className='container-fluid'>
-                        <div className='row text-center my-5 title'>
+                        <div className='row text-center title'>
                             <h2><span>Te brindamos asesoría</span> en tan solo 3 sencillos pasos:</h2>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className='block' id='pasos-creditos'>
+            <section className='block' id='pasos-creditos' data-aos="fade-up">
                 <div className='holder'>
                     <div className='container-fluid'>
                         <div className='row'>
@@ -180,7 +180,7 @@ function Creditos({creditos}){
                                                     <Image src={Scotiabank} alt="pin" width="160" height="33" layout={"fixed"} />
                                                 </span>
                                                 <span className="col">
-                                                    <Image src={HSBC} alt="pin" width="112" height="33" layout={"fixed"} />
+                                                    <Image src={HSBC} alt="pin" width="160" height="33" layout={"fixed"} />
                                                 </span>
                                                 <span className="col">
                                                     <Image src={Santander} alt="pin" width="160" height="33" layout={"fixed"} />
@@ -255,7 +255,7 @@ function Creditos({creditos}){
                 </div>
             </section>
             <section className='block' id="lugares">
-                <div className='holder'>
+                <div className='holder' data-aos="fade-up">
                     <div className='row mx-auto'>
                         <div className='col-md-2 col-12'>
                             <h4>Casas en Venta Puebla</h4>

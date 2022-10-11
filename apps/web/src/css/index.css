@@ -66,6 +66,7 @@
 }
 #portada .portada-carousel .carousel-caption .menu .min-max{
     width: 332px;
+    height: 50px;
 }
 #portada .portada-carousel .carousel-caption .menu select:focus{
     border: black;
@@ -97,6 +98,7 @@
     left: 0;
     top: 10px;
     width: 100%;
+    background: #EEEEEE;
 }
 #portada .portada-carousel .carousel-caption .menu .inputs-range .range input[type=range] {
     -webkit-appearance: none;
@@ -106,6 +108,9 @@
     outline: none;
 } 
 #portada .portada-carousel .carousel-caption .menu .inputs-range .range input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #CC9964;
+}
+#portada .portada-carousel .carousel-caption .menu .inputs-range .range input[type=range]:focus::-moz-range-track  {
     background: #CC9964;
 }
 #portada .portada-carousel .carousel-caption .menu .inputs-range .range input[type=range]:focus::-ms-fill-lower {
@@ -124,7 +129,30 @@
     box-shadow: none;
     border: 0;
 }
+#portada .portada-carousel .carousel-caption .menu .inputs-range .range input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #CC9964;
+    border-radius: 1px;
+    box-shadow: none;
+    border: 0;
+}
 #portada .portada-carousel .carousel-caption .menu .inputs-range .range input[type=range]::-webkit-slider-thumb {
+    z-index: 2;
+    position: relative;
+    box-shadow: 0px 0px 0px #000;
+    border: 1px solid #CC9964;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #CC9964;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+}
+#portada .portada-carousel .carousel-caption .menu .inputs-range .range input[type=range]::-moz-range-thumb {
     z-index: 2;
     position: relative;
     box-shadow: 0px 0px 0px #000;
@@ -152,7 +180,10 @@
     margin: 0 auto;
     max-width: 1300px;
     width: 100%;
-    padding: 0px 70px;
+}
+#propiedades .holder .container-fluid{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 #propiedades h2{
     font-family: 'Silka-bold';
@@ -193,13 +224,21 @@
 }
 #conocenos .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 0px 70px;
+    max-height: 550px;
+    height: 100%;
 }
-#conocenos .conocenos-parallax-desk div:first-child{
-    filter: brightness(40%);
+#conocenos .conocenos-parallax-desk div:first-child:after{
+    position: absolute;
+    content:"";
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background-image: linear-gradient(270deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.85) 100%) !important;
 }
+
 #conocenos .conocenos-parallax-desk .content p{
     position: absolute;
     top: 118px;
@@ -223,9 +262,8 @@
 }
 #logo .holder{
     margin: -8% auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 0px 70px;
 }
 #logo img{
     width: 196px !important;
@@ -237,35 +275,36 @@
 #contacto{
 
 }
-#contacto .parallax-contacto-desk{
+#contacto .parallax-contacto-desk {
     width: 1440px;
     height: 1116px;
 }
+
 #contacto .holder{
     margin: 30% auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 0px 180px;
+    padding: 0px 110px;
 }
-#contacto form .row{
-    margin-left: 0;
-    margin-right: 0;
-}
-#contacto form h3{
+#contacto .holder .container-fluid h3{
     font-family: 'Silka-bold';
     font-size: 34px;
     color: #181D24;
     margin: 30px auto;
 }
-#contacto form p{
-    font-family: 'Silka-bold';
+#contacto .holder .container-fluid p{
+    font-family: 'Silka-regular', sans-serif;
     font-size: 24px;
     color: #181D24;
     margin: 0px 0px 40px 0px;
 }
-#contacto form p span{
+#contacto .holder .container-fluid p span{
     font-family: 'Silka-regular', sans-serif;
     color: #CC9964;
+}
+#contacto form .row{
+    margin-left: 0;
+    margin-right: 0;
 }
 #contacto form .input-contact input{
     background: #EEEEEE;
@@ -284,6 +323,9 @@
 }
 #contacto form .options-contact input:checked{
     background: #CC9964;
+    background: #CC9964;
+    border: 1px solid black;
+    box-shadow: none;
 }
 #contacto form .options-contact label{
     font-family: 'Silka-regular', sans-serif;
@@ -296,6 +338,7 @@
     font-size: 12px;
     color: #515761;
     height: 210px;
+    background: #EEEEEE;
 }
 #contacto form .submit-contact{
     text-align: end;
@@ -304,7 +347,9 @@
     background: #CC9964;
     font-size: 18px;
     color: #EEEEEE;
-    width: 30%;
+    width: 150px;
+    height: 50px;
+    font-family: 'Silka-bold';
 }
 #contacto form .finalizado{
     align-items: center;
@@ -324,20 +369,23 @@
 }
 #lugares{
     background: #EEEEEE;
+    min-height: 280px;
 }
 #lugares .holder{
     margin: 0px auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 50px 70px;
+    height: 100%;
+    padding: 80px 0;
 }
 #lugares .row div{
     width: 20%;
 }
 #lugares .row h4{
-    font-family: 'Silka-regular', sans-serif;
+    font-family: 'Silka-bold';
     font-size: 9px;
     color: #515761;
+    margin-bottom: 13px;
 }
 #lugares .row ul{
     list-style: none;
@@ -351,15 +399,15 @@
         height: 1300px !important;
     }
     #contacto .holder{
-        margin: 25% auto;
+        margin: 22% auto;
     }
 }
-@media (max-width: 1330px){
+@media (max-width: 1300px){
     #contacto .parallax-contacto-desk{
         height: 1116px !important;
     }
     #contacto .holder{
-        margin: 28% auto;
+        margin: 20% auto;
     }
 }
 @media (max-width: 767px){

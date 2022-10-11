@@ -16,7 +16,7 @@ export default function Stepper(){
                             onClick={() => context.dispatch({ type: "prev" })}
                             disabled={context.state.step === 1}
                         >
-                        <Image src={Arrow1} alt="pin" width="13" height="12" layout={"fixed"} /> Atras
+                            <Image src={Arrow1} alt="pin" width="13" height="12" layout={"fixed"} /> Atras
                         </a>
                     )} 
                 </div>

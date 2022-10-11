@@ -32,17 +32,18 @@
 #galeria .holder .wrapper div:nth-child(1n+2) span:hover{
     filter: brightness(40%);
 }
-#galeria .holder .wrapper #ReactSimpleImageViewer{
+ #ReactSimpleImageViewer{
     margin: 0 !important;
+    z-index: 9999 !important;
 }
 #content{
 
 }
 #content .holder{
     margin: 0px auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 57px 70px;
+    padding: 50px 0px;
 }
 #content .sku{
     font-family: 'Silka-regular', sans-serif;
@@ -136,6 +137,68 @@
     width: 100% !important;
     height: 482px !important;
 }
+#content .form {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-top: 1px solid #D8D8D8;
+    border-bottom: 1px solid #D8D8D8;
+}
+#content .form h3{
+    height: 28px;
+    font-family: 'Silka-bold';
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #181D24;
+}
+#content .form span{
+    height: 31px;
+    font-family: 'Silka-regular', sans-serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+#content .form .formulario {
+    margin-top: 50px;
+}
+#content .form .formulario input{
+    width: 270px;
+    height: 45px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: #F4F4F4;
+    border: 1px solid #515761;
+    padding-top: 13px;
+    padding-bottom: 14px;
+    padding-left: 20px;
+    border-radius: 5px;
+    font-family: 'Silka-regular', sans-serif;
+    color: #515761;
+    font-size: 12px;
+}
+#content .form .formulario input:focus-visible{
+    outline: none;
+}
+#content .form .enviar {
+    margin-top: 30px;
+    text-align: end;
+}
+#content .form .enviar button {
+    width: 150px;
+    height: 50px;
+    background: #CC9964;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: 'Silka-bold';
+    border: none;
+    border-radius: 6px;
+}
+.hubsport-form{
+    background: #EEEEEE;
+    height: auto;
+}
+.hubsport-form #hubspotForm{
+    position: sticky;
+    top: 92px;
+}
 @media (max-width: 767px){
     #galeria{
         background: #FFFFFF;
@@ -194,5 +257,31 @@
     #content .video div{
         width: 100% !important;
         height: 233px !important;
+    }
+    #content .form h3{
+        font-size: 20px;
+    }
+    #content .form span{
+        font-size: 18px;
+    }
+    #content .form .formulario {
+        margin-top: 40px;
+    }
+    #content .form .formulario input{
+        width: 100%;
+        height: 45px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #content .form .enviar {
+        margin-top: 20px;
+        text-align: end;
+    }
+    #content .form .enviar button {
+        width: 116px;
+        height: 40px;
+        font-size: 16px;
     }
 }

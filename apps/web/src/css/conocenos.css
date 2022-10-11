@@ -5,7 +5,8 @@
     filter: brightness(40%);
 }
 #conocenos-banner .parallax-conocenos-desk .carousel-caption.content-creditos{
-    bottom: 219px;
+    bottom: 50%;
+    top: 45%;
 }
 #conocenos-banner .parallax-conocenos-desk .carousel-caption.content-creditos h1{
     font-family: 'Silka-bold';
@@ -16,10 +17,13 @@
 
 }
 #fundad .holder{
-    margin: 163px auto;
-    max-width: 1330px;
+    margin-top: 163px;
+    max-width: 1300px;
     width: 100%;
-    padding: 0px 70px;
+}
+#fundad .text{
+    margin-top: 235px;
+    margin-left: -40px;
 }
 #fundad p{
     font-family: 'Silka-bold';
@@ -35,16 +39,18 @@
 
 }
 #conocenos-title .holder{
-    margin: 152px auto;
-    max-width: 1330px;
+    margin-top: 150px;
+    max-width: 1300px;
     width: 100%;
     padding: 0px 300px;
+    margin-bottom: 80px;
 }
 #conocenos-title h3{
     text-align: center;
     font-family: 'Silka-regular', sans-serif;
     font-size: 34px;
     color: #181D24;
+    width: 638px;
 }
 #conocenos-title span{
     font-family: 'Silka-bold';
@@ -54,10 +60,9 @@
 
 }
 #inmobiliarias .holder{
-    margin: 152px auto;
-    max-width: 1330px;
+    margin: auto auto;
+    max-width: 1300px;
     width: 100%;
-    padding: 0px 70px;
 }
 #inmobiliarias .parallax-inmobiliarias-desk div:first-child{
     filter: brightness(40%);
@@ -65,16 +70,26 @@
 #inmobiliarias .parallax-inmobiliarias-desk .carousel-caption.content-creditos{
     bottom: 30%;
 }
+#inmobiliarias .parallax-inmobiliarias-desk .carousel-caption.content-creditos span{
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
 #inmobiliarias .parallax-inmobiliarias-desk .carousel-caption.content-creditos h1{
     font-family: 'Silka-bold';
     font-size: 28px;
     color: #CC9964;
+}
+#inmobiliarias .list-group {
+    margin-top: 80px;
 }
 #inmobiliarias .list-group .list-group-item::before{
     content: none;
 }
 #inmobiliarias .list-group .list-group-item{
     border: none;
+    width: 472px !important;
+    margin-left: auto;
+    margin-right: auto;
 }
 #inmobiliarias .list-group .list-text{
     margin-left: 1rem;
@@ -102,28 +117,33 @@
     text-decoration: none;
 }
 #credito{
-    background: #EEEEEE;
+    background: rgba(238, 238, 238, 0.7);
 }
 #credito .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 0px 70px;
 }
 #credito .content-text{
+    width: 416px;
     padding-top: 160px;
-    padding-left: 110px;
-    padding-right: 70px;
+    margin-left: auto;
+    margin-right: auto;
 }
 #credito .content-text h3{
     font-family: 'Silka-bold';
     font-size: 28px;
     color: #CC9964;
+    margin-bottom: 29px;
 }
 #credito .content-text p{
     font-family: 'Silka-regular', sans-serif;
     font-size: 20px;
     color: #515761;
+    margin-bottom: 40px;
+}
+#credito .content-text a{
+    text-decoration: none;
 }
 #credito .content-text span{
     font-family: 'Silka-regular', sans-serif;
@@ -151,11 +171,15 @@
         padding-right: 17px;
     }
     #fundad .image{
-        margin-bottom: 70px;
+        margin-bottom: 35px;
     }
     #fundad .image span{
         width: 380px !important;
         height: 321px !important;
+    }
+    #fundad .text{
+        margin-top: 35px;
+        margin-left: 0px;
     }
     #fundad p{
         font-family: 'Silka-bold';
@@ -186,14 +210,24 @@
         padding-left: 0;
         padding-right: 0;
     }
+    #inmobiliarias .parallax-inmobiliarias-desk{
+        width: 414px !important;
+        height: 207px !important;
+    }
     #inmobiliarias .parallax-inmobiliarias-desk .carousel-caption.content-creditos h1{
         font-size: 26px;
+    }
+    #inmobiliarias .list-group .list-group-item{
+        width: 100% !important;
+    }
+    #inmobiliarias .list-group {
+        margin-top: 30px;
     }
     #inmobiliarias .list-group .list-group-item.d-flex{
         display: block !important;
     }
     #inmobiliarias .list-group .list-group-item span{
-        margin: 0 150px !important;
+        margin: 0 165px !important;
     }
     #inmobiliarias .list-group .list-text{
         margin-left: 0rem;
@@ -209,6 +243,7 @@
         padding-right: 17px;
         padding-bottom: 117px;
         text-align: center;
+        width: 100%;
     }
     #credito .image{
         padding-right: 0;

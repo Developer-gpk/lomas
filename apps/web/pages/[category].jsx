@@ -27,6 +27,11 @@ function Category(){
         const img = builder.image(soruce)
         return img
     }
+    function separator(numb) {
+        var str = numb.toString().split(".");
+        str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return str.join(".");
+    }
     function fetchPropieadesWithOutFilter(){
         if(update == search){
             sanityClient.fetch(
@@ -75,7 +80,7 @@ function Category(){
                     </div>
                 </div>
             </section>
-            <section className='block' id='form'>
+            <section className='block' id='form' data-aos="fade-up">
                 <div className='holder'>
                     <div className='container-fluid'>
                         <SearchCategoryDesk />
@@ -83,7 +88,7 @@ function Category(){
                     </div>
                 </div>
             </section>
-            <section className='block' id='category-propiedades'>
+            <section className='block' id='category-propiedades' data-aos="fade-up">
                 <div className='holder'>
                     <div className='container-fluid'>
                         <ul className='propiedades'>
@@ -101,7 +106,7 @@ function Category(){
                                         </div>
                                         <h5 className="card-title">{propiedad?.name}</h5>
                                         <p className="card-text">{propiedad?.address}</p>
-                                        <h4 className="price">${propiedad?.sale}</h4>
+                                        <h4 className="price">${separator(propiedad?.sale)}</h4>
                                         <div className='row comp'>
                                             <div className='col'><Image src={M2_Const} alt="pin" width="16" height="16" layout={"fixed"} />{propiedad?.construction > 0 ? <>{propiedad?.construction}</> : <>0</>}<span>m2</span></div>
                                             <div className='col'><Image src={Rec} alt="pin" width="16" height="16" layout={"fixed"} /> {propiedad?.bedrooms > 0 ? <>{propiedad?.bedrooms}</> : <>0</> } <span>Rec.</span></div>
@@ -119,57 +124,11 @@ function Category(){
                     </div>
                 </div>
             </section>
-            <section className='block' id='empieza'>
+            <section className='block' id='empieza' data-aos="fade-up">
                 <div className='holder'>
                 <BannerCategoryFooter category={route.query.category} />
                     <div className='container-fluid'>
 
-                    </div>
-                </div>
-            </section>
-            <section className='block' id="lugares">
-                <div className='holder'>
-                    <div className='row mx-auto'>
-                        <div className='col-md-2 col-12'>
-                            <h4>Casas en Venta Puebla</h4>
-                            <ul>
-                                <li><a>Casas en Venta en Lomas de Angelópolis</a></li>
-                                <li><a>Casas en Venta Recta a Cholula</a></li>
-                                <li><a>Casas en Venta en Forjadores</a></li>
-                                <li><a>Casas en Venta en San Andrés Cholula</a></li>
-                                <li><a>Casas en Venta en Cuautlancingo</a></li>
-                                <li><a>Casas en Venta en Momoxpan</a></li>
-                            </ul>
-                        </div>
-                        <div className='col-md-2 col-12'>
-                            <h4>Terreno en Venta en Puebla</h4>
-                            <ul>
-                                <li><a>Terrenos en Venta en Lomas de Angelópolis</a></li>
-                                <li><a>Terrenos en Venta en San Andrés Cholula </a></li>
-                                <li><a>Terrenos en Venta en San Martín Texmelucan</a></li>
-                                <li><a>Terrenos en Venta Bioparque Estrella</a></li>
-                            </ul>
-                        </div>
-                        <div className='col-md-2 col-12'>
-                            <h4>Departamentos en Venta en Puebla</h4>
-                            <ul>
-                                <li><a>Departamentos en Venta en La Vista</a></li>
-                                <li><a>Departamentos en Venta junto a Lomas de Angelópolis</a></li>
-                            </ul>
-                        </div>
-                        <div className='col-md-2 col-12'>
-                            <h4>Departamentos en Renta en Puebla</h4>
-                            <ul>
-                                <li><a>Departamentos en Renta en Tlaxclancingo </a></li>
-                                <li><a>Departamentos en Renta junto a Lomas de Angelópolis</a></li>
-                            </ul>
-                        </div>
-                        <div className='col-md-2 col-12'>
-                            <h4>Oficinas en Renta en Puebla </h4>
-                            <ul>
-                                <li><a>Oficinas en Renta en Atlixcayotl</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </section>

@@ -3,15 +3,13 @@
 }
 #category-banner .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 0px 70px;
 }
 #category-banner .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 0px 70px;
 }
 #category-banner .parallax-category-desk div:first-child{
     filter: brightness(40%);
@@ -20,7 +18,7 @@
     bottom: 35%;
 }
 #category-banner .parallax-category-desk .carousel-caption.content-category h1{
-    font-family: 'Silka-regular', sans-serif;
+    font-family: 'Silka-bold';
     font-size: 34px;
     color: #FFFFFF;
 }
@@ -31,18 +29,19 @@
 }
 #category-propiedades .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 0px 70px;
+    margin-top: 25px;
 }
 #empieza{
 
 }
 #empieza .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 50px 70px;
+    margin-top: 156px;
+    margin-bottom: 156px;
 }
 #empieza .parallax-category-banner-desk{
     border-radius: 15px;
@@ -68,9 +67,9 @@
 }
 #form .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 25px 70px 25px 70px;
+    padding: 25px 0px 25px 0px;
 }
 #form .menu{
     width: 100%;
@@ -181,7 +180,8 @@
         padding: 0px 0px;
     }
     #empieza .holder{
-        padding: 110px 0px;
+        margin-top: 70px;
+        margin-bottom: 110px;
     }
     #empieza .parallax-category-banner-desk{
         border-radius: 0px;

@@ -82,6 +82,7 @@ import Asesor from './landing/asesor.webp'
 import Asesor2 from './landing/asesor2.webp'
 import Asesor3 from './landing/asesor3.webp'
 import LomasMobile from './icons/lomas-home-movil.svg'
+import ArrowDown from './icons/down-arrow.svg'
 
 export {
     Logo,
@@ -167,5 +168,6 @@ export {
     ImagenVende5,
     Asesor,
     Asesor2,
-    Asesor3
+    Asesor3,
+    ArrowDown
 }

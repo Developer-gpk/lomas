@@ -11,6 +11,9 @@
     margin: 0px 0px 0px;
     padding: 0px 0px;
 }
+.propiedades a{
+    text-decoration: none;
+}
 .propiedades .propiedad{
     background: #EEEEEE;
     border: none;
@@ -65,8 +68,10 @@
     color: #181D24;
     text-decoration: none;
 }
-.propiedad .card-body .btn-propi:hover a{
-    
+.propiedad .card-body:hover .btn-propi a{
+    font-family: 'Silka-bold';
+    transform: translateX(275px);
+    transition: all 1s ease-in-out;
 }
 
 @media (max-width: 767px){

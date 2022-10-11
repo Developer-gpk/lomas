@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Layout from "../src/Layout/Layout"
 import { Formik, Form, Field } from 'formik'
@@ -29,15 +29,18 @@ import SearchMobile from "../src/Components/Search/SearchMobile"
 import PropiedadList from '../src/Components/List/propiedad'
 import SanityClient from '../libs/Client'
 import imageUrlBuilder from '@sanity/image-url'
+import { ScrollParallax } from 'react-just-parallax';
 
 const builder = imageUrlBuilder(SanityClient)
 
 function Web({home}) {
+  const parallax = useRef()
   console.log(home)
   function urlForce(soruce){
     const img = builder.image(soruce)
     return img
   }
+
   return (
     <Layout title="Lomas Home" description={home.descripcion} keywords={home.keywords}>
       <section className="block" id="portada">
@@ -60,7 +63,7 @@ function Web({home}) {
                   />
                 </div>
               ))}
-              <div className="carousel-caption">
+              <div className="carousel-caption" data-aos="fade-up">
                 <h3>¿Qué tipo de propiedad estás buscando?</h3>
                 <SearchDesk />
               </div>
@@ -84,7 +87,7 @@ function Web({home}) {
                   />
                 </div>
               ))}
-              <div className="carousel-caption">
+              <div className="carousel-caption" data-aos="fade-up">
                 <h3>¿Qué tipo de propiedad estás buscando?</h3>
                 <SearchMobile />
               </div>
@@ -92,7 +95,7 @@ function Web({home}) {
           </div>
         </div>
       </section>
-      <section className="block" id="propiedades">
+      <section className="block" id="propiedades" data-aos="fade-up">
         <div className="holder">
           <div className="container-fluid">
             <h2 className="text-center my-5">Propiedades</h2>
@@ -151,7 +154,8 @@ function Web({home}) {
             className='conocenos-parallax-desk'
             style={{ 
               aspectRatio: '2 / 1',
-              zIndex: "2"
+              zIndex: "2",
+              height: "550px"
             }}
             layers={[
               {
@@ -161,7 +165,7 @@ function Web({home}) {
               },
               {
                 children: (
-                  <section className='container-fluid'>
+                  <section className='container-fluid' data-aos="fade-up">
                     <section className='row content'>
                       <p>
                         {home.texto1} 
@@ -182,7 +186,9 @@ function Web({home}) {
       <section className='block' id="logo">
         <div className='holder'>
           <div className='container-fluid text-end'>
-            <Image src={LomasHomeIcon} alt="pin" width="196" height="186" layout={"fixed"} />
+            <ScrollParallax>
+              <Image src={LomasHomeIcon} alt="pin" width="196" height="186" layout={"fixed"} />
+            </ScrollParallax>
           </div>
         </div>
       </section>
@@ -202,7 +208,7 @@ function Web({home}) {
             },
             {
               children: (
-                <div className='holder'>
+                <div className='holder' data-aos="fade-up">
                   <div className='my-5'>
                     <div className='row'>
                       <div className='container-fluid'>
@@ -285,16 +291,16 @@ function Web({home}) {
                   </div>
                   <div className='row mx-auto'>
                     <div className='col-md-2'>
-                      <Image src={Call} alt="pin" width="15" height="15" layout={"fixed"} /> (222) 226 7440
+                      <Image src={Call} alt="pin" width="25" height="25" layout={"fixed"} /> (222) 226 7440
                     </div>
                     <div className='col-md-2'>
-                      <Image src={Wa} alt="pin" width="15" height="15" layout={"fixed"} /> 2213 634 540
+                      <Image src={Wa} alt="pin" width="25" height="25" layout={"fixed"} /> 2213 634 540
                     </div>
                     <div className='col-md-8'>
-                      <Image src={Mail} alt="pin" width="15" height="15" layout={"fixed"} /> contacto@lomashome.com.mx
+                      <Image src={Mail} alt="pin" width="25" height="25" layout={"fixed"} /> contacto@lomashome.com.mx
                     </div>
                     <div className='col-md-10 mt-4'>
-                      <Image src={Pin} alt="pin" width="15" height="15" layout={"fixed"} />Niños Héroes 4927 · Ofic. 2 Reserva Territorial Atlixcayotl <br/>  C.P. 72190 Col. San Miguel La Rosa, Puebla, Pue.
+                      <Image src={Pin} alt="pin" width="25" height="25" layout={"fixed"} />Niños Héroes 4927 · Ofic. 2 Reserva Territorial Atlixcayotl <br/>  C.P. 72190 Col. San Miguel La Rosa, Puebla, Pue.
                     </div>
                   </div>
               </div>
@@ -304,7 +310,7 @@ function Web({home}) {
         />
       </section>
       <section className='block' id="lugares">
-        <div className='holder'>
+        <div className='holder' data-aos="fade-up">
           <div className='row mx-auto'>
             <div className='col-md-2 col-12'>
               <h4>Casas en Venta Puebla</h4>

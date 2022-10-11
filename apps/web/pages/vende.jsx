@@ -69,60 +69,7 @@ export default function Vende(){
     }, [])
     return(
         <ParallaxProvider>
-            <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                <div className="offcanvas-header">
-                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div className="offcanvas-body">
-                    <div className="navbar-nav ms-auto">
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Comprar
-                                <Image src={Dropdown} alt="pin" width="20" height="13" layout={"fixed"} />
-                            </a>
-                            <ul className="dropdown-menu text-center">
-                                <li>
-                                    <Link href={{ pathname: '/[category]', query: { category: 'casa'}}}>
-                                        <a className="dropdown-item">Casas</a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href={{ pathname: '/[category]', query: { category: 'departamento'}}}>
-                                        <a className="dropdown-item">Departamentos</a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href={{ pathname: '/[category]', query: { category: 'terreno'}}}>
-                                        <a className="dropdown-item">Terrenos</a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href={{ pathname: '/[category]', query: { category: 'local'}}}>
-                                        <a className="dropdown-item">Locales comerciales</a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href={{ pathname: '/[category]', query: { category: 'oficina'}}}>
-                                        <a className="dropdown-item">Oficinas</a>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </li>
-                        <Link href="/vende">
-                            <a className="nav-link">Vende tu propiedad</a>
-                        </Link>
-                        <Link href="/creditos">
-                            <a className="nav-link">Créditos</a>
-                        </Link>
-                        <Link href="/conocenos">
-                            <a className="nav-link">Conócenos</a>
-                        </Link>
-                        <Link href='/#contacto'>
-                            <a className="nav-link">Contacto</a>
-                        </Link>
-                    </div>           
-                </div>
-            </div>
+            
             <section className={`navi ${isActive ? "isActive" : ""}`}>
                 <div className='holder'>
                     <nav className='navbar navbar-expand-lg'>
@@ -140,28 +87,61 @@ export default function Vende(){
                             <button onClick={() => setIsClick(!isClick)} className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                                 <i className="bi bi-list"></i>
                             </button>
-                            
                         </div>
                     </nav>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#">Comprar</a>
+                        </li>
+                        <li>
+                            <Link href="/vende">
+                                <a href="">Vende tu propiedad</a>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/creditos">
+                                <a href="#">Créditos</a>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/conocenos">
+                                <a href="#">Conócenos</a>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/#contacto">
+                                <a href="#">Contacto</a>
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
                 </div>
             </section>
+            
             <div className='wrapper'>
                 <section className='block' id='landing'>
                     <div className='holder'>
                         <div className='row'>
-                            <div className='col-12 col-md-6 title'>
+                            <div className='col-12 col-md-5 title'>
                                 <div className='container-fluid'>
                                     <h1>Es hora de vender tu propiedad de manera eficiente</h1>
                                     <span>Olvídate del estrés y la espera innecesaria.</span><br/>
                                     <a>Quiero vender mi propiedad <Image src={ArrowSend} alt="pin" width="13" height="12" /></a>
                                 </div>
                             </div>
-                            <div className='col-12 col-md-6 image'>
+                            <div className='col-12 col-md-7 image'>
                                 <ParallaxBanner 
                                     className=''
                                     style={{
                                         aspectRatio: '2/1',
-                                        height: '580px'
+                                        height: '580px',
+                                        width: "818px"
                                     }}
                                     layers={[
                                         {
@@ -301,7 +281,7 @@ export default function Vende(){
                                     <h2><span>¡Llegaste al lugar indicado!,</span> empieza ahora a ofertar tus bienes con nosotros.</h2>
                                     <a>Quiero vender mi propiedad <Image src={ArrowSend} alt="pin" width="13" height="12" /></a>
                                 </div>
-                                <div className='col-12 col-md-6 d-none d-sm-none d-md-block'>
+                                <div className='col-12 col-md-6 d-none d-sm-none d-md-block img'>
                                     <Image src={Asesor} alt="Asesor 1" />
                                 </div>
                             </div>

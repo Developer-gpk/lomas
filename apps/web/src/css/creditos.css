@@ -25,18 +25,23 @@
     width: 148px;
 }
 #title-creditos{
-
+    margin-top: 100px;
+    margin-bottom: 80px;
 }
 #title-creditos .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 0px 70px;
+    padding: 0px 0px;
 }
 #title-creditos .title{
     font-family: 'Silka-regular', sans-serif;
     font-size: 34px;
     color: #181D24;
+    justify-content: center;
+}
+#title-creditos .title h2{
+    width: 638px;
 }
 #title-creditos .title span{
     color: #CC9964;
@@ -47,9 +52,9 @@
 }
 #pasos-creditos .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 0px 70px;
+    padding: 0px 0px;
 }
 #pasos-creditos .holder .row{
     position: relative;
@@ -107,14 +112,17 @@
 #pasos-creditos .holder .row .right .right-cpm span{
     height: 100vh !important;
 }
+#pasos-creditos .holder .row .right .right-cpm span img{
+    object-fit: cover !important;
+}
 #title-banks{
     
 }
 #title-banks .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 0px 70px;
+    padding: 0px 0px;
 }
 #title-banks h2{
     text-align: center;
@@ -133,9 +141,9 @@
 }
 #banks .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 0px 70px;
+    padding: 0px 0px;
 }
 #banks .parallax-banks-desk{
     border-radius: 15px;
@@ -186,9 +194,9 @@
 }
 #form-multistep .holder{
     margin: 150px auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
-    padding: 0px 70px;
+    padding: 0px 0px;
 }
 #form-multistep .holder h3{
     font-family: 'Silka-regular', sans-serif;
@@ -246,17 +254,35 @@
 }
 #form-multistep .stepControl a.submit{
     font-family: 'Silka-regular', sans-serif;
-    font-size: 12px;
+    font-size: 18px;
     text-decoration: none;
+    margin-top: -10px;
+    width: 148px;
+    height: 45px;
+    text-align: center;
+    align-items: center;
+    padding-top: 11px;
+    margin-right: 104px;
+    background: #CC9964;
+    color: #FFFFFF;
+    border-radius: 6px;
 }
 @media (max-width: 767px){
     #banner-creditos .parallax-creditos-desk .carousel-caption.content-creditos h1{
         font-size: 26px;
     }
+    #banner-creditos .parallax-creditos-desk .carousel-caption{
+        left: 0;
+        right: 0;
+    }
     #banner-creditos .parallax-creditos-desk .carousel-caption.content-creditos .button a{
         font-size: 16px;
         height: 40px;
         width: 126px;
+    }
+    #title-creditos{
+        margin-top: 70px;
+        margin-bottom: 70px;
     }
     #title-creditos .holder{
         padding: 0px 18px;

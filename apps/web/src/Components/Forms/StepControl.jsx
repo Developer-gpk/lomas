@@ -1,12 +1,14 @@
 import React, { useContext } from 'react'
+import Image from 'next/image'
 import { FormContext } from './Form'
+import { Arrow1, ArrowSend } from 'ui/constants'
 
 export default function StepperControl(props){
     const context = useContext(FormContext)
     return(
         <div className='container-fluid stepControl'>
             <div className='row'>
-                <div className='col-2 col-md-2'>
+                <div className='col-2 col-md-2 atras'>
                     {context.state.step === 1 ? null : (
                         <a
                             type='button'
@@ -14,21 +16,21 @@ export default function StepperControl(props){
                             onClick={() => context.dispatch({ type: "prev" })}
                             disabled={context.state.step === 1}
                         >
-                        Atras
+                         <Image src={Arrow1} alt="pin" width="13" height="12" layout={"fixed"} /> Atras
                         </a>
                     )} 
                 </div>
-                <div className='col-8 col-md-8'>
+                <div className='col-8 col-md-7'>
 
                 </div>
-                <div className='col-2 col-md-2'>
+                <div className='col-2 col-md-3'>
                     {context.state.step === 3 ? (
                         <a className='submit' type="submit">
-                            Enviar
+                            Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} />
                         </a>
                     ):(
                         <a className='action' type='button' onClick={() => context.dispatch({ type: "next" })}>
-                            Siguiente
+                            Siguiente <Image src={Arrow1} alt="pin" width="13" height="12" layout={"fixed"} /> 
                         </a>
                     )}
                 </div>
