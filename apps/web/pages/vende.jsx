@@ -68,8 +68,7 @@ export default function Vende(){
         window.addEventListener('scroll', chageBackground)
     }, [])
     return(
-        <ParallaxProvider>
-            
+        <ParallaxProvider>         
             <section className={`navi ${isActive ? "isActive" : ""}`}>
                 <div className='holder'>
                     <nav className='navbar navbar-expand-lg'>

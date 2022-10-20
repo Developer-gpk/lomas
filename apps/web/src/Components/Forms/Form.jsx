@@ -4,6 +4,7 @@ import PersonalData from './PersonalData';
 import StepperControl from './StepControl';
 import NumbersData from './NumbersData';
 import DomicilioData from './DomicilioData';
+import * as Yup from 'yup'
 
 export const FormContext = React.createContext();
 
@@ -43,6 +44,24 @@ export default function Forms(){
         ciudad: '',
         estado: ''
     }
+    const validation = Yup.object().shape({
+        nombre: Yup.string().required(),
+        apellidos: Yup.string().required(),
+        nacimiento: Yup.string().required(),
+        celular: Yup.string().min(10).max(10).required(),
+        correo: Yup.string().email().required(),
+        valorInmueble: Yup.mixed().required(),
+        enganche: Yup.string().required(),
+        ahorroMinimo: Yup.string().required(),
+        tipoCredito: Yup.mixed().required(),
+        plazo: Yup.mixed().required(),
+        ingresos: Yup.mixed().required(),
+        cp: Yup.string().required(),
+        colonia: Yup.string().required(),
+        municipio: Yup.string().required(),
+        ciudad: Yup.string().required(),
+        estado: Yup.string().required()
+    })
     const submitHandler = (values, onSubmitProp) =>{
         console.log(values)
     }
@@ -52,6 +71,7 @@ export default function Forms(){
             <FormContext.Provider value={{ state: state, dispatch: dispatch}} >
                 <Formik
                     initialValues={initialValues}
+                    validationSchema={validation}
                     onSubmit={async (values, { setSubmitting }) =>{
                         console.log(values)
                         await setTimeout(() =>{
@@ -60,14 +80,14 @@ export default function Forms(){
                         setSubmitting(false)
                     }}
                 >
-                    {(formik) => {
+                    {({isSubmitting, errors, touched}) => {
                         return(
                             <Form autoComplete='off'>
-                                {!formik.isSubmitting ? (
+                                {!isSubmitting ? (
                                     <div>
-                                        {state.step === 1 ? <PersonalData /> : null}
-                                        {state.step === 2 ? <NumbersData /> : null}
-                                        {state.step === 3 ? <DomicilioData /> : null}
+                                        {state.step === 1 ? <PersonalData errors={errors} touched={touched} /> : null}
+                                        {state.step === 2 ? <NumbersData errors={errors} touched={touched} /> : null}
+                                        {state.step === 3 ? <DomicilioData errors={errors} touched={touched} /> : null}
                                         <StepperControl />
                                     </div>
                                 ): (

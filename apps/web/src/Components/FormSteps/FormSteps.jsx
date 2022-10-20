@@ -4,6 +4,7 @@ import Contrato from './Contrato';
 import Stepper from './Stepper';
 import Contacto from './Contacto';
 import Propiedad from './Propiedad';
+import * as Yup from 'yup'
 
 
 export const FormContext = React.createContext();
@@ -41,6 +42,21 @@ export default function FormSteps(){
         antiguedad: '',
         comentario: ''
     }
+    const validation = Yup.object().shape({
+        terminos: Yup.bool().oneOf([true]).required(),
+        nombre: Yup.string().required(),
+        apellidoP: Yup.string().required(),
+        apellidoM: Yup.string().required(),
+        celular: Yup.string().required(),
+        correo: Yup.string().email().required(),
+        cp: Yup.string().required(),
+        colonia: Yup.string().required(),
+        tipoPropiedad: Yup.mixed().required(),
+        m2: Yup.string().required(),
+        m2Construccion: Yup.string().required(),
+        antiguedad: Yup.mixed().required(),
+        comentario: Yup.string()
+    })
     const submitHandler = (values, onSubmitProp) =>{
         console.log("enviado")
     }
@@ -58,12 +74,12 @@ export default function FormSteps(){
                         initialValues={initialValues}
                         onSubmit={submitHandler}
                     >
-                        {(formik) => {
+                        {({isSubmitting, errors, touched}) => {
                             return(
                                 <Form autoComplete='off'>
-                                    {state.step === 1 ? <Contrato /> : null}
-                                    {state.step === 2 ? <Contacto /> : null}
-                                    {state.step === 3 ? <Propiedad /> : null}
+                                    {state.step === 1 ? <Contrato errors={errors} touched={touched} /> : null}
+                                    {state.step === 2 ? <Contacto errors={errors} touched={touched} /> : null}
+                                    {state.step === 3 ? <Propiedad errors={errors} touched={touched} /> : null}
                                     <Stepper />
                                 </Form>
                             )

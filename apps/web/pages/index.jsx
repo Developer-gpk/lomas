@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import Layout from "../src/Layout/Layout"
 import { Formik, Form, Field } from 'formik'
 import { ParallaxBanner } from 'react-scroll-parallax'
@@ -29,7 +30,8 @@ import SearchMobile from "../src/Components/Search/SearchMobile"
 import PropiedadList from '../src/Components/List/propiedad'
 import SanityClient from '../libs/Client'
 import imageUrlBuilder from '@sanity/image-url'
-import { ScrollParallax } from 'react-just-parallax';
+import { ScrollParallax } from 'react-just-parallax'
+import * as Yup from 'yup'
 
 const builder = imageUrlBuilder(SanityClient)
 
@@ -40,7 +42,12 @@ function Web({home}) {
     const img = builder.image(soruce)
     return img
   }
-
+  const validation = Yup.object().shape({
+    nombre: Yup.string().required(),
+    email: Yup.string().email().required(),
+    telefono: Yup.string().required(),
+    contacto: Yup.string().required()
+  })
   return (
     <Layout title="Lomas Home" description={home.descripcion} keywords={home.keywords}>
       <section className="block" id="portada">
@@ -173,7 +180,9 @@ function Web({home}) {
                         <br/><br/>
                         <span>{home.texto2}</span>
                         <br/><br/>
-                        <a>Conoce más <Image src={Arrow1} alt="pin" width="13" height="12" layout={"fixed"} /></a>
+                        <Link href="/conocenos">
+                          <a>Conoce más <Image src={Arrow1} alt="pin" width="13" height="12" layout={"fixed"} /></a>
+                        </Link>
                       </p>
                     </section>
                   </section>
@@ -224,6 +233,7 @@ function Web({home}) {
                           contacto: '',
                           mensaje: ''
                         }}
+                        validationSchema={validation}
                         onSubmit={async (values, { setSubmitting }) =>{
                           console.log(values)
                           await setTimeout(() =>{
@@ -232,37 +242,37 @@ function Web({home}) {
                           setSubmitting(false)
                         }}
                       >
-                        {({isSubmitting}) =>(  
+                        {({isSubmitting, errors, touched}) =>(  
                           <Form>
                             {!isSubmitting ? (
                               <div className='row'>
                                 <div className='col-12 col-md-6'>
                                   <div className='mb-4 input-contact'>
-                                    <Field name="nombre" type="text" className="form-control" aria-describedby="emailHelp" placeholder='Nombre*' />
+                                    <Field name="nombre" type="text" className={`form-control ${errors.nombre && touched.nombre ? ("isError") : null}`} aria-describedby="emailHelp" placeholder='Nombre*' />
                                   </div>
                                   <div className='mb-4 input-contact'>
-                                    <Field name='email' type="email" className="form-control" aria-describedby="emailHelp" placeholder='Correo*' />
+                                    <Field name='email' type="email" className={`form-control ${errors.email && touched.email ? ("isError") : null}`} aria-describedby="emailHelp" placeholder='Correo*' />
                                   </div>
                                   <div className='mb-4 input-contact'>
-                                    <Field name='telefono' type="text" className="form-control" aria-describedby="emailHelp" placeholder='Telefono de 10 dígitos*' />
+                                    <Field name='telefono' type="text" className={`form-control ${errors.telefono && touched.telefono ? ("isError") : null}`} aria-describedby="emailHelp" placeholder='Telefono de 10 dígitos*' />
                                   </div>
                                   <div className='mb-4'>
                                     <h6>¿Cómo prefieres que te contactemos?*</h6>
                                     <div className='row'>
                                       <div className='col-4 col-md-4 options-contact'>
-                                        <Field className="form-check-input" type="radio" name="contacto" id="whatsapp" value="WhatsApp" />
+                                        <Field className={`form-check-input ${errors.contacto && touched.contacto ? ("isError") : null}`} type="radio" name="contacto" id="whatsapp" value="WhatsApp" />
                                         <label className="form-check-label" htmlFor="whatsapp">
                                           Whatsapp
                                         </label>
                                       </div>
                                       <div className='col-4 col-md-4 options-contact'>
-                                        <Field className="form-check-input" type="radio" name="contacto" id="correo" value="Correo" />
+                                        <Field className={`form-check-input ${errors.contacto && touched.contacto ? ("isError") : null}`} type="radio" name="contacto" id="correo" value="Correo" />
                                         <label className="form-check-label" htmlFor="correo">
                                           Correo
                                         </label>
                                       </div>
                                       <div className='col-4 col-md-4 options-contact'>
-                                        <Field className="form-check-input" type="radio" name="contacto" id="llamada" value="Llamada" />
+                                        <Field className={`form-check-input ${errors.contacto && touched.contacto ? ("isError") : null}`} type="radio" name="contacto" id="llamada" value="Llamada" />
                                         <label className="form-check-label" htmlFor="llamada">
                                           Llamada
                                         </label>

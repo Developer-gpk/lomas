@@ -256,6 +256,8 @@
 }
 #conocenos .conocenos-parallax-desk .content p a{
     font-size: 16px;
+    text-decoration: none;
+    color: #FFFFFF;
 }
 #logo{
 
@@ -312,6 +314,12 @@
     font-size: 12px;
     font-family: 'Silka-regular', sans-serif;
     height: 50px;
+    border: 1px solid rgba(81,87,97, 0.3);
+}
+#contacto form .input-contact input:focus{
+    box-shadow: none;
+    border: none;
+    border: 1px solid rgba(81,87,97, 0.3);
 }
 #contacto form h6{
     font-family: 'Silka-bold';
@@ -339,6 +347,19 @@
     color: #515761;
     height: 210px;
     background: #EEEEEE;
+    border: 1px solid rgba(81,87,97, 0.3);
+}
+#contacto form textarea:focus{
+    box-shadow: none;
+    border: none;
+    border: 1px solid rgba(81,87,97, 0.3);
+}
+.isError{
+    border: 1px solid #CC9964 !important;
+    color: #CC9964 !important;
+}
+.isError::placeholder{
+    color: #CC9964 !important;
 }
 #contacto form .submit-contact{
     text-align: end;

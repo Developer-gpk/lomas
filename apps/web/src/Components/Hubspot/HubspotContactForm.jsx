@@ -17,8 +17,8 @@ export default function HubspotContactForm({ region, portalId, formId }){
                 })
             }
         });
-    }, [])
+    })
     return(
-        <div id='hubspotForm'></div>
+            <div id='hubspotForm'></div>
     )
 }
