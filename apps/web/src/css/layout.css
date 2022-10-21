@@ -1,3 +1,7 @@
+body{
+    overflow: auto !important;
+    padding: 0 !important;
+}
 .navigation{
     left: 0;
     padding: 0px 0px;
@@ -21,7 +25,7 @@
     height: 90px;
 }
 .navigation.creditos .navbar-brand{
-    margin: 15px 0px 15px 70px;
+    margin: 15px 0px 15px 150px;
 }
 .navigation.creditos .navbar-collapse{
     padding-top: 56px;
@@ -35,7 +39,7 @@
     height: 90px;
 }
 .navigation.conocenos .navbar-brand{
-    margin: 15px 0px 15px 70px;
+    margin: 15px 0px 15px 150px;
 }
 .navigation.conocenos .navbar-collapse{
     padding-top: 56px;
@@ -205,12 +209,21 @@
 #footer .fcc-aviso{
     border-top: 1px solid rgba(204, 153, 100, 0.2);
     margin-top: 110.5px;
-    padding-top: 14.5px;
+    padding-top: 11.5px;
 }
 #footer .fcc-aviso .derechos{
     font-family: 'Silka-regular', sans-serif;
     font-size: 10px;
     color: #EEEEEE;
+}
+#footer .compra-dep ul{
+    padding: 0;
+}
+#footer .compra-dep ul li{
+    list-style: none;
+}
+#footer .compra-dep ul li a{
+    text-decoration: none;
 }
 .whats {
     position: fixed; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
@@ -303,6 +316,8 @@
     .navigation .navbar-collapse .dropdown-menu{
         margin-top: 0px;
         width: 100%;
+        justify-content: space-around;
+    margin-left: 17.5px;
     }
     .navigation .navbar-brand.Active{
         -webkit-transition: all 550ms ease-in-out;
@@ -334,5 +349,14 @@
     }
     #footer .fcc-aviso{
         margin-top: 24px;
+    }
+    #footer .compra-dep ul{
+        padding: 0;
+    }
+    #footer .compra-dep ul li{
+        list-style: none;
+    }
+    #footer .compra-dep ul li a{
+        text-decoration: none;
     }
 }

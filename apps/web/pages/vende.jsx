@@ -88,12 +88,12 @@ export default function Vende(){
                             </button>
                         </div>
                     </nav>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                <div class="offcanvas-header">
-                    <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div className="offcanvas-header">
+                    <button type="button" className="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body">
-                    <ul class="nav navbar-nav">
+                <div className="offcanvas-body">
+                    <ul className="nav navbar-nav">
                         <li>
                             <a href="#">Comprar</a>
                         </li>
@@ -131,7 +131,9 @@ export default function Vende(){
                                 <div className='container-fluid'>
                                     <h1>Es hora de vender tu propiedad de manera eficiente</h1>
                                     <span>Olvídate del estrés y la espera innecesaria.</span><br/>
-                                    <a>Quiero vender mi propiedad <Image src={ArrowSend} alt="pin" width="13" height="12" /></a>
+                                    <Link href="/vende#form-landing">
+                                        <a>Quiero vender mi propiedad <Image src={ArrowSend} alt="pin" width="13" height="12" /></a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className='col-12 col-md-7 image'>
@@ -278,7 +280,9 @@ export default function Vende(){
                             <div className='row content'>
                                 <div className='col-12 col-md-6'>
                                     <h2><span>¡Llegaste al lugar indicado!,</span> empieza ahora a ofertar tus bienes con nosotros.</h2>
-                                    <a>Quiero vender mi propiedad <Image src={ArrowSend} alt="pin" width="13" height="12" /></a>
+                                    <Link href="/vende#form-landing">
+                                        <a>Quiero vender mi propiedad <Image src={ArrowSend} alt="pin" width="13" height="12" /></a>
+                                    </Link>
                                 </div>
                                 <div className='col-12 col-md-6 d-none d-sm-none d-md-block img'>
                                     <Image src={Asesor} alt="Asesor 1" />

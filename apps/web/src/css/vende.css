@@ -130,6 +130,7 @@
     color: #FFFFFF;
     font-size: 16px;
     font-family: 'Silka-regular';
+    text-decoration: none;
 }
 #title-statick{
 
@@ -537,6 +538,7 @@
     width: 303px;
     display: inline-table;
     color: #FFFFFF;
+    text-decoration: none;
 }
 #vender{
     background: #FAFAFA;

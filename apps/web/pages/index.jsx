@@ -299,18 +299,24 @@ function Web({home}) {
                         )}
                       </Formik>
                   </div>
-                  <div className='row mx-auto'>
+                  <div className='row mx-auto contactos'>
                     <div className='col-md-2'>
-                      <Image src={Call} alt="pin" width="25" height="25" layout={"fixed"} /> (222) 226 7440
+                      <a href='tel:+52(222)2267440'>
+                        <Image src={Call} alt="pin" width="25" height="25" layout={"fixed"} /> (222) 226 7440
+                      </a>
                     </div>
                     <div className='col-md-2'>
-                      <Image src={Wa} alt="pin" width="25" height="25" layout={"fixed"} /> 2213 634 540
+                      <a href='https://wa.me/+522213634540'>
+                        <Image src={Wa} alt="pin" width="25" height="25" layout={"fixed"} /> 2213 634 540
+                      </a>
                     </div>
                     <div className='col-md-8'>
-                      <Image src={Mail} alt="pin" width="25" height="25" layout={"fixed"} /> contacto@lomashome.com.mx
+                      <a href='mailto:contacto@lomashome.com.mx'>
+                        <Image src={Mail} alt="pin" width="25" height="25" layout={"fixed"} /> contacto@lomashome.com.mx
+                      </a>
                     </div>
-                    <div className='col-md-10 mt-4'>
-                      <Image src={Pin} alt="pin" width="25" height="25" layout={"fixed"} />Niños Héroes 4927 · Ofic. 2 Reserva Territorial Atlixcayotl <br/>  C.P. 72190 Col. San Miguel La Rosa, Puebla, Pue.
+                    <div className='col-md-10 mt-4 d-flex'>
+                      <div className='mt-2'><Image src={Pin} alt="pin" width="25" height="25" layout={"fixed"} /></div> Niños Héroes 4927 · Ofic. 2 Reserva Territorial Atlixcayotl <br/>  C.P. 72190 Col. San Miguel La Rosa, Puebla, Pue.
                     </div>
                   </div>
               </div>

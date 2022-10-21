@@ -20,8 +20,8 @@ export default function Layout({children, title, description, keywords}){
             <Navbar />
             <div className="whats d-none d-sm-none d-md-block">
                 <ul>
-                    <li className="whatsapp"><a href="https://wa.me/" target="_blank" rel="noreferrer" className="icon-whatsapp"></a></li>
-                    <li className="phone"><a href="tel:" target="_blank" rel="noreferrer" className="icon-number"></a></li>
+                    <li className="whatsapp"><a href="https://wa.me/+522213634540" target="_blank" rel="noreferrer" className="icon-whatsapp"></a></li>
+                    <li className="phone"><a href="tel:+52(222)2267440" target="_blank" rel="noreferrer" className="icon-number"></a></li>
                 </ul>
             </div>
             <div className='outer-wrapper' style={router.route == "/propiedad/[slug]" ? {contain: "inherit"} : {}}>

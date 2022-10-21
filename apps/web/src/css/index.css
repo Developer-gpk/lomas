@@ -3,8 +3,11 @@
 }
 #portada .holder{
     margin: 0 auto;
-    max-width: 1330px;
+    max-width: 1300px;
     width: 100%;
+}
+#portada .portada-carousel #carouselDesktop .carousel-inner{
+    height: 650px !important;
 }
 #portada .portada-carousel .portada-parallax-desk{
     filter: brightness(40%);
@@ -286,7 +289,6 @@
     margin: 30% auto;
     max-width: 1300px;
     width: 100%;
-    padding: 0px 110px;
 }
 #contacto .holder .container-fluid h3{
     font-family: 'Silka-bold';
@@ -388,6 +390,10 @@
     font-size: 24px;
     color: #181D24;
 }
+#contacto .contactos a{
+    text-decoration: none;
+    color: #181D24;
+}
 #lugares{
     background: #EEEEEE;
     min-height: 280px;
@@ -420,7 +426,7 @@
         height: 1300px !important;
     }
     #contacto .holder{
-        margin: 22% auto;
+        margin: 30% auto;
     }
 }
 @media (max-width: 1300px){
@@ -513,7 +519,7 @@
         margin: 70% auto;
     }
     #contacto .parallax-contacto-desk {
-        height: 1345px !important;
+        height: 1445px !important;
     }
     #lugares .holder{
         padding: 30px 17px;
@@ -525,4 +531,7 @@
     #lugares .row h4 {
         margin-bottom: 10px;
     }
+}
+.contactos div{
+    font-size: 18px;
 }

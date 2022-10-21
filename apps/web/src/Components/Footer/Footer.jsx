@@ -17,19 +17,46 @@ export default function Footer(){
                         </div>
                         <div className='col-12 col-md-6 fcc-link'>
                             <ul className="nav justify-content-end">
-                                <Link href={{ pathname: '/[category]', query: { category: 'casa'}}}>
+                                <div className='compra-dep'>
                                     <a className="nav-link">Compra</a>
-                                </Link>
-                                <Link href={{ pathname: '/[category]', query: { category: 'departamento'}}}>
+                                    <ul>
+                                        <li>
+                                            <Link href="/casa">
+                                                <a>Casas</a>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/departamento">
+                                                <a>Departamentos</a>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/terreno">
+                                                <a>Terrenos</a>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/local">
+                                                <a>Locales comerciales</a>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/oficina">
+                                                <a>Oficinas</a>
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <Link href="/vende">
                                     <a className="nav-link">Vende tu propiedad</a>
                                 </Link>
-                                <Link href={{ pathname: '/[category]', query: { category: 'terreno'}}}>
+                                <Link href="/creditos">
                                     <a className="nav-link">Créditos</a>
                                 </Link>
-                                <Link href={{ pathname: '/[category]', query: { category: 'local'}}}>
+                                <Link href="/conocenos">
                                     <a className="nav-link">Conócenos</a>
                                 </Link>
-                                <Link href={{ pathname: '/[category]', query: { category: 'oficina'}}}>
+                                <Link href="/#contacto">
                                     <a className="nav-link">Contacto</a>
                                 </Link>
                             </ul>

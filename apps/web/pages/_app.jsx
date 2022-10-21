@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Script from 'next/script'
 import AOS from 'aos'
 import '../src/css/normalize.css'
 import '../src/css/global.css'
@@ -23,7 +24,19 @@ function MyApp({ Component, pageProps }) {
         })
     }, [])
     return (
-      <Component {...pageProps} />
+      <>
+        <Script id='analytics-cdn' strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=UA-123850556-88`} />
+        <Script id='script-analytics' strategy="lazyOnload">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+                    
+            gtag('config', 'UA-246056744-1');
+          `}
+        </Script>
+        <Component {...pageProps} />
+      </>
     )
 }
 
