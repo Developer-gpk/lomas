@@ -18,7 +18,7 @@ export default function PersonalData({errors, touched}){
             </div>
             <div className='row'>
                 <div className='col-12 col-md-5'>
-                    <Field type="text" name="nacimiento" className={`form-control ${errors.nacimiento && touched.nacimiento ? ("isError") : null} fecha-nacimiento`} placeholder="Fecha de nacimiento*" onFocus={(e) => (e.target.type = "date")} />
+                    <Field type="date" name="nacimiento" className={`form-control ${errors.nacimiento && touched.nacimiento ? ("isError") : null} fecha-nacimiento`} placeholder="Fecha de nacimiento*" required  />
                 </div>
                 <div className='col-12 col-md-7'>
                     <Field name="celular" className={`form-control ${errors.celular && touched.celular ? ("isError") : null}`} as="input" placeholder="Numero celular*" />
