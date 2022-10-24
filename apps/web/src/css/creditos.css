@@ -176,6 +176,21 @@
 #banks .parallax-banks-mobile .row{
     filter: none !important;
 }
+#banks .parallax-banks-mobile .row .bank{
+    display: contents;
+}
+#banks .parallax-banks-mobile .row #carouselExampleSlidesOnly{
+    filter: none !important;
+}
+#banks .parallax-banks-mobile .row #carouselExampleSlidesOnly .carousel-inner{
+    filter: none !important;
+}
+#banks .parallax-banks-mobile .row #carouselExampleSlidesOnly .carousel-inner .carousel-item{
+    filter: none !important;
+}
+#banks .parallax-banks-mobile .row #carouselExampleSlidesOnly .carousel-inner .carousel-item .col{
+    margin: 0 5px;
+}
 #banks .parallax-banks-mobile .banks{
     position: absolute;
     bottom: 40%;
@@ -329,7 +344,7 @@
     }
     #banks .parallax-banks-mobile .banks{
         position: absolute;
-        bottom: 0%;
+        bottom: 40%;
     }
     #form-multistep .holder h3{
         font-family: 'Silka-regular', sans-serif;

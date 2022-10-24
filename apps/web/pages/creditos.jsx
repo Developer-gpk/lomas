@@ -210,22 +210,32 @@ function Creditos({creditos}){
                                     <section className='container-fluid'>
                                         <div className='row text-center banks'>
                                             <h1>Trabajamos con los bancos más reconocidos</h1>
-                                            <div className='row'>
-                                                <span className="col">
-                                                    <Image src={Bbva} alt="pin" width="160" height="33" layout={"fixed"} />
-                                                </span>
-                                                <span className="col">
-                                                    <Image src={Banorte} alt="pin" width="160" height="33" layout={"fixed"} />
-                                                </span>
-                                                <span className="col">
-                                                    <Image src={Scotiabank} alt="pin" width="160" height="33" layout={"fixed"} />
-                                                </span>
-                                                <span className="col">
-                                                    <Image src={HSBC} alt="pin" width="112" height="33" layout={"fixed"} />
-                                                </span>
-                                                <span className="col">
-                                                    <Image src={Santander} alt="pin" width="160" height="33" layout={"fixed"} />
-                                                </span>
+                                            <div className='row bank'>
+                                                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <span className="col">
+                                                                <Image src={Bbva} alt="pin" width="160" height="33" layout={"fixed"} />
+                                                            </span>
+                                                            <span className="col">
+                                                                <Image src={Banorte} alt="pin" width="160" height="33" layout={"fixed"} />
+                                                            </span>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <span className="col">
+                                                                <Image src={Scotiabank} alt="pin" width="160" height="33" layout={"fixed"} />
+                                                            </span>
+                                                            <span className="col">
+                                                                <Image src={HSBC} alt="pin" width="160" height="33" layout={"fixed"} />
+                                                            </span>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <span className="col">
+                                                                <Image src={Santander} alt="pin" width="160" height="33" layout={"fixed"} />
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </section>

@@ -68,7 +68,7 @@ export default function Footer(){
                             <span>Todos los derechos reservados.</span><br/>
                             <span>AVISO DE PRIVACIDAD</span>
                         </div>
-                        <div className='col-md-7'>
+                        <div className='col-md-7 col-4 centro'>
                             <ul className="nav justify-content-start">
                                 <a className="nav-link" href="#"><Image src={Tiktok} alt="Tiktok" width="15" height="18" /></a>
                                 <a className="nav-link" href="#"><Image src={Ig} alt="Instagram" width="15" height="18" /></a>

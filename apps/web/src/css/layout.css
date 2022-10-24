@@ -359,4 +359,56 @@ body{
     #footer .compra-dep ul li a{
         text-decoration: none;
     }
+    #footer .fcc-aviso .centro a{
+        padding: 0;
+    margin: 5px;
+    }
+    .redes{
+        position: fixed;
+        z-index: 9;
+        bottom: 1%;
+        width: 100%;
+    }
+    .redes .content{
+        width: 380px;
+        margin: 0 auto;
+        background: #FFFFFF;
+        height: 60px;
+        border-radius: 6px;
+        padding: 8px 20px;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 5px 10px 18px #888888;
+    }
+    .redes .content .whatsapp{
+        width: 45px;
+        height: 45px;
+        background: #25D366;
+        border-radius: 50%;
+    }
+    .redes .content .whatsapp a span{
+        margin: 8px 9px !important;
+    }
+    .redes .content .phone{
+        width: 45px;
+        height: 45px;
+        background: #CC9964;
+        border-radius: 50%;
+    }
+    .redes .content .phone a span{
+        margin: 9px 9px !important;
+    }
+    .redes .content .contacto{
+        width: 198px;
+        height: 45px;
+        background: #CC9964;
+        border-radius: 6px;
+        text-align: center;
+        padding: 10px 30px;
+        text-decoration: none;
+        color: #FFFFFF;
+        font-family: 'Silka-bold';
+        font-size: 16px;
+    }
+    
 }

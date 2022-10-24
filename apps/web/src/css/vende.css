@@ -969,4 +969,19 @@
     #form-landing .form .lectura {
         padding-left: 0px;
     }
+    .block.llegaste .item-one {
+        margin: 0 0;
+    }
+    .block.llegaste .item-two {
+        margin: 0 0;
+        margin-top: 80px;
+    }
+    .block.llegaste .item-three{
+        margin: 0 0;
+        margin-top: 80px;
+    }
+    .block.llegaste .item-four{
+        margin: 0 0;
+        margin-top: 80px;
+    }
 }

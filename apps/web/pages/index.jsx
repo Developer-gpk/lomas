@@ -37,7 +37,6 @@ const builder = imageUrlBuilder(SanityClient)
 
 function Web({home}) {
   const parallax = useRef()
-  console.log(home)
   function urlForce(soruce){
     const img = builder.image(soruce)
     return img

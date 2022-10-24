@@ -394,6 +394,9 @@
     text-decoration: none;
     color: #181D24;
 }
+#contacto .contactos a span {
+    margin: -6px 0 !important;
+}
 #lugares{
     background: #EEEEEE;
     min-height: 280px;
