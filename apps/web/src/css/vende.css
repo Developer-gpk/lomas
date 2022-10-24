@@ -985,6 +985,36 @@
         margin-top: 80px;
     }
 }
+@media (max-height:900px) {
+    .block.llegaste .item-one 
+    .block.llegaste .header h2 {
+        font-size: 22px;
+        margin: 0 0;
+        max-width: 380px;
+        top: 100px !important;
+    }
+    .block.llegaste .item-two 
+    .block.llegaste .item-two .image-wrapper {
+        margin: 0 0;
+        height: 263px;
+        margin-top: 80px;
+        width: 400px;
+    }
+    .block.llegaste .item-three
+    .block.llegaste .item-three .image-wrapper {
+        margin: 0 0;
+        min-height: 112px;
+        margin-top: 80px;
+        min-width: 300px;
+    }
+    .block.llegaste .item-four
+    .block.llegaste .item-three .text-wrapper {
+        margin: 0 0;
+        margin-top: 80px;
+        padding-top: 50px;
+    }
+}
+
 .finish-form h5{
     justify-content: center;
     text-align: center;
