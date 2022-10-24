@@ -211,7 +211,7 @@ function Creditos({creditos}){
                                         <div className='row text-center banks'>
                                             <h1>Trabajamos con los bancos más reconocidos</h1>
                                             <div className='row bank'>
-                                                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                                                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
                                                     <div class="carousel-inner">
                                                         <div class="carousel-item active">
                                                             <span className="col">
