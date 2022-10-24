@@ -12,7 +12,7 @@ export default function StepperControl(props){
                     {context.state.step === 1 ? null : (
                         <a
                             type='button'
-                            className='action'
+                            className='action rotate'
                             onClick={() => context.dispatch({ type: "prev" })}
                             disabled={context.state.step === 1}
                         >
@@ -25,9 +25,9 @@ export default function StepperControl(props){
                 </div>
                 <div className='col-2 col-md-3'>
                     {context.state.step === 3 ? (
-                        <a className='submit' type="submit">
+                        <button className='submit' type="submit">
                             Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} />
-                        </a>
+                        </button>
                     ):(
                         <a className='action' type='button' onClick={() => context.dispatch({ type: "next" })}>
                             Siguiente <Image src={Arrow1} alt="pin" width="13" height="12" layout={"fixed"} /> 

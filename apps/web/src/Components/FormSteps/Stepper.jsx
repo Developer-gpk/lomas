@@ -22,9 +22,9 @@ export default function Stepper(){
                 </div>
                 <div className='col-6 text-end siguiente'>
                     {context.state.step === 3 ? (
-                        <a className='submit btn' type="submit">
+                        <button className='submit btn' type="submit">
                             Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} />
-                        </a>
+                        </button>
                     ):(
                         <a className='action' type='button' onClick={() => context.dispatch({ type: "next" })}>
                             Siguiente <Image src={Arrow1} alt="pin" width="13" height="12" layout={"fixed"} />

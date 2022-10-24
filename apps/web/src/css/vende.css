@@ -985,3 +985,12 @@
         margin-top: 80px;
     }
 }
+.finish-form h5{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 30%;
+    font-family: 'Silka-bold';
+    font-size: 24px;
+    color: #181D24;
+}

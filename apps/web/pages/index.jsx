@@ -47,6 +47,7 @@ function Web({home}) {
     telefono: Yup.string().required(),
     contacto: Yup.string().required()
   })
+
   return (
     <Layout title="Lomas Home" description={home.descripcion} keywords={home.keywords}>
       <section className="block" id="portada">
@@ -234,11 +235,21 @@ function Web({home}) {
                         }}
                         validationSchema={validation}
                         onSubmit={async (values, { setSubmitting }) =>{
-                          console.log(values)
-                          await setTimeout(() =>{
-                            setSubmitting(true)
-                          }, 5000)
-                          setSubmitting(false)
+                          try {
+                            const endpoint = `https://www.goplek.com/mailer/send-mail-v1.php`;
+                            const res = await fetch(endpoint, {
+                              method: "POST",
+                              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                              body: `data=${JSON.stringify({
+                                host: "inquisitive-duckanoo-006759.netlify.app",
+                                data: values,
+                              })}`,
+                            });
+                            const data = await res.text();
+                            console.log(data)
+                          } catch (error) {
+                            console.log(error)
+                          }
                         }}
                       >
                         {({isSubmitting, errors, touched}) =>(  

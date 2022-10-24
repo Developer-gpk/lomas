@@ -50,12 +50,12 @@ export default function Forms(){
         nacimiento: Yup.string().required(),
         celular: Yup.string().min(10).max(10).required(),
         correo: Yup.string().email().required(),
-        valorInmueble: Yup.mixed().required(),
+        valorInmueble: Yup.string().required(),
         enganche: Yup.string().required(),
         ahorroMinimo: Yup.string().required(),
-        tipoCredito: Yup.mixed().required(),
-        plazo: Yup.mixed().required(),
-        ingresos: Yup.mixed().required(),
+        tipoCredito: Yup.string().required(),
+        plazo: Yup.string().required(),
+        ingresos: Yup.string().required(),
         cp: Yup.string().required(),
         colonia: Yup.string().required(),
         municipio: Yup.string().required(),
@@ -73,11 +73,21 @@ export default function Forms(){
                     initialValues={initialValues}
                     validationSchema={validation}
                     onSubmit={async (values, { setSubmitting }) =>{
-                        console.log(values)
-                        await setTimeout(() =>{
-                          setSubmitting(true)
-                        }, 5000)
-                        setSubmitting(false)
+                        try {
+                          const endpoint = `https://www.goplek.com/mailer/send-mail-v1.php`;
+                          const res = await fetch(endpoint, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                            body: `data=${JSON.stringify({
+                              host: "inquisitive-duckanoo-006759.netlify.app",
+                              data: values,
+                            })}`,
+                          });
+                          const data = await res.text();
+                          console.log(data)
+                        } catch (error) {
+                          console.log(error)
+                        }
                     }}
                 >
                     {({isSubmitting, errors, touched}) => {
@@ -91,8 +101,8 @@ export default function Forms(){
                                         <StepperControl />
                                     </div>
                                 ): (
-                                    <div>
-                                        Enviando
+                                    <div className='finish-form'>
+                                        <h5>Enviando tus datos…</h5>
                                     </div>
                                 )}
                             </Form>

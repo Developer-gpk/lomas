@@ -9,9 +9,7 @@ export default function NumbersData({errors, touched}){
             </div>
             <div className='row'>
                 <div className='col-12 col-md-6'>
-                    <Field name="valorInmueble" as="select" className={`form-select ${errors.valorInmueble && touched.valorInmueble ? ("isError") : null}`}>
-                        <option defaultValue>Valor del inmueble que buscas*</option>
-                    </Field>
+                    <Field name="valorInmueble" as="input" className={`form-select ${errors.valorInmueble && touched.valorInmueble ? ("isError") : null}`} placeholder="Valor del inmueble que buscas*" />
                 </div>
                 <div className='col-12 col-md-3'>
                     <Field name="enganche" className={`form-control ${errors.enganche && touched.enganche ? ("isError") : null}`} as="input" placeholder="% enganche" />
@@ -22,19 +20,13 @@ export default function NumbersData({errors, touched}){
             </div>
             <div className='row'>
                 <div className='col-12 col-md-4'>
-                    <Field name="tipoCredito" as="select" className={`form-select ${errors.tipoCredito && touched.tipoCredito ? ("isError") : null}`}>
-                        <option defaultValue>Tipo de crédito*</option>
-                    </Field>
+                    <Field name="tipoCredito" as="input" className={`form-select ${errors.tipoCredito && touched.tipoCredito ? ("isError") : null}`} placeholder="Tipo de crédito*" />
                 </div>
                 <div className='col-12 col-md-4'>
-                    <Field name="plazo" as="select" className={`form-select ${errors.plazo && touched.plazo ? ("isError") : null}`}>
-                        <option defaultValue>Plazo*</option>
-                    </Field>
+                    <Field name="plazo" as="input" className={`form-select ${errors.plazo && touched.plazo ? ("isError") : null}`} placeholder="Plazo*" />
                 </div>
                 <div className='col-12 col-md-4'>
-                    <Field name="ingresos" as="select" className={`form-select ${errors.ingresos && touched.ingresos ? ("isError") : null}`}>
-                        <option defaultValue>Ingresos*</option>
-                    </Field>
+                    <Field name="ingresos" as="input" className={`form-select ${errors.ingresos && touched.ingresos ? ("isError") : null}`} placeholder="Ingresos*" />
                 </div>
             </div>
             <div className='row relleno'>

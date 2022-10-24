@@ -58,6 +58,7 @@ export default function FormSteps(){
         comentario: Yup.string()
     })
     const submitHandler = (values, onSubmitProp) =>{
+        console.log(values  )
         console.log("enviado")
     }
     return(
@@ -72,15 +73,40 @@ export default function FormSteps(){
                 <FormContext.Provider value={{ state: state, dispatch: dispatch}} >
                     <Formik
                         initialValues={initialValues}
-                        onSubmit={submitHandler}
+                        validationSchema={validation}
+                        onSubmit={async (values, { setSubmitting }) =>{
+                            try {
+                              const endpoint = `https://www.goplek.com/mailer/send-mail-v1.php`;
+                              const res = await fetch(endpoint, {
+                                method: "POST",
+                                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                                body: `data=${JSON.stringify({
+                                  host: "inquisitive-duckanoo-006759.netlify.app",
+                                  data: values,
+                                })}`,
+                              });
+                              const data = await res.text();
+                              console.log(data)
+                            } catch (error) {
+                              console.log(error)
+                            }
+                        }}
                     >
                         {({isSubmitting, errors, touched}) => {
                             return(
                                 <Form autoComplete='off'>
-                                    {state.step === 1 ? <Contrato errors={errors} touched={touched} /> : null}
-                                    {state.step === 2 ? <Contacto errors={errors} touched={touched} /> : null}
-                                    {state.step === 3 ? <Propiedad errors={errors} touched={touched} /> : null}
-                                    <Stepper />
+                                    {!isSubmitting ?(
+                                        <>
+                                            {state.step === 1 ? <Contrato errors={errors} touched={touched} /> : null}
+                                            {state.step === 2 ? <Contacto errors={errors} touched={touched} /> : null}
+                                            {state.step === 3 ? <Propiedad errors={errors} touched={touched} /> : null}
+                                            <Stepper />
+                                        </>
+                                    ): (
+                                        <div className='finish-form'>
+                                            <h5>Enviando tus datos…</h5>
+                                        </div>
+                                    )}
                                 </Form>
                             )
                         }}

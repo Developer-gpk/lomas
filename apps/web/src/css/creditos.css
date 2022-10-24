@@ -267,7 +267,10 @@
     text-decoration: none;
     text-align: center;
 }
-#form-multistep .stepControl a.submit{
+#form-multistep .stepControl a.rotate span{
+    transform: rotateZ(180deg);
+}
+#form-multistep .stepControl button.submit{
     font-family: 'Silka-regular', sans-serif;
     font-size: 18px;
     text-decoration: none;
@@ -276,7 +279,7 @@
     height: 45px;
     text-align: center;
     align-items: center;
-    padding-top: 11px;
+    border: none;
     margin-right: 104px;
     background: #CC9964;
     color: #FFFFFF;
@@ -369,4 +372,13 @@
         padding-right: 17px;
         margin-top: 91px;
     }
+}
+.finish-form h5{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 30%;
+    font-family: 'Silka-bold';
+    font-size: 24px;
+    color: #181D24;
 }

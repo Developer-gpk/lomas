@@ -1,7 +1,7 @@
 import React from 'react'
 import { Field  } from 'formik'
 
-export default function Contrato(){
+export default function Contrato({ errors, touched}){
     return(
         <>
             <div className='row title'>
@@ -26,7 +26,7 @@ export default function Contrato(){
             </div>
             <div className='row'>
                 <div className='col-12 col-md-12 checkbox'>
-                    <Field type="checkbox" name="terminos" value="acepto" required/>
+                    <Field type="checkbox" name="terminos" value="acepto" className={`${errors.terminos && touched.terminos ? ("isError") : null}`}/>
                     <label>
                         He leído y acepto los términos y condiciones<br /> del contrato anteriormente presentado.
                     </label>
