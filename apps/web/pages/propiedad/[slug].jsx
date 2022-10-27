@@ -4,14 +4,14 @@ import Script from 'next/script'
 import ImageViewer from 'react-simple-image-viewer'
 import imageUrlBuilder from '@sanity/image-url'
 import { M2Totales, M2Const, Rec, BaniosComp, Banio, Cochera, ArrowSend, Alberca, Arco, Juegos, Firepit, Salon, GYM, Elevador} from 'ui/constants'
-import SanityClient from '../../libs/Client'
+import Client from '../../libs/Client'
 import Layout from '../../src/Layout/Layout'
 import dynamic from 'next/dynamic'
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 import HubspotContactForm from "../../src/Components/Hubspot/HubspotContactForm"
 import { Formik, Form, Field } from 'formik'
 
-const builder = imageUrlBuilder(SanityClient)
+const builder = imageUrlBuilder(Client)
 
 function Propiedad({propiedad}){
     console.log(propiedad)
@@ -190,11 +190,21 @@ function Propiedad({propiedad}){
 }
 
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+    const paths = await Client.fetch(
+      `*[_type == "propiedades" && defined(slug.current)][].slug.current`
+    )
+    return {
+      paths: paths.map(( slug ) => ({params: { slug }})),
+      fallback: false,
+    }
+}
+  
+export async function getStaticProps(context) {
     console.log(context)
     // It's important to default the slug so that it doesn't return "undefined"
     const { slug = "" } = context.params
-    const propiedad = await SanityClient.fetch(
+    const propiedad = await Client.fetch(
       `
         *[_type == "propiedades" && slug.current == $slug]{
           ...,

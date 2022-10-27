@@ -22,7 +22,7 @@ import { Casa,
 import SearchDesk from "../src/Components/Search/SearchDesk"
 import SearchMobile from "../src/Components/Search/SearchMobile"
 import PropiedadList from '../src/Components/List/propiedad'
-import SanityClient from '../libs/Client'
+import Client from '../libs/Client'
 import imageUrlBuilder from '@sanity/image-url'
 import { ScrollParallax } from 'react-just-parallax'
 import * as Yup from 'yup'
@@ -30,7 +30,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Parallax, Autoplay } from 'swiper'
 import MainSlider from '../src/Components/mainSlider/mainSlider'
 
-const builder = imageUrlBuilder(SanityClient)
+const builder = imageUrlBuilder(Client)
 
 function Web({home}) {
   const parallax = useRef()
@@ -335,7 +335,7 @@ function Web({home}) {
 
 export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
-  const home = await SanityClient.fetch(
+  const home = await Client.fetch(
     `
       *[_type == "home" ][0]{
         ...
