@@ -14,7 +14,6 @@ import { Formik, Form, Field } from 'formik'
 const builder = imageUrlBuilder(Client)
 
 function Propiedad({propiedad}){
-    console.log(propiedad)
     const [currentImage, setCurrentImage] = useState(0);
     const [isViewerOpen, setIsViewerOpen] = useState(false);
     let array = []
