@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Script from 'next/script'
 import ImageViewer from 'react-simple-image-viewer'
 import imageUrlBuilder from '@sanity/image-url'
-import { M2Totales, M2Const, Rec, BaniosComp, Banio, Cochera, ArrowSend  } from 'ui/constants'
+import { M2Totales, M2Const, Rec, BaniosComp, Banio, Cochera, ArrowSend, Alberca, Arco, Juegos, Firepit, Salon, GYM, Elevador} from 'ui/constants'
 import SanityClient from '../../libs/Client'
 import Layout from '../../src/Layout/Layout'
 import dynamic from 'next/dynamic'
@@ -112,7 +112,7 @@ function Propiedad({propiedad}){
                                         </div>
                                     </div>
                                 </div>
-                                {propiedad.details || propiedad.details2 ? (
+                                {propiedad?.details || propiedad?.details2 ? (
                                     <div className="row">
                                         <div className="col-12 detalles">
                                             <div>
@@ -123,29 +123,29 @@ function Propiedad({propiedad}){
                                         </div>
                                     </div>
                                 ) : (<></>)}
-                                {propiedad.pool || propiedad.arc || propiedad.games || propiedad.grills || propiedad.events || propiedad.gym || propiedad.elevator ? (
+                                {propiedad?.pool || propiedad?.arc || propiedad?.games || propiedad?.grills || propiedad?.events || propiedad?.gym || propiedad?.elevator ? (
                                     <div className="row">
                                         <div className="col-12 aminidadesP2">
                                             <div>
                                                 <h3>Amenidades</h3>
                                                 <div className="nav">
-                                                    { propiedad?.pool ? <p className="nav-link text-center"><span><Image src="/icons/ficha_tecnica/alberca.svg" alt="pin" width="40" height="40" layout={"fixed"} /></span><br/>Alberca</p> : null }
-                                                    { propiedad?.arc ? <p className="nav-link text-center"><span><Image src="/icons/ficha_tecnica/arco-de-acceso.svg" alt="pin" width="40" height="40" layout={"fixed"} /></span><br/>Arco de acceso</p> : null }
-                                                    { propiedad?.games ? <p className="nav-link text-center"><span><Image src="/icons/ficha_tecnica/juegos-infantiles.svg" alt="pin" width="40" height="40" layout={"fixed"} /></span><br/>Juegos infantiles</p> : null }
-                                                    { propiedad?.grills ? <p className="nav-link text-center"><span><Image src="/icons/ficha_tecnica/firepit.svg" alt="pin" width="40" height="40" layout={"fixed"} /></span><br/>Firepit</p> : null }
-                                                    { propiedad?.events ? <p className="nav-link text-center"><span><Image src="/icons/ficha_tecnica/salon-de-eventos.svg" alt="pin" width="40" height="40" layout={"fixed"} /></span><br/>Salón de eventos</p> : null }
-                                                    { propiedad?.gym ? <p className="nav-link text-center"><span><Image src="/icons/ficha_tecnica/gimnasio.svg" alt="pin" width="40" height="40" layout={"fixed"} /></span><br/>Gimnasio</p> : null }
-                                                    { propiedad?.elevator ? <p className="nav-link text-center"><span><Image src="/icons/ficha_tecnica/elevador.svg" alt="pin" width="40" height="40" layout={"fixed"} /></span><br/>Elevador</p> : null }
+                                                    { propiedad?.pool ? <p className="nav-link text-center"><span><Image src={Alberca} alt="pin" width="40" height="40" layout={"fixed"} /></span><br/>Alberca</p> : null }
+                                                    { propiedad?.arc ? <p className="nav-link text-center"><span><Image src={Arco} alt="pin" width="40" height="40" layout={"fixed"} /></span><br/>Arco de acceso</p> : null }
+                                                    { propiedad?.games ? <p className="nav-link text-center"><span><Image src={Juegos} alt="pin" width="40" height="40" layout={"fixed"} /></span><br/>Juegos infantiles</p> : null }
+                                                    { propiedad?.grills ? <p className="nav-link text-center"><span><Image src={Firepit} alt="pin" width="40" height="40" layout={"fixed"} /></span><br/>Firepit</p> : null }
+                                                    { propiedad?.events ? <p className="nav-link text-center"><span><Image src={Salon} alt="pin" width="40" height="40" layout={"fixed"} /></span><br/>Salón de eventos</p> : null }
+                                                    { propiedad?.gym ? <p className="nav-link text-center"><span><Image src={GYM} alt="pin" width="40" height="40" layout={"fixed"} /></span><br/>Gimnasio</p> : null }
+                                                    { propiedad?.elevator ? <p className="nav-link text-center"><span><Image src={Elevador} alt="pin" width="40" height="40" layout={"fixed"} /></span><br/>Elevador</p> : null }
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 ) : (<></>)}
-                                {propiedad.url ? (
+                                {propiedad?.url ? (
                                     <div className="row">
                                         <div className="col-12 video">
                                             <h3>Video</h3>
-                                            <ReactPlayer url={propiedad.url} />
+                                            <ReactPlayer url={propiedad?.url} />
                                         </div>
                                     </div>
                                 ) : (<></>)}
@@ -189,17 +189,8 @@ function Propiedad({propiedad}){
     )
 }
 
-export async function getStaticPaths() {
-    const paths = await SanityClient.fetch(
-      `*[_type == "propiedades" && defined(slug.current)][].slug.current`
-    )
-    return {
-      paths: paths.map(( slug ) => ({params: { slug }})),
-      fallback: false,
-    }
-}
-  
-export async function getStaticProps(context) {
+
+export async function getServerSideProps(context) {
     console.log(context)
     // It's important to default the slug so that it doesn't return "undefined"
     const { slug = "" } = context.params
