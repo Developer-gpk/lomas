@@ -1,43 +1,18 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import Layout from "../src/Layout/Layout"
 import { Formik, Form, Field } from 'formik'
 import { ParallaxBanner } from 'react-scroll-parallax'
-import { Casa, 
-        Depart, 
-        Terre, 
-        Local, 
-        Oficina, 
-        BannerConocenos, 
-        Arrow1, 
-        LomasHomeIcon, 
-        FamilyContact, 
-        ArrowSend,
-        Call,
-        Wa,
-        Mail,
-        Pin,
-        Enviando   } from "ui/constants"
-import SearchDesk from "../src/Components/Search/SearchDesk"
-import SearchMobile from "../src/Components/Search/SearchMobile"
+import { Casa, Depart, Terre, Local, Oficina, LomasHomeIcon, FamilyContact, ArrowSend, Call, Wa, Mail, Pin, Enviando   } from "ui/constants"
 import PropiedadList from '../src/Components/List/propiedad'
 import Client from '../libs/Client'
-import imageUrlBuilder from '@sanity/image-url'
 import { ScrollParallax } from 'react-just-parallax'
 import * as Yup from 'yup'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Parallax, Autoplay } from 'swiper'
 import MainSlider from '../src/Components/mainSlider/mainSlider'
+import Conocenos from '../src/Components/Conocenos/conocenos'
 
-const builder = imageUrlBuilder(Client)
 
 function Web({home}) {
-  const parallax = useRef()
-  function urlForce(soruce){
-    const img = builder.image(soruce)
-    return img
-  }
   const validation = Yup.object().shape({
     nombre: Yup.string().required(),
     email: Yup.string().email().required(),
@@ -104,41 +79,7 @@ function Web({home}) {
         </div>
       </section>
       <section className="block" id="conocenos">
-        <div className='holder'>
-          <ParallaxBanner
-            className='conocenos-parallax-desk'
-            style={{ 
-              aspectRatio: '2 / 1',
-              zIndex: "2",
-              height: "550px"
-            }}
-            layers={[
-              {
-                image:
-                  BannerConocenos.src,
-                  speed: -10,
-              },
-              {
-                children: (
-                  <section className='container-fluid' data-aos="fade-up">
-                    <section className='row content'>
-                      <p>
-                        {home.texto1} 
-                        <br/><br/>Buscamos hacer de este proceso una experiencia extraordinaria.
-                        <br/><br/>
-                        <span>{home.texto2}</span>
-                        <br/><br/>
-                        <Link href="/conocenos">
-                          <a>Conoce más <Image src={Arrow1} alt="pin" width="13" height="12" layout={"fixed"} /></a>
-                        </Link>
-                      </p>
-                    </section>
-                  </section>
-                )
-              }
-            ]}
-          />
-        </div>         
+        <Conocenos text1={home.texto1} text2={home.texto2} />   
       </section>
       <section className='block' id="logo">
         <div className='holder'>
@@ -159,8 +100,7 @@ function Web({home}) {
           }}
           layers={[
             {
-              image:
-                FamilyContact.src,
+              image: FamilyContact.src,
               speed: -10,
             },
             {
@@ -189,7 +129,7 @@ function Web({home}) {
                               method: "POST",
                               headers: { "Content-Type": "application/x-www-form-urlencoded" },
                               body: `data=${JSON.stringify({
-                                host: "inquisitive-duckanoo-006759.netlify.app",
+                                host: "lomashome.com.mx",
                                 data: values,
                               })}`,
                             });

@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from "react"
 import Image from 'next/image'
-import Script from 'next/script'
 import ImageViewer from 'react-simple-image-viewer'
 import imageUrlBuilder from '@sanity/image-url'
 import { M2Totales, M2Const, Rec, BaniosComp, Banio, Cochera, ArrowSend, Alberca, Arco, Juegos, Firepit, Salon, GYM, Elevador} from 'ui/constants'
@@ -10,10 +9,16 @@ import dynamic from 'next/dynamic'
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 import HubspotContactForm from "../../src/Components/Hubspot/HubspotContactForm"
 import { Formik, Form, Field } from 'formik'
+import * as Yup from 'yup'
 
 const builder = imageUrlBuilder(Client)
 
 function Propiedad({propiedad}){
+    const validation = Yup.object().shape({
+        nombre: Yup.string().required(),
+        email: Yup.string().email().required(),
+        telefono: Yup.string().required(),
+    })
     const [currentImage, setCurrentImage] = useState(0);
     const [isViewerOpen, setIsViewerOpen] = useState(false);
     let array = []
@@ -55,7 +60,7 @@ function Propiedad({propiedad}){
             <section className="block" id="galeria">
                 <div className="holder">
                     <div className="container-fluid">
-                        <div className="wrapper">
+                        <div className="wrap">
                             {propiedad?.imagesGallery?.map((img, index) =>(
                                 index < 5 ? 
                                 <div key={index}>
@@ -74,14 +79,14 @@ function Propiedad({propiedad}){
                 <div className="holder">
                     <div className="container-fluid">
                         <div className="row">
-                            <div className="col-12 col-md-8">
+                            <div className="col-12 col-md-8 ficha">
                                 <div className="row">
                                     <div className="col-6 col-md-8 sku">
-                                        { propiedad?.sku ? <span>{propiedad?.sku}</span> : null }
+                                        { propiedad?.sku ? <h5>{propiedad?.sku}</h5> : null }
                                     </div>
                                     <div className="col-6 col-md-4 categoria">
-                                        { propiedad?.sku ? <span className="">{propiedad?.categoria?.category}</span> : null }
-                                        { propiedad?.availability ? <span className="">{propiedad?.availability}</span> : null }
+                                        { propiedad?.sku ? <h5>{propiedad?.categoria?.category}</h5> : null }
+                                        { propiedad?.availability ? <h5>{propiedad?.availability}</h5> : null }
                                     </div>
                                 </div>
                                 <div className="row">
@@ -154,27 +159,44 @@ function Propiedad({propiedad}){
                                         email: "",
                                         telefono: ""
                                     }}
+                                    validationSchema={validation}
                                     onSubmit={async (values, { setSubmitting }) =>{
-                                        console.log(values)
+                                        try {
+                                          const endpoint = `https://www.goplek.com/mailer/send-mail-v1.php`;
+                                          const res = await fetch(endpoint, {
+                                            method: "POST",
+                                            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                                            body: `data=${JSON.stringify({
+                                              host: "lomashome.com.mx",
+                                              data: values,
+                                            })}`,
+                                          });
+                                          const data = await res.text();
+                                          console.log(data)
+                                        } catch (error) {
+                                          console.log(error)
+                                        }
                                     }}
                                 >
-                                    <Form>
-                                        <div className="form">
-                                            <h3>Tour virtual</h3>
-                                            <span>¿Quieres ver el recorrido virtual?</span><br />
-                                            <span>Déjanos tus datos y te lo haremos llegar </span>
-                                            <div className="formulario">
-                                                <Field name="nombre" type="text" placeholder="Nombre*" required/>
-                                                <Field name="email" type="email" placeholder="e-mail*" required/>
-                                                <Field name="telefono" type="text" placeholder="Teléfono*" required/>
+                                    {({isSubmitting, errors, touched}) =>(
+                                        <Form>
+                                            <div className="form">
+                                                <h3>Tour virtual</h3>
+                                                <span>¿Quieres ver el recorrido virtual?</span><br />
+                                                <span>Déjanos tus datos y te lo haremos llegar </span>
+                                                <div className="formulario">
+                                                    <Field className={`${errors.nombre && touched.nombre ? ("isError") : null}`} name="nombre" type="text" placeholder="Nombre*" required/>
+                                                    <Field className={`${errors.email && touched.email ? ("isError") : null}`} name="email" type="email" placeholder="e-mail*" required/>
+                                                    <Field className={`${errors.telefono && touched.telefono ? ("isError") : null}`} name="telefono" type="text" placeholder="Teléfono*" required/>
+                                                </div>
+                                                <div className="enviar">
+                                                    <button type="submit">
+                                                        Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} />
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <div className="enviar">
-                                                <button type="submit">
-                                                    Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} />
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </Form>
+                                        </Form>
+                                    )}
                                 </Formik>
                             </div>
                             <div className="col-12 col-md-4 hubsport-form">
@@ -187,19 +209,8 @@ function Propiedad({propiedad}){
         </Layout>
     )
 }
-
-
-export async function getStaticPaths() {
-    const paths = await Client.fetch(
-      `*[_type == "propiedades" && defined(slug.current)][].slug.current`
-    )
-    return {
-      paths: paths.map(( slug ) => ({params: { slug }})),
-      fallback: false,
-    }
-}
   
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     console.log(context)
     // It's important to default the slug so that it doesn't return "undefined"
     const { slug = "" } = context.params

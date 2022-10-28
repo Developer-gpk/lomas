@@ -1,0 +1,72 @@
+#propiedades{
+    margin-top: 70px;
+    position: relative;
+    .holder{
+        margin: 0 auto;
+        max-width: 1300px;
+        width: 100%;
+        .container-fluid{
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            h2{
+                font-family: 'Silka-bold';
+                font-weight: bold;
+                font-size: 34px;
+                color: #181D24;
+                margin-bottom: 50px;
+            }
+            .categorias{
+                .nav-tabs{
+                    --bs-nav-tabs-border-width: 0px;
+                    .nav-item{
+                        padding-left: 31px;
+                        padding-right: 31px;
+                        button{
+                            text-transform: uppercase;
+                            &.nav-link{
+                                border-bottom: 4px solid #EEEEEE;
+                                font-family: 'Silka-regular', sans-serif;
+                                color: #181D24;
+                            }
+                            &.active{
+                                border-bottom: 4px solid #CC9964;
+                                transition: all .5s ease-in-out;
+                            }
+                        }
+                        span{
+                            width: 30px !important;
+                            height: 30px !important;
+                            margin-right: 15px !important;
+                        }
+                        img{
+                            padding: 3px !important;
+                            margin-top: 4px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px){
+    #propiedades{
+        margin-top: 30px;
+        .holder{
+            padding: 0px 0px;
+            .container-fluid{
+                h2{
+                    font-size: 26px;
+                    margin-bottom: 31px;
+                }
+                .categorias{
+                    .nav-tabs{
+                        .nav-item{
+                            padding-left: 8px;
+                            padding-right: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

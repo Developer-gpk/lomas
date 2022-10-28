@@ -2,53 +2,7 @@ body{
     overflow: auto !important;
     padding: 0 !important;
 }
-.navigation{
-    left: 0;
-    padding: 0px 0px;
-    position: fixed;
-    top: 0;
-    transition: all 550ms ease-in-out;
-    width: 100%;
-    z-index: 999;
-    background: rgba(24,29,36, 0.2);
-    height: 110px;
-    -webkit-transition: all 550ms ease-in-out;
-}
-.navigation.isActive{
-    background: #181D24;
-    -webkit-transition: height 550ms ease-in-out;
-    padding: 0px 0px;
-    height: 90px;
-    transition: all 550ms ease-in-out;
-}
-.navigation.creditos{
-    height: 90px;
-}
-.navigation.creditos .navbar-brand{
-    margin: 15px 0px 15px 150px;
-}
-.navigation.creditos .navbar-collapse{
-    padding-top: 56px;
-    padding-bottom: 15px;
-}
-.navigation.creditos .navbar-brand span{
-    height: 60px !important;
-    width: 97.71px !important;
-}
-.navigation.conocenos{
-    height: 90px;
-}
-.navigation.conocenos .navbar-brand{
-    margin: 15px 0px 15px 150px;
-}
-.navigation.conocenos .navbar-collapse{
-    padding-top: 56px;
-    padding-bottom: 15px;
-}
-.navigation.conocenos .navbar-brand span{
-    height: 60px !important;
-    width: 97.71px !important;
-}
+
 
 .navigation .navbar-brand.Active span{
     -webkit-transition: witdth height 550ms ease-in-out;

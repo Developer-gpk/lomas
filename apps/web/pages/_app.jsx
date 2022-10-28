@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Script from 'next/script'
+import { HubspotProvider } from 'next-hubspot';
 import AOS from 'aos'
 import 'swiper/scss'
 import 'swiper/css/effect-fade'
@@ -10,7 +11,6 @@ import "bootstrap-icons/font/bootstrap-icons.css"
 import '../src/css/layout.css'
 import '../src/css/list.css'
 import '../src/css/creditos.css'
-import '../src/css/propiedad.css'
 import '../src/css/search.css'
 import '../src/css/category.css'
 import '../src/css/conocenos.css'
@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
         })
     }, [])
     return (
-      <>
+      <HubspotProvider>
         <Script id='analytics-cdn' strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=UA-123850556-88`} />
         <Script id='script-analytics' strategy="lazyOnload">
           {`
@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
           `}
         </Script>
         <Component {...pageProps} />
-      </>
+      </HubspotProvider>
     )
 }
 

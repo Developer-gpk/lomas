@@ -1,0 +1,33 @@
+#logo{
+    position: relative;
+    .holder{
+        margin: -8% auto;
+        max-width: 1300px;
+        width: 100%;
+        span{
+            z-index: 2;
+            width: 196px !important;
+            height: 186px !important;
+            img{
+                width: 196px !important;
+                height: 186px !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px){
+    #logo{
+        .holder{
+            margin: -8% auto;
+            max-width: 1330px;
+            width: 100%;
+            padding: 0px 36px;
+            span{
+                width: 63px !important;
+                height: 60px !important;
+                z-index: 2;
+            }
+        }
+    }
+}

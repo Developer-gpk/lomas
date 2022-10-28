@@ -81,7 +81,7 @@ export default function FormSteps(){
                                 method: "POST",
                                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                                 body: `data=${JSON.stringify({
-                                  host: "inquisitive-duckanoo-006759.netlify.app",
+                                  host: "lomashome.com.mx",
                                   data: values,
                                 })}`,
                               });

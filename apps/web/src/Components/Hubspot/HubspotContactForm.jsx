@@ -1,7 +1,13 @@
 import React, { useEffect } from 'react'
+import { useHubspotForm } from 'next-hubspot';
 
 export default function HubspotContactForm({ region, portalId, formId }){
-    useEffect(() =>{
+    const { loaded, error, formCreated } = useHubspotForm({
+        portalId: portalId,
+        formId: formId,
+        target: '#hubspotForm'
+    });
+    /*useEffect(() =>{
         const script = document.createElement('script');
         script.src='//js.hsforms.net/forms/embed/v2.js';
         document.body.appendChild(script);
@@ -17,7 +23,7 @@ export default function HubspotContactForm({ region, portalId, formId }){
                 })
             }
         });
-    })
+    })*/
     return(
             <div id='hubspotForm'></div>
     )

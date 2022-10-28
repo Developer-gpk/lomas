@@ -20,8 +20,9 @@ export default function Navbar(){
         chageBackground()
         window.addEventListener('scroll', chageBackground)
     })
+    console.log(route)
     return(
-        <section className={`navigation ${checked ? 'isChecked' : ''} ${isActive ? 'isScroll' : ''}`}>
+        <section className={`navigation ${checked ? 'isChecked' : ''} ${isActive ? 'isScroll' : ''} ${route.route != "/propiedad/[slug]" ? route.route.slice(1) : ""} ${route.pathname == "/propiedad/[slug]" ? "propiedad" : ""}`}>
             <div className='holder'>
                 <nav className='navbar-custom'>
                     <input id="nav-toggle" type="checkbox" onClick={() => setChecked(!checked)} />
@@ -29,7 +30,7 @@ export default function Navbar(){
                         <a className={`logo d-none d-sm-none d-md-block ${isActive ? 'isScroll' : ''}`}><Image src={Logo} /></a>
                     </Link>
                     <Link href="/">
-                        <a className={`logo d-block d-sm-block d-md-none ${isActive ? 'isScroll' : ''}`}>
+                        <a className={`logo d-block d-sm-block d-md-none ${isActive ? 'isScroll' : ''} ${route.asPath.slice(1)}`}>
                             <div className={`${isActive ? 'isHidden' : 'isShow'}`}>
                                 <Image src={Logo} alt="Logo Lomas Home" />
                             </div>
