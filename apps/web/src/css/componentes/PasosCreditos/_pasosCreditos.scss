@@ -1,0 +1,110 @@
+#pasos-creditos{
+    .holder{
+        margin: 0 auto;
+        max-width: 1300px;
+        width: 100%;
+        padding: 0px 0px;
+        .row{
+            .left{
+                width: 50%;
+                padding: 0;
+                .stocked{
+                    display: flex;
+                    width: 527px;
+                    padding-top: 15vh;
+                    padding-bottom: 80px;
+                    position: sticky;
+                    top: 0;
+                    margin: 0px 0px 0px 13px;
+                    .accordion{
+                        .accordion-item{
+                            border: none;
+                            .accordion-body{
+                                padding: 0;
+                                h2{
+                                    font-family: 'Silka-bold';
+                                    font-size: 24px;
+                                    color: #515761;
+                                    opacity: 0.4;
+                                    margin-top: 50px;
+                                    &.isElement{
+                                        font-family: 'Silka-regular', sans-serif;
+                                        color: #CC9964 !important;
+                                        opacity: 1;
+                                        transition: all 1s ease;
+                                    }
+                                }
+                                p{
+                                    font-family: 'Silka-regular', sans-serif;
+                                    font-size: 18px;
+                                    color: #515761;
+                                    opacity: 0.4;
+                                    margin-top: 25px;
+                                    margin-bottom: 50px;
+                                    &.isElement{
+                                        opacity: 1;
+                                        transition: all 1s ease-in;
+                                    }
+                                }
+                            }
+                            &:nth-child(1){
+                                border-bottom: 1px solid #CC9964;
+                            }
+                            &:nth-child(2){
+                                border-bottom: 1px solid #CC9964;
+                            }
+                        }
+                    }
+                }
+            }
+            .right{
+                width: 50%;
+                position: relative;
+                .right-cpm{
+                    position: sticky;
+                    top: 0;
+                    span{
+                        height: 100vh !important;
+                        img{
+                            object-fit: cover !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px){
+    #pasos-creditos{
+        .holder{
+            padding: 0px 17px;
+            .row{
+                .left{
+                    width: 100%;
+                    padding-left: 0;
+                    padding-right: 0;
+                    .stocked{
+                        width: 100%;
+                        margin: 0;
+                        padding: 0;
+                        .accordion{
+                            .accordion-item{
+                                
+                                .accordion-body{
+                                    
+                                    h2{
+                                        font-size: 22px;
+                                    }
+                                    p{
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

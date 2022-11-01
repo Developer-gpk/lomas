@@ -1,0 +1,42 @@
+#title-banks{
+    padding: 150px 0;
+    .holder{
+        margin: 0 auto;
+        max-width: 1300px;
+        width: 100%;
+        .container-fluid{
+            h2{
+                width: 655px;
+                height: 82px;
+                margin: 0 auto;
+                text-align: center;
+                font-family: 'Silka-regular', sans-serif;
+                font-size: 34px;
+                color: #181D24;
+                span{
+                    font-family: 'Silka-bold';
+                    color: #CC9964;
+                }
+            }
+        }
+    }   
+}
+
+@media (max-width: 767px){
+    #title-banks{
+        padding-top: 70px;
+        padding-bottom: 110px;
+        padding-left: 17px;
+        padding-right: 17px;
+        .holder{
+            .container-fluid{
+                padding: 0;
+                h2{
+                    width: 100%;
+                    height: 102px;
+                    font-size: 27px;
+                }
+            }
+        }   
+    }
+}

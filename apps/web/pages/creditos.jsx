@@ -7,6 +7,7 @@ import Forms from '../src/Components/Forms/Form'
 import Link from 'next/link'
 import Client from '../libs/Client'
 import imageUrlBuilder from '@sanity/image-url'
+import BannerCreditos from '../src/Components/BannerCreditos/bannerCreditos'
 
 const builder = imageUrlBuilder(Client)
 
@@ -56,33 +57,7 @@ function Creditos({creditos}){
     return(
         <Layout title="Creditos | Lomas Home" description={creditos?.descripcion} keywords={creditos?.keywords}>
             <section className='block' id='banner-creditos'>
-                <ParallaxBanner
-                    className='parallax-creditos-desk'
-                    style={{ 
-                        aspectRatio: '2 / 1',
-                        height: "480px"
-                    }}
-                    layers={[
-                    {
-                        image:
-                        CoverCreditos1.src,
-                        speed: -10,
-                        
-                    },
-                    {
-                        children: (
-                            <section className='row text-center carousel-caption content-creditos'>
-                                <h1>Te ayudamos a conseguir el financiamiento que mejor se adapte a ti.</h1>
-                                <div className='button'>
-                                    <Link href="/creditos#form-multistep">
-                                        <a className='btn'>Empezar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} /></a>
-                                    </Link>
-                                </div>
-                            </section>
-                        )
-                    }
-                    ]}
-                />
+                <BannerCreditos />
             </section>
             <section className='block' id='title-creditos' data-aos="fade-up">
                 <div className='holder'>
@@ -129,13 +104,13 @@ function Creditos({creditos}){
                             </div>
                             <div className='right d-none d-sm-none d-md-block'>
                                 <div className='right-cpm' id='element1'>
-                                    <Image src={urlForce(creditos?.imagen1?.asset).url()} alt="pin" width="733" height="820" layout={"fixed"} />
+                                    <Image src={urlForce(creditos?.imagen1?.asset).url()} alt="pin" width="733" height="820" layout={"fixed"} quality={100} />
                                 </div>
                                 <div className='right-cpm' id='element2'>
-                                    <Image src={urlForce(creditos?.imagen2?.asset).url()} alt="pin" width="733" height="820" layout={"fixed"} />
+                                    <Image src={urlForce(creditos?.imagen2?.asset).url()} alt="pin" width="733" height="820" layout={"fixed"} quality={100} />
                                 </div>
                                 <div className='right-cpm' id='element3'>
-                                    <Image src={urlForce(creditos?.imagen3?.asset).url()} alt="pin" width="733" height="820" layout={"fixed"} />
+                                    <Image src={urlForce(creditos?.imagen3?.asset).url()} alt="pin" width="733" height="820" layout={"fixed"} quality={100} />
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
-import React, {  useState, useReducer } from 'react'
-import { Formik, Form, Field, FormikConfig, FormikValues  } from 'formik'
+import React, { useReducer } from 'react'
+import { Formik, Form  } from 'formik'
 import PersonalData from './PersonalData';
 import StepperControl from './StepControl';
 import NumbersData from './NumbersData';
@@ -62,10 +62,6 @@ export default function Forms(){
         ciudad: Yup.string().required(),
         estado: Yup.string().required()
     })
-    const submitHandler = (values, onSubmitProp) =>{
-        console.log(values)
-    }
-    const [page, setPage] = useState(0);
     return(
         <>
             <FormContext.Provider value={{ state: state, dispatch: dispatch}} >

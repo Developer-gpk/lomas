@@ -10,7 +10,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import "bootstrap-icons/font/bootstrap-icons.css"
 import '../src/css/layout.css'
 import '../src/css/list.css'
-import '../src/css/creditos.css'
 import '../src/css/search.css'
 import '../src/css/category.css'
 import '../src/css/conocenos.css'

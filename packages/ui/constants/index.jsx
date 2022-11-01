@@ -92,6 +92,8 @@ import Firepit from './icons/firepit.svg'
 import Salon from './icons/salon-de-eventos.svg'
 import GYM from './icons/gimnasio.svg'
 import Elevador from './icons/elevador.svg'
+import WhitOutImage from './home/placeholder.webp'
+
 export {
     Logo,
     LomasMobile,
@@ -186,5 +188,6 @@ export {
     Firepit,
     Salon,
     GYM,
-    Elevador
+    Elevador,
+    WhitOutImage
 }

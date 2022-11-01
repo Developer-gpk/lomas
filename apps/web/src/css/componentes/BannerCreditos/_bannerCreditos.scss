@@ -1,0 +1,67 @@
+#banner-creditos{
+    position: relative;
+    .parallax-creditos-desk{
+        div:first-child{
+            filter: brightness(40%);
+        }
+        .carousel-caption{
+            &.content-creditos{
+                bottom: 15%;
+                h1{
+                    width: 754px;
+                    height: 82px;
+                    margin: 0 auto;
+                    font-family: 'Silka-bold';
+                    font-size: 34px;
+                    color: #FFFFFF;
+                    padding: 0;
+                    span{
+                        font-family: 'Silka-regular';
+                    }
+                }
+                .button{
+                    text-align: center;
+                    margin-top: 40px;
+                    a{
+                        font-family: 'Silka-bold';
+                        font-size: 18px;
+                        color: #FFFFFF;
+                        background: #CC9964;
+                        height: 45px;
+                        width: 148px;
+                        &:hover{
+                            background: #8E6439;
+                            border: none;
+                            transition: all .5s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px){
+    #banner-creditos{
+        .parallax-creditos-desk{
+            .carousel-caption{
+                left: 0;
+                right: 0;
+                &.content-creditos{
+                    h1{
+                        width: 379px;
+                        height: 93px;
+                        font-size: 26px;
+                    }
+                    .button{
+                        a{
+                            font-size: 16px;
+                            height: 40px;
+                            width: 126px;
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}

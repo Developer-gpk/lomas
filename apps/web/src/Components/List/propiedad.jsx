@@ -3,16 +3,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import sanityClient from '../../../libs/Client'
 import imageUrlBuilder from '@sanity/image-url'
-import { M2_Const, Rec, Banios_comp, Arrow1 } from 'ui/constants'
-import { separator } from '../../../libs/complementos'
+import { M2_Const, Rec, Banios_comp, Arrow1, WhitOutImage} from 'ui/constants'
+import { separator, buildImages } from '../../../libs/complementos'
 
 const builder = imageUrlBuilder(sanityClient)
 
 export default function PropiedadList({propiedad}){
-    function urlForce(soruce){
-        const img = builder.image(soruce)
-        return img
-    }
     const [propiedades, setPropiedades] = useState(null);
     useEffect(() => {
 		sanityClient.fetch(
@@ -30,11 +26,17 @@ export default function PropiedadList({propiedad}){
                 <Link  href={{ pathname: '/propiedad/[slug]', query: { slug: propiedad.slug.current }}} key={index}>
                     <a>
                         <li className='propiedad card'>
-                            {propiedad.imagesGallery?.map((img, index) => (
-                                index <= 0 ?
-                                    <Image src={urlForce(img.asset).url()} width={416} height={289} layout={"responsive"} className="card-img-top" alt={propiedad?.name} key={index} />
-                                : null
-                            ))}
+                            {propiedad.imagesGallery ? (
+                                <>
+                                    {propiedad.imagesGallery?.map((img, index) => (
+                                        index <= 0 ?
+                                            <Image src={buildImages(img.asset).url()} width={416} height={289} layout={"responsive"} className="card-img-top" alt={propiedad?.name} key={index} />
+                                        : null
+                                    ))}
+                                </>
+                            ) : (
+                                <Image src={WhitOutImage} width={416} height={289} layout={"responsive"} className="card-img-top" alt="Sin imagen" />
+                            )}
                             <div className="card-body">
                                 <div className='row d-inline-block'>
                                     <span className='text-uppercase'>{propiedad?.categoria?.category}</span>

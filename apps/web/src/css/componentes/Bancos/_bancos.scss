@@ -1,0 +1,75 @@
+#banks{
+    .holder{
+        margin: 0 auto;
+        max-width: 1300px;
+        width: 100%;
+        .parallax-banks-desk{
+            border-radius: 15px;
+            div:first-child{
+                filter: brightness(40%);
+            }
+            .container-fluid{
+                padding: 0;
+                .row{
+                    filter: none !important;
+                    &.banks{
+                        position: absolute;
+                        bottom: 40%;
+                        h1{
+                            width: 633px;
+                            height: 34px;
+                            padding: 0;
+                            font-family: 'Silka-bold';
+                            font-size: 28px;
+                            color: #CC9964;
+                            margin: 0 auto 30px auto;
+                        }
+                        .row{
+                            padding: 0px 110px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px){
+    #banks{
+        .holder{
+            .parallax-banks-mobile{
+                div:first-child{
+                    filter: brightness(40%);
+                }
+                .container-fluid{
+                    padding: 0;
+                    position: absolute;
+                    bottom: 40%;
+                    .row{
+                        filter: none !important;
+                        &.banks{
+                            display: contents;
+                            h1{
+                                font-family: 'Silka-bold';
+                                font-size: 28px;
+                                color: #CC9964;
+                                margin-bottom: 30px;
+                            }
+                            #carouselExampleSlidesOnly{
+                                filter: none !important;
+                                .carousel-inner{
+                                    filter: none !important;
+                                    .carousel-item{
+                                        filter: none !important;
+                                        .col{
+                                            margin: 0 5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

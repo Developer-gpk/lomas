@@ -20,7 +20,6 @@ export default function Navbar(){
         chageBackground()
         window.addEventListener('scroll', chageBackground)
     })
-    console.log(route)
     return(
         <section className={`navigation ${checked ? 'isChecked' : ''} ${isActive ? 'isScroll' : ''} ${route.route != "/propiedad/[slug]" ? route.route.slice(1) : ""} ${route.pathname == "/propiedad/[slug]" ? "propiedad" : ""}`}>
             <div className='holder'>

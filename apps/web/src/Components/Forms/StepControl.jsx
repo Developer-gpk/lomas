@@ -8,7 +8,7 @@ export default function StepperControl(props){
     return(
         <div className='container-fluid stepControl'>
             <div className='row'>
-                <div className='col-2 col-md-2 atras'>
+                <div className='atras'>
                     {context.state.step === 1 ? null : (
                         <a
                             type='button'
@@ -20,10 +20,7 @@ export default function StepperControl(props){
                         </a>
                     )} 
                 </div>
-                <div className='col-8 col-md-7'>
-
-                </div>
-                <div className='col-2 col-md-3'>
+                <div className='siguiente'>
                     {context.state.step === 3 ? (
                         <button className='submit' type="submit">
                             Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} />
