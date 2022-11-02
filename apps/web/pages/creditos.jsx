@@ -55,7 +55,7 @@ function Creditos({creditos}){
         window.addEventListener('scroll', changeElement3)
     }, []);
     return(
-        <Layout title="Creditos | Lomas Home" description={creditos?.descripcion} keywords={creditos?.keywords}>
+        <Layout title="Créditos | Lomas Home" description={creditos?.descripcion} keywords={creditos?.keywords}>
             <section className='block' id='banner-creditos'>
                 <BannerCreditos />
             </section>

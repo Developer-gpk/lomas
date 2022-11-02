@@ -70,9 +70,9 @@ export default function Footer(){
                         </div>
                         <div className='col-md-7 col-4 centro'>
                             <ul className="nav justify-content-start">
-                                <a className="nav-link" href="#"><Image src={Tiktok} alt="Tiktok" width="15" height="18" /></a>
-                                <a className="nav-link" href="#"><Image src={Ig} alt="Instagram" width="15" height="18" /></a>
-                                <a className="nav-link" href="#"><Image src={Fb} alt="Facebook" width="15" height="18" /></a>
+                                <a className="nav-link" href="https://www.tiktok.com/@lomashome?_t=8WgwwmFFGqr&_r=1"><Image src={Tiktok} alt="Tiktok" width="15" height="18" /></a>
+                                <a className="nav-link" href="https://instagram.com/lomashome?igshid=YmMyMTA2M2Y="><Image src={Ig} alt="Instagram" width="15" height="18" /></a>
+                                <a className="nav-link" href="https://www.facebook.com/profile.php?id=100083650590910"><Image src={Fb} alt="Facebook" width="15" height="18" /></a>
                             </ul>
                         </div>
                         <div className='col-md-2 text-end'>

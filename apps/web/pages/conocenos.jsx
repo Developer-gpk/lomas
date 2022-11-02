@@ -53,7 +53,7 @@ function Conocenos({conocenos}){
         window.addEventListener('scroll', changeElement3)
     }, []);
     return(
-        <Layout title={"Conocenos"}>
+        <Layout title={"Conócenos"}>
             <section className='block' id='conocenos-banner'>
                 <ParallaxBanner
                     className='parallax-conocenos-desk'
