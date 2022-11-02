@@ -87,51 +87,7 @@
     overflow-x: hidden;
           overflow-y: visible;
 }
-#landing{
-    background-image: url('../../../../packages/ui/constants/landing/cover-background.webp');
-    height: 680px;
-}
-#landing .holder{
-    margin: 0 auto;
-    max-width: 1300px;
-    width: 100%;
-    display: flex;
-}
-#landing .holder .title{
-    margin-top: 240px;
-    padding-right: 25px;
-}
-#landing .holder .image{
-    margin-top: 140px;
-}
-#landing .holder .title .container-fluid{
-    padding-left: 0;
-    padding-right: 0;
-}
-#landing .holder .title .container-fluid h1{
-    font-family: 'Silka-bold';
-    font-size: 54px;
-    color: #EEEEEE;
-    margin-bottom: 20px;
-}
-#landing .holder .title .container-fluid span{
-    font-family: 'Silka-regular';
-    font-size: 22px;
-    color: #CC9964;
-}
-#landing .holder .title .container-fluid a{
-    width: 303px;
-    height: 48px;
-    padding: 12px 30px 15px 30px;
-    background: #CC9964;
-    position: absolute;
-    margin-top: 50px;
-    border-radius: 24px;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-family: 'Silka-regular';
-    text-decoration: none;
-}
+
 #title-statick{
 
 }
@@ -157,62 +113,10 @@
 #static{
 
 }
-#que-hacemos{
-    background: url('../../../../packages/ui/constants/landing/vender-back.webp');
-    height: 930px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#que-hacemos .holder{
-    margin: 0 auto;
-    max-width: 1300px;
-    width: 100%;
-    margin-top: 89px;
-    padding-right: 180px;
-    padding-left: 180px;
-}
-#que-hacemos h2{
-    font-family: 'Silka-bold';
-    color: #CC9964;
-    font-size: 34px;
-    margin-top: 150px;
-}
-#que-hacemos ul li{
-    background: transparent;
-    color: #FFFFFF;
-    font-family: 'Silka-regular';
-    font-size: 16px;
-    width: 250px;
-    margin: 15px auto;
-}
-#que-hacemos .image{
-    margin-top: 350px;
-}
-#que-hacemos .image .row span{
-    position: absolute !important;
-    right: 17px !important;
-    z-index: 2 !important;
-    margin-top: -88px !important;
-    width: 50px !important;
-    height: 48px !important;
-}
-#lugar .img span{
-    width: 493px !important;
-    height: 585px !important;
-    max-width: initial !important;
-}
-#llegaste{
-
-}
-#llegaste .holder{
-
-}
-
 .block.llegaste {
     padding-top: 242px;
     position: relative;
 }
-
 .block.llegaste .header h2 {
     color: #181D24;
     font-family: 'Silka-regular';
@@ -500,92 +404,8 @@
     }
 }
 
-#lugar{
-    background: url('../../../../packages/ui/constants/landing/asesor-back.webp');
-    height: 890px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#lugar .holder{
-    margin: 0 auto;
-    max-width: 1300px;
-    width: 100%;
-    padding: 150px 0px;
-}
-#lugar .holder .content{
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-#lugar h2{
-    font-family: 'Silka-regular';
-    font-size: 34px;
-    color: #181D24;
-    width: 527px;
-    margin-left: 50px;
-}
-#lugar h2 span{
-    font-family: 'Silka-bold';
-    font-size: 34px;
-    color: #CC9964;
-}
-#lugar .content a{
-    margin-top: 40px;
-    padding: 15px 30px;
-    background: #CC9964;
-    border-radius: 24px;
-    height: 48px;
-    width: 303px;
-    display: inline-table;
-    color: #FFFFFF;
-    text-decoration: none;
-}
-#vender{
-    background: #FAFAFA;
-}
-#vender .holder{
-    margin: 0 auto;
-    max-width: 1300px;
-    width: 100%;
-    padding: 150px 70px;
-}
-#vender h2{
-    font-family: 'Silka-regular';
-    font-size: 34px;
-    color: #181D24;
-    text-align: center;
-    padding-left: 401px;
-    padding-right: 401px;
-    padding-bottom: 80px;
-}
-#vender h2 span{
-    font-family: 'Silka-bold';
-    font-size: 34px;
-    color: #CC9964;
-}
-#vender .images span{
-    border-radius: 24px;
-}
-#vender .requisitos h3{
-    font-family: 'Silka-bold';
-    font-size: 22px;
-    color: #181D24;
-}
-#vender .requisitos .requi{
-    margin-top: 49px;
-}
-#vender .requisitos .requi ul li{
-    color: #CC9964;
-    margin-bottom: 30px;
-}
-#vender .requisitos .requi ul li span{
-    margin-bottom: 30px;
-    color: #515761;
-    font-family: 'Silka-regular';
-    font-size: 16px;
-}
 #form-landing{
-
+    margin-top: 150px;
 }
 #form-landing .holder{
     margin: 0 auto;
@@ -771,151 +591,8 @@
     .block.llegaste .item-five img {
         object-fit: cover !important;
     }
-    #landing .holder{
-        display: block;
-    }
-    #landing .holder .title{
-        margin-top: 163px;
-        padding-left: 17px;
-        padding-right: 17px;
-        text-align: center;
-    }
-    #landing .holder .title .container-fluid h1{
-        font-size: 40px;
-        margin-bottom: 23px;
-    }
-    #landing .holder .title .container-fluid span{
-        font-size: 18px;
-    }
-    #landing .holder .title .container-fluid a{
-        width: 248px;
-        height: 38px;
-        padding: 10px 15px 10px 15px;
-        background: #CC9964;
-        position: absolute;
-        margin-top: 62px;
-        border-radius: 24px;
-        color: #FFFFFF;
-        font-size: 14px;
-        font-family: 'Silka-regular';
-        left: 83px;
-    }
-    #landing .holder .image {
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-top: 225px;
-    }
-    #landing .holder .image div{
-        height: 270px !important;
-        width: 100% !important;
-    }
-    #landing .holder .image div div{
-        inset: 0px 0px !important;
-    }
-    #title-statick .holder{
-        margin: 0 auto;
-        max-width: 1300px;
-        width: 100%;
-        margin-top: 260px;
-    }
-    #title-statick .holder h2{
-        text-align: center;
-        font-family: 'Silka-regular';
-        font-size: 34px;
-        color: #181D24;
-        padding-left: 17px;
-        padding-right: 17px;
-    }
-    #que-hacemos{
-        background: url('../../../../packages/ui/constants/landing/vender-back.webp');
-        height: 1529px;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    #que-hacemos .holder{
-        margin-top: 93px;
-        padding-right: 42px;
-        padding-left: 42px;
-    }
-    #que-hacemos h2{
-        font-size: 28px;
-        margin-top: 109px;
-        text-align: center;
-    }
-    #que-hacemos .list-group li{
-        font-size: 14px;
-        margin: 14px auto;
-        width: 318px;
-    }
-    #que-hacemos .image{
-        margin-top: 67px;
-        text-align: center;
-    }
-    #que-hacemos .image span{
-        width: 280px;
-        height: 359px;
-    }
-    #lugar{
-        background: url('../../../../packages/ui/constants/landing/asesor-back.webp');
-        height: 630px;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    #lugar .holder{
-        margin: 0 auto;
-        max-width: 1300px;
-        width: 100%;
-        padding: 0px 17px;
-    }
-    #lugar .holder .content{
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    #lugar h2{
-        font-family: 'Silka-regular';
-        font-size: 34px;
-        color: #181D24;
-        margin-top: 213px;
-        width: 100%;
-        margin-left: 0px;
-    }
-    #lugar h2 span{
-        font-family: 'Silka-bold';
-        font-size: 34px;
-        color: #CC9964;
-    }
-    #lugar .content a{
-        margin-top: 40px;
-        padding: 15px 30px;
-        background: #CC9964;
-        border-radius: 24px;
-        height: 48px;
-        width: 303px;
-        display: inline-table;
-    }
-    #vender .holder{
-        padding: 70px 17px;
-    }
-    #vender h2{
-        font-family: 'Silka-regular';
-        font-size: 34px;
-        color: #181D24;
-        text-align: center;
-        padding-left: 0px;
-        padding-right: 0px;
-        padding-bottom: 80px;
-    }
-    #vender .images {
-        text-align: center;
-    }
-    #vender .images span{
-        width: 248px !important;
-        height: 278px !important;
-    }
-    #vender .requisitos h3{
-        text-align: center;
-        margin-top: 183px;
+    #form-landing{
+        margin-top: 0px;
     }
     #form-landing .images{
         height: 580px;

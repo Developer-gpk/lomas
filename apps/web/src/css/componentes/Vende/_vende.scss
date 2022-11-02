@@ -1,0 +1,538 @@
+#landing{
+    background-image: url('../../../../../../packages/ui/constants/landing/cover-background.webp');
+    height: 680px;
+    .holder{
+        margin: 0 auto;
+        max-width: 1300px;
+        width: 100%;
+        display: flex;
+        .container-fluid{
+            padding: 0;
+            .row{
+                margin-left: 0;
+                margin-right: 0;
+                .title{
+                    margin-top: 240px;
+                    padding: 0;
+                    h1{
+                        width: 527px;
+                        height: 195px;
+                        font-family: 'Silka-bold';
+                        font-size: 54px;
+                        color: #EEEEEE;
+                        margin-bottom: 20px;
+                    }
+                    h2{
+                        width: 473px;
+                        height: 27px;
+                        font-family: 'Silka-regular';
+                        font-size: 22px;
+                        color: #CC9964;
+                        margin-bottom: 50px;
+                    }
+                    a{
+                        width: 303px;
+                        height: 48px;
+                        padding: 12px 30px 15px 30px;
+                        background: #CC9964;
+                        margin-top: 50px;
+                        border-radius: 24px;
+                        color: #FFFFFF;
+                        font-size: 16px;
+                        font-family: 'Silka-regular';
+                        text-decoration: none;
+                    }
+                }
+                .image{
+                    margin-top: 140px;
+                }
+            }
+        }
+    }
+}
+#que-hacemos{
+    background: url('../../../../../../packages/ui/constants/landing/vender-back.webp');
+    height: 930px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .holder{
+        margin: 0 auto;
+        max-width: 1300px;
+        width: 100%;
+        .container-fluid{
+            .row{
+                .listas{
+                    h2{
+                        width: 416px;
+                        height: 82px;
+                        font-family: 'Silka-bold';
+                        color: #CC9964;
+                        font-size: 34px;
+                        margin-top: 150px;
+                    }
+                    ul{
+                        list-style: none;
+                        padding: 0;
+                        li{
+                            width: 306px;
+                            height: 57px;
+                            margin: 22.5px auto;
+                            display: flex;
+                            .camara{
+                                display: flex;
+                                &::before{
+                                    content: '';
+                                    display: inline-block;
+                                    width: 35px;
+                                    height: 35px;
+                                    background-image: url('../../../../../../packages/ui/constants/icons/camara.svg');
+                                }
+                            }
+                            .trecientos{
+                                display: flex;
+                                &::before{
+                                    content: '';
+                                    display: inline-block;
+                                    width: 35px;
+                                    height: 35px;
+                                    background-image: url('../../../../../../packages/ui/constants/icons/360L.svg');
+                                }
+                            }
+                            .planos{
+                                display: flex;
+                                &::before{
+                                    content: '';
+                                    display: inline-block;
+                                    width: 35px;
+                                    height: 35px;
+                                    background-image: url('../../../../../../packages/ui/constants/icons/planos.svg');
+                                }
+                            }
+                            .plataforma{
+                                display: flex;
+                                &::before{
+                                    content: '';
+                                    display: inline-block;
+                                    width: 35px;
+                                    height: 35px;
+                                    background-image: url('../../../../../../packages/ui/constants/icons/plataformas.svg');
+                                }
+                            }
+                            .capacitado{
+                                display: flex;
+                                &::before{
+                                    content: '';
+                                    display: inline-block;
+                                    width: 35px;
+                                    height: 35px;
+                                    background-image: url('../../../../../../packages/ui/constants/icons/consultor.svg');
+                                }
+                            }
+                            .material{
+                                display: flex;
+                                &::before{
+                                    content: '';
+                                    display: inline-block;
+                                    width: 35px;
+                                    height: 35px;
+                                    background-image: url('../../../../../../packages/ui/constants/icons/materialL.svg');
+                                }
+                            }
+                            .valoracion{
+                                display: flex;
+                                &::before{
+                                    content: '';
+                                    display: inline-block;
+                                    width: 35px;
+                                    height: 35px;
+                                    background-image: url('../../../../../../packages/ui/constants/icons/valoración.svg');
+                                }
+                            }
+                            .ejecutivo{
+                                display: flex;
+                                &::before{
+                                    content: '';
+                                    display: inline-block;
+                                    width: 35px;
+                                    height: 35px;
+                                    background-image: url('../../../../../../packages/ui/constants/icons/ejecutivo.svg');
+                                }
+                            }
+                            .contrato{
+                                display: flex;
+                                &::before{
+                                    content: '';
+                                    display: inline-block;
+                                    width: 35px;
+                                    height: 35px;
+                                    background-image: url('../../../../../../packages/ui/constants/icons/contrato.svg');
+                                }
+                            }
+                            .verificamos{
+                                display: flex;
+                                &::before{
+                                    content: '';
+                                    display: inline-block;
+                                    width: 35px;
+                                    height: 35px;
+                                    background-image: url('../../../../../../packages/ui/constants/icons/legalidad.svg');
+                                }
+                            }
+                            .acompañamiento{
+                                display: flex;
+                                &::before{
+                                    content: '';
+                                    display: inline-block;
+                                    width: 35px;
+                                    height: 35px;
+                                    background-image: url('../../../../../../packages/ui/constants/icons/acompaniamiento.svg');
+                                }
+                            }
+                            h5{
+                                width: 246px;
+                                height: 57px;
+                                background: transparent;
+                                color: #FFFFFF;
+                                font-family: 'Silka-regular';
+                                font-size: 16px;
+                                margin-left: 25px;
+                            }
+                        }
+                    }
+                }
+                .image{
+                    text-align: center;
+                    margin-top: 396px;
+                    .logo{
+                        position: absolute !important;
+                        right: 8% !important;
+                        z-index: 2 !important;
+                        margin-top: -88px !important;
+                        width: 115.84px !important;
+                        height: 110px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+#lugar{
+    background: url('../../../../../../packages/ui/constants/landing/asesor-back.webp');
+    height: 890px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .holder{
+        margin: 0 auto;
+        max-width: 1300px;
+        width: 100%;
+        padding: 150px 0;
+        .container-fluid{
+            .content{
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                h2{
+                    width: 527px;
+                    height: 123px;
+                    margin: 0 auto;
+                    font-family: 'Silka-regular';
+                    font-size: 34px;
+                    color: #181D24;
+                    span{
+                        font-family: 'Silka-bold';
+                        color: #CC9964;
+                    }
+                }
+                a{
+                    margin-top: 40px;
+                    padding: 15px 30px;
+                    background: #CC9964;
+                    border-radius: 24px;
+                    height: 48px;
+                    width: 303px;
+                    display: inline-table;
+                    color: #FFFFFF;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+#vender{
+    background: #FAFAFA;
+    height: 820px;
+    .holder{
+        margin: 0 auto;
+        max-width: 1300px;
+        width: 100%;
+        .container-fluid{
+            h2{
+                width: 637px;
+                height: 82px;
+                font-family: 'Silka-regular';
+                font-size: 34px;
+                color: #181D24;
+                text-align: center;
+                margin: 150px auto 80px auto;
+                padding: 0;
+                span{
+                    font-family: 'Silka-bold';
+                    color: #CC9964;
+                }
+            }
+            .images{
+                span{
+                    border-radius: 24px;
+                }
+            }
+            .requisitos{
+                margin-top: 72px;
+                h3{
+                    font-family: 'Silka-bold';
+                    font-size: 22px;
+                    color: #181D24;
+                    margin: 0;
+                }
+                .requi{
+                    margin-top: 49px;
+                    ul{
+                        li{
+                            color: #CC9964;
+                            margin: 15px 0;
+                            span{
+                                margin-bottom: 30px;
+                                color: #515761;
+                                font-family: 'Silka-regular';
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px){
+    #landing{
+        .holder{
+            display: block;
+            padding: 0 17px;
+            .container-fluid{
+                padding: 0;
+                .row{
+                    margin-left: 0;
+                    margin-right: 0;
+                    .title{
+                        margin-top: 163px;
+                        padding: 0;
+                        text-align: center;
+                        h1{
+                            width: 100%;
+                            height: 144px;
+                            font-size: 40px;
+                            text-align: center;
+                            margin: 0 auto 23px auto;
+                        }
+                        h2{
+                            width: 100%;
+                            height: 22px;
+                            font-size: 18px;
+                            margin: 0 auto;
+                            text-align: center;
+                            margin-bottom: 62px;
+                        }
+                        a{
+                            width: 248px;
+                            height: 38px;
+                            padding: 10px 15px 10px 15px;
+                            background: #CC9964;
+                            margin-top: 62px;
+                            border-radius: 24px;
+                            color: #FFFFFF;
+                            font-size: 14px;
+                            font-family: 'Silka-regular';
+                            left: 83px;
+                        }
+                    }
+                    .image{
+                        margin-top: 120px;
+                        div{
+                            height: 270px!important;
+                            width: 100%!important;
+                            div{
+                                inset: 0 0!important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #que-hacemos{
+        height: 1529px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .holder{
+            margin-top: 93px;
+            padding-right: 42px;
+            padding-left: 42px;
+            .container-fluid{
+                padding: 0;
+                .row{
+                    .listas{
+                        h2{
+                            width: 100%;
+                            height: 68px;
+                            font-size: 28px;
+                            margin-bottom: 49px;
+                            margin-top: 109px;
+                        }
+                        ul{
+                            li{
+                                width: 100%;
+                                height: 34px;
+                                margin: 24.5px auto;
+                                .camara{
+                                    &::before{
+                                        width: 35px;
+                                        height: 35px;
+                                    }
+                                }
+                                .trecientos{
+                                    &::before{
+                                        width: 35px;
+                                        height: 35px;
+                                    }
+                                }
+                                .planos{
+                                    &::before{
+                                        width: 35px;
+                                        height: 35px;
+                                    }
+                                }
+                                .plataforma{
+                                    &::before{
+                                        width: 35px;
+                                        height: 35px;
+                                    }
+                                }
+                                .capacitado{
+                                    &::before{
+                                        width: 35px;
+                                        height: 35px;
+                                    }
+                                }
+                                .material{
+                                    &::before{
+                                        width: 35px;
+                                        height: 35px;
+                                    }
+                                }
+                                .valoracion{
+                                    &::before{
+                                        width: 35px;
+                                        height: 35px;
+                                    }
+                                }
+                                .ejecutivo{
+                                    &::before{
+                                        width: 35px;
+                                        height: 35px;
+                                    }
+                                }
+                                .contrato{
+                                    &::before{
+                                        width: 35px;
+                                        height: 35px;
+                                    }
+                                }
+                                .verificamos{
+                                    &::before{
+                                        width: 35px;
+                                        height: 35px;
+                                    }
+                                }
+                                .acompañamiento{
+                                    &::before{
+                                        width: 35px;
+                                        height: 35px;
+                                    }
+                                }
+                                h5{
+                                    width: 100%;
+                                    height: 34px;
+                                    font-size: 14px;
+                                    margin-left: 17px;
+                                }
+                            }
+                        }
+                    }
+                    .image{
+                        text-align: center;
+                        margin-top: 188px;
+
+                        .logo{
+                            right: 58px !important;
+                            margin-top: 16px !important;
+                            width: 50px !important;
+                            height: 48px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #lugar{
+        height: 630px;
+        .holder{
+            padding: 214px 0;
+            .container-fluid{
+                .content{
+                    h2{
+                        width: 100%;
+                        height: 102px;
+                        font-size: 28px;
+                    }
+                    a{
+                        margin-top: 63px;
+                        height: 38px;
+                        width: 253px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    #vender{
+        height: 1205px;
+        .holder{
+            padding: 0 17px;
+            .container-fluid{
+                h2{
+                    width: 100%;
+                    height: 68px;
+                    font-size: 27px;
+                    margin: 110px auto 70px auto;
+                    padding: 0;
+                }
+                .images{
+                    text-align: center;
+                    span{
+                        width: 248px !important;
+                        height: 278px !important;
+                    }
+                }
+                .requisitos{
+                    margin-top: 72px;
+                    h3{
+                        font-size: 20px;
+                        text-align: center;
+                    }
+                    .requi{
+                        margin: 30px auto 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}

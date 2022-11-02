@@ -22,13 +22,13 @@
                             .accordion-body{
                                 padding: 0;
                                 h2{
-                                    font-family: 'Silka-bold';
+                                    font-family: 'Silka-regular', sans-serif;
                                     font-size: 24px;
                                     color: #515761;
                                     opacity: 0.4;
                                     margin-top: 50px;
                                     &.isElement{
-                                        font-family: 'Silka-regular', sans-serif;
+                                        font-family: 'Silka-bold';
                                         color: #CC9964 !important;
                                         opacity: 1;
                                         transition: all 1s ease;

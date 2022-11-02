@@ -38,6 +38,44 @@ export default function NavbarLanding(){
                             </div>
                         </a>
                     </Link>
+                    <ul className={`links ${isActive ? 'isScroll' : ''}`}>
+                        <li>
+                            <label htmlFor="drop-1" className='toggle'>Comprar</label>
+                            <a className='dropdown-btn'>Comprar</a>
+                            <input type="checkbox" id="drop-1"/>
+                            <ul className="dropdown">
+                                <li>
+                                    <Link href={{ pathname: '/[category]', query: { category: 'casa'}}}>
+                                        <a>Casas</a>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={{ pathname: '/[category]', query: { category: 'departamento'}}}>
+                                        <a>Departamentos</a>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={{ pathname: '/[category]', query: { category: 'terreno'}}}>
+                                        <a>Terrenos</a>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={{ pathname: '/[category]', query: { category: 'local'}}}>
+                                        <a>Locales comerciales</a>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={{ pathname: '/[category]', query: { category: 'oficina'}}}>
+                                        <a>Oficinas</a>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><Link href="/vende"><a>Vende tu propiedad</a></Link></li>
+                        <li><Link href="/creditos"><a>Créditos</a></Link></li>
+                        <li><Link href="/conocenos"><a>Conócenos</a></Link></li>
+                        <li><Link href='/#contacto'><a>Contacto</a></Link></li>
+                    </ul>
                     <label htmlFor="nav-toggle" className="icon-burger">
                         <div className='line'></div>
                         <div className='line'></div>
