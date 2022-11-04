@@ -66,7 +66,9 @@ export default function Footer(){
                         <div className='col-md-3 derechos'>
                             <span>Lomas home © 2022.</span>
                             <span>Todos los derechos reservados.</span><br/>
-                            <a href="/AVISO DE PRIVACIDAD LOMAS HOME.pdf" target="_bank" style={{ textDecoration: "none", color: "#FFFFFF"}}><span>AVISO DE PRIVACIDAD</span></a>
+                            <Link href="/privacidad">
+                                <a target="_bank" style={{ textDecoration: "none", color: "#FFFFFF"}}><span>AVISO DE PRIVACIDAD</span></a>
+                            </Link>
                         </div>
                         <div className='col-md-7 col-4 centro'>
                             <ul className="nav justify-content-start">

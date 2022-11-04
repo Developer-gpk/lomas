@@ -18,6 +18,26 @@ html{
     font-style: normal;
 }
 
+.privacidad{
+    .holder{
+        max-width: 1300px;
+        width: 100%;
+        margin: 0 auto;
+        .container-fluid{
+            h1{
+                text-align: center;
+                margin-top: 120px;
+                font-family: "Silka-bold";
+                font-size: 30px;
+            }
+            p{
+                font-family: "Silka-regular";
+                text-align: justify;
+            }
+        }
+    }
+}
+
 @import './index.scss';
 @import './componentes/Navbar/navbar';
 @import './componentes/Propiedad/propiedad';

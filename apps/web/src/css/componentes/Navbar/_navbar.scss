@@ -55,6 +55,23 @@
             }
         }
     }
+    &.privacidad{
+        height: 90px;
+        background: #181D24;
+        .holder{
+            .navbar-custom{
+                .logo{
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                    height: 60px;
+                    width: 97.71px;
+                }
+                .links{
+                    margin-top: 56px;
+                }
+            }
+        }
+    }
     .holder{
         margin: 0 auto;
         max-width: 1300px;
@@ -216,6 +233,30 @@
             }
         }
         &.propiedad{
+            height: 60px;
+            background: #181D24;
+            .holder{
+                .navbar-custom{
+                    .logo{
+                        margin-top: 23px;
+                        margin-bottom: 23px;
+                        height: 13.65px;
+                        width: 114px;
+                        div:nth-child(1){
+                            display: none !important;
+                        }
+                        div:nth-child(2){
+                            display: block !important;
+                        }
+                    }
+                    .links{
+                        margin-top: 56px;
+                        top: 4px;
+                    }
+                }
+            }
+        }
+        &.privacidad{
             height: 60px;
             background: #181D24;
             .holder{
