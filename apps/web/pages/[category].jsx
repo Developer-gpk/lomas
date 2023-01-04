@@ -108,7 +108,12 @@ function Category(){
                                                 </div>
                                                 <h5 className="card-title">{propiedad?.name}</h5>
                                                 <p className="card-text">{propiedad?.address}</p>
-                                                <h4 className="price">${separator(propiedad?.sale)}</h4>
+                                                {propiedad.sale ? (
+                                                    <h4 className="price">${separator(propiedad?.sale)}</h4>
+                                                ) : null}
+                                                {propiedad.income ? (
+                                                    <h4 className="price">${separator(propiedad?.income)}</h4>
+                                                ) : null}
                                                 <div className='row comp'>
                                                     <div className='col'><Image src={M2_Const} alt="pin" width="16" height="16" layout={"fixed"} />{propiedad?.construction > 0 ? <>{propiedad?.construction}</> : <>0</>}<span>m2</span></div>
                                                     <div className='col'><Image src={Rec} alt="pin" width="16" height="16" layout={"fixed"} /> {propiedad?.bedrooms > 0 ? <>{propiedad?.bedrooms}</> : <>0</> } <span>Rec.</span></div>
