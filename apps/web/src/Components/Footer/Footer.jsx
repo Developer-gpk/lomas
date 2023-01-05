@@ -4,6 +4,29 @@ import { Logo, Tiktok, Ig, Fb, Goplek } from 'ui/constants'
 import Link from 'next/link'
 
 export default function Footer(){
+    const gaFooter = function(category, action, label) {
+        if ("function" === typeof gtag
+            && "string" === typeof category
+            && "string" === typeof action) {
+            var object = {
+                "event_action": action,
+                "event_label" : label || ''
+            };
+
+            // Send to Google Analytics.
+            gtag('event', category, object);
+
+            // Print in console.
+            if ("console" in window) {
+                console.log(
+                    'ga: [category: %s, action: %s, label: %s]',
+                    category,
+                    object['event_action'],
+                    object['event_label']
+                );
+            }
+        }
+    }
     return(
         <footer className='block' id='footer'>
             <div className='holder'>
@@ -72,9 +95,9 @@ export default function Footer(){
                         </div>
                         <div className='col-md-7 col-4 centro'>
                             <ul className="nav justify-content-start">
-                                <a className="nav-link" href="https://www.tiktok.com/@lomashome?_t=8WgwwmFFGqr&_r=1"><Image src={Tiktok} alt="Tiktok" width="15" height="18" /></a>
-                                <a className="nav-link" href="https://instagram.com/lomashome?igshid=YmMyMTA2M2Y="><Image src={Ig} alt="Instagram" width="15" height="18" /></a>
-                                <a className="nav-link" href="https://www.facebook.com/profile.php?id=100083650590910"><Image src={Fb} alt="Facebook" width="15" height="18" /></a>
+                                <a className="nav-link" href="https://www.tiktok.com/@lomashome?_t=8WgwwmFFGqr&_r=1" onClick={gaFooter('Contacto', 'Abrir TikTok', '')} target='_blank' rel="noopener noreferrer"><Image src={Tiktok} alt="Tiktok" width="15" height="18" /></a>
+                                <a className="nav-link" href="https://instagram.com/lomashome?igshid=YmMyMTA2M2Y=" onClick={gaFooter('Contacto', 'Abrir Instagram', '')} target='_blank' rel="noopener noreferrer"><Image src={Ig} alt="Instagram" width="15" height="18" /></a>
+                                <a className="nav-link" href="https://www.facebook.com/profile.php?id=100083650590910" onClick={gaFooter('Contacto', 'Abrir Facebook', '')} target='_blank' rel="noopener noreferrer"><Image src={Fb} alt="Facebook" width="15" height="18" /></a>
                             </ul>
                         </div>
                         <div className='col-md-2 text-end'>

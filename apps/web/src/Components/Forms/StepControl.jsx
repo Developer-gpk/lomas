@@ -5,6 +5,29 @@ import { Arrow1, ArrowSend } from 'ui/constants'
 
 export default function StepperControl(props){
     const context = useContext(FormContext)
+    const gaFooter = function(category, action, label) {
+        if ("function" === typeof gtag
+            && "string" === typeof category
+            && "string" === typeof action) {
+            var object = {
+                "event_action": action,
+                "event_label" : label || ''
+            };
+
+            // Send to Google Analytics.
+            gtag('event', category, object);
+
+            // Print in console.
+            if ("console" in window) {
+                console.log(
+                    'ga: [category: %s, action: %s, label: %s]',
+                    category,
+                    object['event_action'],
+                    object['event_label']
+                );
+            }
+        }
+    }
     return(
         <div className='container-fluid stepControl'>
             <div className='row'>
@@ -22,12 +45,12 @@ export default function StepperControl(props){
                 </div>
                 <div className='siguiente'>
                     {context.state.step === 3 ? (
-                        <button className='submit' type="submit">
+                        <button className='submit' type="submit" onClick={ga('Contacto', 'Enviar Formulario', '')}>
                             Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} />
                         </button>
                     ):(
                         <a className='action' type='button' onClick={() => context.dispatch({ type: "next" })}>
-                            Siguiente <Image src={Arrow1} alt="pin" width="13" height="12" layout={"fixed"} /> 
+                            Siguiente <Image src={Arrow1} alt="pin" width="13" height="12" layout={"fixed"} />
                         </a>
                     )}
                 </div>

@@ -19,7 +19,29 @@ function Web({home}) {
     telefono: Yup.string().required(),
     contacto: Yup.string().required()
   })
+  const gaFooter = function(category, action, label) {
+    if ("function" === typeof gtag
+        && "string" === typeof category
+        && "string" === typeof action) {
+        var object = {
+            "event_action": action,
+            "event_label" : label || ''
+        };
 
+        // Send to Google Analytics.
+        gtag('event', category, object);
+
+        // Print in console.
+        if ("console" in window) {
+            console.log(
+                'ga: [category: %s, action: %s, label: %s]',
+                category,
+                object['event_action'],
+                object['event_label']
+            );
+        }
+    }
+  }
   return (
     <Layout title="Lomas Home" description={home.descripcion} keywords={home.keywords}>
       <section className="block" id="portada">
@@ -183,7 +205,7 @@ function Web({home}) {
                                     <Field as="textarea" name='mensaje' className="form-control" rows="7" placeholder='Mensaje'></Field>
                                   </div>
                                   <div className='mb-4 submit-contact'>
-                                    <button type="submit" className="btn">Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} /></button>
+                                    <button type="submit" className="btn" onClick={ga('Contacto', 'Enviar Formulario', '')}>Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} /></button>
                                   </div>
                                 </div>
                               </div>

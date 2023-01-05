@@ -43,6 +43,29 @@ function Propiedad({propiedad}){
         setCurrentImage(0);
         setIsViewerOpen(false);
     };
+    const gaFooter = function(category, action, label) {
+        if ("function" === typeof gtag
+            && "string" === typeof category
+            && "string" === typeof action) {
+            var object = {
+                "event_action": action,
+                "event_label" : label || ''
+            };
+
+            // Send to Google Analytics.
+            gtag('event', category, object);
+
+            // Print in console.
+            if ("console" in window) {
+                console.log(
+                    'ga: [category: %s, action: %s, label: %s]',
+                    category,
+                    object['event_action'],
+                    object['event_label']
+                );
+            }
+        }
+    }
     return(
         <Layout title={`${propiedad?.name} | Lomas Home`} description={propiedad?.name} keywords={`${propiedad?.name}, ${propiedad?.availability}, ${propiedad?.categoria?.category}, ${propiedad?.address}`}>
             {isViewerOpen && (
@@ -190,7 +213,7 @@ function Propiedad({propiedad}){
                                                     <Field className={`${errors.telefono && touched.telefono ? ("isError") : null}`} name="telefono" type="text" placeholder="Teléfono*" required/>
                                                 </div>
                                                 <div className="enviar">
-                                                    <button type="submit">
+                                                    <button type="submit" onClick={ga('Contacto', 'Enviar Formulario', '')}>
                                                         Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} />
                                                     </button>
                                                 </div>

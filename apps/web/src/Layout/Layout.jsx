@@ -47,7 +47,7 @@ export default function Layout({children, title, description, keywords}){
                     <Link href="/#contacto">
                         <a className='contacto'>
                             Enviar mensaje <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} />
-                        </a> 
+                        </a>
                     </Link>
                 </div>
             </div>
