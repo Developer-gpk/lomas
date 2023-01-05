@@ -205,7 +205,7 @@ function Web({home}) {
                                     <Field as="textarea" name='mensaje' className="form-control" rows="7" placeholder='Mensaje'></Field>
                                   </div>
                                   <div className='mb-4 submit-contact'>
-                                    <button type="submit" className="btn" onClick={ga('Contacto', 'Enviar Formulario', '')}>Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} /></button>
+                                    <button type="submit" className="btn" onClick={gaFooter('Contacto', 'Enviar Formulario', '')}>Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} /></button>
                                   </div>
                                 </div>
                               </div>
