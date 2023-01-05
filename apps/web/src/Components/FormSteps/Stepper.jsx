@@ -45,7 +45,7 @@ export default function Stepper(){
                 </div>
                 <div className='col-6 text-end siguiente'>
                     {context.state.step === 3 ? (
-                        <button className='submit btn' type="submit" onClick={ga('Contacto', 'Enviar Formulario', '')}>
+                        <button className='submit btn' type="submit" onClick={gaFooter('Contacto', 'Enviar Formulario', '')}>
                             Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} />
                         </button>
                     ):(

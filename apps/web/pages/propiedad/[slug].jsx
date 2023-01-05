@@ -213,7 +213,7 @@ function Propiedad({propiedad}){
                                                     <Field className={`${errors.telefono && touched.telefono ? ("isError") : null}`} name="telefono" type="text" placeholder="Teléfono*" required/>
                                                 </div>
                                                 <div className="enviar">
-                                                    <button type="submit" onClick={ga('Contacto', 'Enviar Formulario', '')}>
+                                                    <button type="submit" onClick={gaFooter('Contacto', 'Enviar Formulario', '')}>
                                                         Enviar <Image src={ArrowSend} alt="pin" width="13" height="12" layout={"fixed"} />
                                                     </button>
                                                 </div>
