@@ -10,6 +10,7 @@ import { ScrollParallax } from 'react-just-parallax'
 import * as Yup from 'yup'
 import MainSlider from '../src/Components/mainSlider/mainSlider'
 import Conocenos from '../src/Components/Conocenos/conocenos'
+import HubspotContactForm from '../src/Components/Hubspot/HubspotContactForm'
 
 
 function Web({home}) {
@@ -135,6 +136,7 @@ function Web({home}) {
                         <p className='text-center'><span>Envíanos un mensaje o llámanos,</span><br/>con gusto te atenderemos.</p>
                       </div>
                     </div>
+                      {/*}
                       <Formik
                         initialValues={{
                           nombre: '',
@@ -218,6 +220,8 @@ function Web({home}) {
                           </Form>
                         )}
                       </Formik>
+                      {*/}
+                      <HubspotContactForm region="na1" portalId="22106410" formId="2c6aff2e-a4d3-4043-a58e-70d3f94c8d72" />
                   </div>
                   <div className='row mx-auto contactos'>
                     <div className='col-md-2'>
