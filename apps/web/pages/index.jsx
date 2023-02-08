@@ -230,8 +230,8 @@ function Web({home}) {
                       </a>
                     </div>
                     <div className='col-md-2'>
-                      <a href='https://wa.me/+522213634540'>
-                        <Image src={Wa} alt="pin" width="25" height="25" layout={"fixed"} /> 2213 634 540
+                      <a href='https://wa.me/+522215572917'>
+                        <Image src={Wa} alt="pin" width="25" height="25" layout={"fixed"} /> 221 557 2917
                       </a>
                     </div>
                     <div className='col-md-8'>
