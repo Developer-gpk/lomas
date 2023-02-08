@@ -225,8 +225,8 @@ function Web({home}) {
                   </div>
                   <div className='row mx-auto contactos'>
                     <div className='col-md-2'>
-                      <a href='tel:+52(221)5572917'>
-                        <Image src={Call} alt="pin" width="25" height="25" layout={"fixed"} /> (221) 557 2917
+                      <a href='tel:+52(222)6886134'>
+                        <Image src={Call} alt="pin" width="25" height="25" layout={"fixed"} /> (222) 688 6134
                       </a>
                     </div>
                     <div className='col-md-2'>
