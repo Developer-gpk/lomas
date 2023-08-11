@@ -28,8 +28,8 @@ export default function Layout({children, title, description, keywords}){
             <Navbar />
             <div className="whats d-none d-sm-none d-md-block">
                 <ul>
-                    <li className="whatsapp"><a href="https://wa.me/+522215572917" target="_blank" rel="noreferrer" className="icon-whatsapp"></a></li>
-                    <li className="phone"><a href="tel:+522221853611" target="_blank" rel="noreferrer" className="icon-number"></a></li>
+                    <li className="whatsapp"><a href="https://wa.me/+522221853611" target="_blank" rel="noreferrer" className="icon-whatsapp"></a></li>
+                    <li className="phone"><a href="tel:+52(222)6886134" target="_blank" rel="noreferrer" className="icon-number"></a></li>
                 </ul>
             </div>
             <div className='outer-wrapper' style={router.route == "/propiedad/[slug]" ? {contain: "inherit"} : {}}>
@@ -39,7 +39,7 @@ export default function Layout({children, title, description, keywords}){
             <div className='redes d-block d-sm-block d-md-none'>
                 <div className='content'>
                     <div className='whatsapp'>
-                        <a href="https://wa.me/+522215572917" target="_blank" rel="noreferrer"><Image src={WhatsApp} /></a>
+                        <a href="https://wa.me/+522221853611" target="_blank" rel="noreferrer"><Image src={WhatsApp} /></a>
                     </div>
                     <div className='phone'>
                         <a href="tel:+52(222)6886134" target="_blank" rel="noreferrer"><Image src={PhoneCTA} /></a>
